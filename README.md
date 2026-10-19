@@ -40,21 +40,53 @@ bash scripts/get_data.sh          # about 8.4 GB streamed once, about 40 MB writ
 fixed, so everybody gets the same 1 500 images, and one painter gives at most 50 images, so that the
 model learns the style and not the painter.
 
+**Our split** ([notebook 01](notebooks/01_data.ipynb)): 1 061 images to train, 219 to validate and
+220 to test, with the same share of each style in each part. All the images of a known painter go to
+the same part (0 known painter in two parts, against 23 of 32 with a random split), so the scores
+measure the style and not the memory of a painter. The test set is used only once, at the very end.
+The split is saved in [reports/split.csv](reports/split.csv).
+
+## Results so far
+
+| Model | Validation accuracy | Notes |
+|---|---|---|
+| Always the most frequent style | 22.8 % | the chance level |
+| MLP on 64 x 64 pixels (6.4 M parameters) | 40.6 % (best epoch: 3) | 99.7 % on train at the end: strong overfitting |
+| MLP on 16 / 32 / 64 pixels, mean of 3 seeds | 39.4 / 39.0 / 37.1 % | more pixels do not help an MLP |
+
+Sanity checks ([notebook 02](notebooks/02_mlp.ipynb)): the first loss is 1.591, close to ln 5 = 1.609
+(after shrinking the last layer, see the notebook), and the model learns one batch of 32 images by
+heart (100 %). Every number comes from [reports/results/](reports/results/).
+
+![MLP baseline curves](reports/figures/02_baseline_curves.png)
+
+## How to run
+
+```bash
+pip install -r requirements.txt
+bash scripts/get_data.sh                  # once: builds data/wikiart_style5
+python -m pytest                          # automatic checks
+python scripts/run_notebooks.py           # rebuilds and runs every notebook (FAST_RUN=1 for a quick check)
+```
+
+The notebooks are stored twice: the `.py` file is the source (easy to read in a Git diff) and the
+`.ipynb` file is the same notebook with its outputs. Everything runs on a laptop CPU.
+
 ## Repository structure
 
 ```
 make_wikiart_subset.py   builds the data subset (script given by the course)
-scripts/get_data.sh      the exact command we used
-src/museum_guide/        our Python code (data, models, training loop, diagnostics, benchmarks)
+scripts/                 the exact data command, and a script that runs all the notebooks
+src/museum_guide/        our Python code (data, models, training loop, diagnostics)
 notebooks/               the experiments, run in order (01 to 05)
-tests/                   small automatic checks (data split, model shapes)
-reports/                 figures and measured results (JSON/CSV), no artwork images
+tests/                   small automatic checks (data split, model, training loop)
+reports/                 figures, the split and every measured result (JSON), no artwork images
 ```
 
 ## Project status
 
 - [x] Repository and data subset
-- [ ] **m1**: data split and a first MLP baseline
+- [x] **m1**: data split and a first MLP baseline
 - [ ] **m2**: monitoring curves and failure diagnosis
 - [ ] Pretrained ResNet18
 - [ ] **v1.0**: classical models, CPU benchmark, final test and recommendation

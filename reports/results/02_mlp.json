@@ -1,0 +1,185 @@
+{
+  "first_loss": {
+    "last_scale_1.0": 1.99004,
+    "last_scale_0.1": 1.5907
+  },
+  "ln5": 1.60944,
+  "overfit_one_batch": {
+    "first_loss": 1.53699,
+    "last_loss": 0.0,
+    "accuracy": 1.0
+  },
+  "baseline_64px": {
+    "parameters": 6424581,
+    "epochs_run": 40,
+    "final_train_acc": 0.99717,
+    "final_val_acc": 0.3516,
+    "final_gap": 0.64557,
+    "seconds_per_epoch": 0.27122,
+    "best_epoch": 3,
+    "best_val_loss": 1.60614,
+    "val_acc_at_best": 0.40639,
+    "gap_at_best": 0.36458
+  },
+  "majority_val_acc": 0.22831,
+  "sizes": [
+    {
+      "size": 16,
+      "parameters": 526341,
+      "best_epoch": 1.33333,
+      "val_acc_mean": 0.39422,
+      "val_acc_std": 0.00264,
+      "best_val_loss": 1.43168,
+      "final_gap": 0.61764,
+      "seconds_per_epoch": 0.02783
+    },
+    {
+      "size": 32,
+      "parameters": 1705989,
+      "best_epoch": 1.66667,
+      "val_acc_mean": 0.38965,
+      "val_acc_std": 0.02596,
+      "best_val_loss": 1.43972,
+      "final_gap": 0.62073,
+      "seconds_per_epoch": 0.07576
+    },
+    {
+      "size": 64,
+      "parameters": 6424581,
+      "best_epoch": 1.66667,
+      "val_acc_mean": 0.37139,
+      "val_acc_std": 0.0304,
+      "best_val_loss": 1.55364,
+      "final_gap": 0.61431,
+      "seconds_per_epoch": 0.26776
+    }
+  ],
+  "runs": [
+    {
+      "size": 16,
+      "seed": 0,
+      "parameters": 526341,
+      "epochs_run": 40,
+      "final_train_acc": 0.99906,
+      "final_val_acc": 0.379,
+      "final_gap": 0.62006,
+      "seconds_per_epoch": 0.02774,
+      "best_epoch": 2,
+      "best_val_loss": 1.43625,
+      "val_acc_at_best": 0.39269,
+      "gap_at_best": 0.1549
+    },
+    {
+      "size": 16,
+      "seed": 1,
+      "parameters": 526341,
+      "epochs_run": 40,
+      "final_train_acc": 0.97832,
+      "final_val_acc": 0.36986,
+      "final_gap": 0.60846,
+      "seconds_per_epoch": 0.02841,
+      "best_epoch": 1,
+      "best_val_loss": 1.43766,
+      "val_acc_at_best": 0.39726,
+      "gap_at_best": 0.07305
+    },
+    {
+      "size": 16,
+      "seed": 2,
+      "parameters": 526341,
+      "epochs_run": 40,
+      "final_train_acc": 0.9623,
+      "final_val_acc": 0.3379,
+      "final_gap": 0.6244,
+      "seconds_per_epoch": 0.02735,
+      "best_epoch": 1,
+      "best_val_loss": 1.42113,
+      "val_acc_at_best": 0.39269,
+      "gap_at_best": 0.07856
+    },
+    {
+      "size": 32,
+      "seed": 0,
+      "parameters": 1705989,
+      "epochs_run": 40,
+      "final_train_acc": 0.99717,
+      "final_val_acc": 0.38356,
+      "final_gap": 0.61361,
+      "seconds_per_epoch": 0.07731,
+      "best_epoch": 2,
+      "best_val_loss": 1.46331,
+      "val_acc_at_best": 0.36073,
+      "gap_at_best": 0.23493
+    },
+    {
+      "size": 32,
+      "seed": 1,
+      "parameters": 1705989,
+      "epochs_run": 40,
+      "final_train_acc": 0.95947,
+      "final_val_acc": 0.30594,
+      "final_gap": 0.65354,
+      "seconds_per_epoch": 0.07457,
+      "best_epoch": 1,
+      "best_val_loss": 1.43174,
+      "val_acc_at_best": 0.41096,
+      "gap_at_best": 0.05841
+    },
+    {
+      "size": 32,
+      "seed": 2,
+      "parameters": 1705989,
+      "epochs_run": 40,
+      "final_train_acc": 0.98775,
+      "final_val_acc": 0.39269,
+      "final_gap": 0.59505,
+      "seconds_per_epoch": 0.0754,
+      "best_epoch": 2,
+      "best_val_loss": 1.42413,
+      "val_acc_at_best": 0.39726,
+      "gap_at_best": 0.19652
+    },
+    {
+      "size": 64,
+      "seed": 0,
+      "parameters": 6424581,
+      "epochs_run": 40,
+      "final_train_acc": 0.99717,
+      "final_val_acc": 0.3516,
+      "final_gap": 0.64557,
+      "seconds_per_epoch": 0.26852,
+      "best_epoch": 3,
+      "best_val_loss": 1.60614,
+      "val_acc_at_best": 0.40639,
+      "gap_at_best": 0.36458
+    },
+    {
+      "size": 64,
+      "seed": 1,
+      "parameters": 6424581,
+      "epochs_run": 40,
+      "final_train_acc": 0.98869,
+      "final_val_acc": 0.40183,
+      "final_gap": 0.58686,
+      "seconds_per_epoch": 0.26811,
+      "best_epoch": 1,
+      "best_val_loss": 1.55199,
+      "val_acc_at_best": 0.35616,
+      "gap_at_best": 0.16127
+    },
+    {
+      "size": 64,
+      "seed": 2,
+      "parameters": 6424581,
+      "epochs_run": 40,
+      "final_train_acc": 0.98492,
+      "final_val_acc": 0.37443,
+      "final_gap": 0.61049,
+      "seconds_per_epoch": 0.26666,
+      "best_epoch": 1,
+      "best_val_loss": 1.5028,
+      "val_acc_at_best": 0.3516,
+      "gap_at_best": 0.14322
+    }
+  ]
+}
