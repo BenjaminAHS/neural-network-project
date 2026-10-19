@@ -1,0 +1,26 @@
+{
+  "1 learning rate too big": {
+    "symptom": "loss 1.565 (ln 5 = 1.609), val acc 0.187, 99.6% dead neurons in layer 2; SGD lr 1: nan at mini-batch 8",
+    "cause": "steps too big: they push the ReLU neurons of layer 2 below 0 for every image (dead), or blow up the weights",
+    "cure": "learning rate 0.0001 (from the sweep)",
+    "after cure": "best val acc 0.438, 0.4% dead neurons in layer 2"
+  },
+  "2 zero_grad forgotten": {
+    "symptom": "loss jumps up to 4.94, then val acc 0.192 (one class); gradient norm x26 after 2 epochs",
+    "cause": "PyTorch adds each new gradient to the old ones: every step uses the sum of all past gradients",
+    "cure": "optimizer.zero_grad() before loss.backward()",
+    "after cure": "loss falls smoothly to 1.068, val acc 0.411"
+  },
+  "3 raw pixels": {
+    "symptom": "first loss 16.3 instead of 1.6; SGD loss up to 3.1e+08; Adam noisy, best val acc 0.352",
+    "cause": "inputs up to 255 make huge pre-activations and logits, so huge losses and gradients",
+    "cure": "standardise each channel with the training mean and std",
+    "after cure": "first loss 1.610, best val acc 0.438"
+  },
+  "4 deep sigmoid": {
+    "symptom": "loss stuck at 1.609 = ln 5, val acc 0.196; gradient of layer 1 / layer 9 = 6e-07",
+    "cause": "vanishing gradient: the sigmoid derivative is at most 1/4, multiplied over 8 layers",
+    "cure": "ReLU and He initialisation",
+    "after cure": "layer 1 / layer 9 = 0.17, loss 0.296, best val acc 0.393"
+  }
+}
