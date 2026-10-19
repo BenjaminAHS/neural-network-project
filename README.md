@@ -21,7 +21,7 @@ every claim backed by evidence.
 | 1 | A feed-forward network (MLP) in PyTorch that classifies paintings from their pixels | [02_mlp](notebooks/02_mlp.ipynb) |
 | 2 | Training monitoring (curves, gradients, dead neurons, learning rate) and regularisation | [03_monitoring](notebooks/03_monitoring.ipynb) |
 | 2 | Failure diagnosis: four broken runs, diagnosed and fixed | [04_training_doctor](notebooks/04_training_doctor.ipynb) |
-| 3 | A pretrained CNN (ResNet18) used as a feature extractor and fine-tuned | `notebooks/05_resnet` |
+| 3 | A pretrained CNN (ResNet18) used as a feature extractor and fine-tuned | [05_resnet](notebooks/05_resnet.ipynb) |
 | 4 | Classical models, CPU speed tests and our recommendation to the director | `notebooks/06_final_comparison` |
 
 ## Data
@@ -55,6 +55,9 @@ The split is saved in [reports/split.csv](reports/split.csv).
 | MLP on 64 x 64 pixels (6.4 M parameters) | 40.6 % (best epoch: 3) | 99.7 % on train at the end: strong overfitting |
 | MLP on 16 / 32 / 64 pixels, mean of 3 seeds | 39.4 / 39.0 / 37.1 % | more pixels do not help an MLP |
 | Regularised MLP, 32 x 32 pixels, mean of 3 seeds | **45.5 %** (std 0.7) | train/validation gap 0.12 instead of 0.61 |
+| Frozen ResNet18 + linear head (linear probe), 3 seeds | **88.1 %** (std 0.0) | only 2 565 trained parameters |
+| Frozen ResNet18 + small MLP head, 3 seeds | **89.2 %** (std 1.1) | same as the linear probe within the noise |
+| ResNet18 with `layer4` fine-tuned, 3 seeds | 85.4 % (std 0.5) | 8.4 M trained parameters: overfits, and much slower |
 
 Sanity checks ([notebook 02](notebooks/02_mlp.ipynb)): the first loss is 1.591, close to ln 5 = 1.609
 (after shrinking the last layer, see the notebook), and the model learns one batch of 32 images by
@@ -90,10 +93,35 @@ diagnoses and fixes each run. Every number below was measured there.
 | 8 sigmoid layers | loss stuck at 1.609 = ln 5, 19.2 % | vanishing gradient: layer 1 gets 6 x 10^-7 of the gradient of layer 9 | ReLU and He initialisation | ratio 0.17, 39.3 % validation |
 
 A loss stuck at ln 5 can mean dead neurons (patient 1) or a vanishing gradient (patient 4): only the
-monitor tells them apart. A fifth, silent failure (the same painter in training and test) cannot be
-seen in any curve; we measure it with the ResNet in notebook 05.
+monitor tells them apart.
 
 ![Vanishing gradient](reports/figures/04_p4_grad_per_layer.png)
+
+Three more failures are **silent**: nothing crashes and the training curves look normal. We measured
+them with the ResNet in [notebook 05](notebooks/05_resnet.ipynb):
+
+| Silent failure | Measured effect | Cure |
+|---|---|---|
+| Features extracted without `model.eval()` (batch norm uses the statistics of each batch) | 12.8 % instead of 88.1 % on validation | always call `model.eval()` before extracting or predicting |
+| Pixels not normalised with the ImageNet mean and std | 81.7 % instead of 88.1 % | use the statistics the network was trained with |
+| The same painter in training and in evaluation (painter leakage) | +11.4 points on images by known painters (83.7 % against 72.3 %, same images), no change on the control group | split the data by painter (notebook 01) |
+
+## Pretrained ResNet18
+
+[Notebook 05](notebooks/05_resnet.ipynb) reuses ResNet18, a convolutional network already trained on
+ImageNet (1.2 million photos). The network comes from torchvision; the heads, the freezing of the
+blocks and the training loop are ours.
+
+- **Frozen features + a linear head** (a "linear probe"): each painting becomes 512 numbers, computed once
+  (15.5 ms per painting on a laptop CPU), and only 2 565 parameters are trained. **88.1 %** on validation,
+  almost twice our best MLP.
+- **Fine-tuning the last block** (8.4 million trained parameters, with random crops and flips): 85.4 %.
+  It overfits 1 061 images and takes 1.7 to 3.6 minutes of training per run, against 0.4 s for the
+  linear probe, so the frozen features win here.
+- **Errors**: Ukiyo-e is always found; Cubism is the hardest style (recall 71 %, against 7 % for the MLP),
+  mostly confused with Pop Art.
+
+![Painter leakage](reports/figures/05_painter_leakage.png)
 
 ## How to run
 
@@ -123,5 +151,5 @@ reports/                 figures, the split and every measured result (JSON), no
 - [x] Repository and data subset
 - [x] **m1**: data split and a first MLP baseline
 - [x] **m2**: monitoring curves and failure diagnosis
-- [ ] Pretrained ResNet18
+- [x] Pretrained ResNet18 (feature extractor, fine-tuning, painter leakage)
 - [ ] **v1.0**: classical models, CPU benchmark, final test and recommendation

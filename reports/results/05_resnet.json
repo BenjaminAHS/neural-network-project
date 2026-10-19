@@ -1,0 +1,232 @@
+{
+  "parameters": {
+    "ResNet18 + linear head (total)": 11179077,
+    "trained by A (feature extractor + linear head)": 2565,
+    "trained by B (fine-tuning of layer4 + head)": 8396293
+  },
+  "feature_ms_per_image_batch64": 15.46943,
+  "heads": [
+    {
+      "head": "linear probe",
+      "val_acc": 0.88128,
+      "val_acc_std": 0.0,
+      "gap": 0.08668,
+      "val_loss": 0.41867,
+      "epochs": 36.0,
+      "trained_parameters": 2565,
+      "seconds": 0.37065
+    },
+    {
+      "head": "MLP head",
+      "val_acc": 0.89193,
+      "val_acc_std": 0.01149,
+      "gap": 0.09801,
+      "val_loss": 0.3702,
+      "epochs": 27.66667,
+      "trained_parameters": 132613,
+      "seconds": 0.52125
+    }
+  ],
+  "head_runs": [
+    {
+      "head": "linear probe",
+      "seed": 0,
+      "val_acc": 0.88128,
+      "gap": 0.07725,
+      "val_loss": 0.41819,
+      "epochs": 33,
+      "trained_parameters": 2565,
+      "seconds": 0.32869
+    },
+    {
+      "head": "linear probe",
+      "seed": 1,
+      "val_acc": 0.88128,
+      "gap": 0.0895,
+      "val_loss": 0.41886,
+      "epochs": 37,
+      "trained_parameters": 2565,
+      "seconds": 0.3881
+    },
+    {
+      "head": "linear probe",
+      "seed": 2,
+      "val_acc": 0.88128,
+      "gap": 0.09327,
+      "val_loss": 0.41897,
+      "epochs": 38,
+      "trained_parameters": 2565,
+      "seconds": 0.39516
+    },
+    {
+      "head": "MLP head",
+      "seed": 0,
+      "val_acc": 0.89041,
+      "gap": 0.09639,
+      "val_loss": 0.36188,
+      "epochs": 27,
+      "trained_parameters": 132613,
+      "seconds": 0.51131
+    },
+    {
+      "head": "MLP head",
+      "seed": 1,
+      "val_acc": 0.90411,
+      "gap": 0.08458,
+      "val_loss": 0.38361,
+      "epochs": 28,
+      "trained_parameters": 132613,
+      "seconds": 0.52254
+    },
+    {
+      "head": "MLP head",
+      "seed": 2,
+      "val_acc": 0.88128,
+      "gap": 0.11307,
+      "val_loss": 0.36512,
+      "epochs": 28,
+      "trained_parameters": 132613,
+      "seconds": 0.52989
+    }
+  ],
+  "extraction_bugs": {
+    "correct (eval mode, ImageNet normalisation)": 0.88128,
+    "forgot model.eval()": 0.12785,
+    "forgot the ImageNet normalisation": 0.81735
+  },
+  "finetune_recipe": {
+    "train_from": "layer4",
+    "lr_body": 0.0001,
+    "lr_head": 0.001,
+    "weight_decay": 0.01,
+    "epochs": 10,
+    "patience": 3
+  },
+  "finetune_runs": [
+    {
+      "seed": 0,
+      "val_acc": 0.85845,
+      "gap": 0.12364,
+      "val_loss": 0.3842,
+      "epochs": 6,
+      "best_epoch": 3,
+      "minutes": 2.23247
+    },
+    {
+      "seed": 1,
+      "val_acc": 0.84932,
+      "gap": 0.1488,
+      "val_loss": 0.45336,
+      "epochs": 10,
+      "best_epoch": 7,
+      "minutes": 3.56284
+    },
+    {
+      "seed": 2,
+      "val_acc": 0.85388,
+      "gap": 0.0924,
+      "val_loss": 0.39881,
+      "epochs": 5,
+      "best_epoch": 2,
+      "minutes": 1.74749
+    }
+  ],
+  "leakage": [
+    {
+      "folds": "random folds",
+      "seed": 0,
+      "all images": 0.84141,
+      "known painters": 0.83396,
+      "unknown painters": 0.84677
+    },
+    {
+      "folds": "painter folds",
+      "seed": 0,
+      "all images": 0.79063,
+      "known painters": 0.71455,
+      "unknown painters": 0.84543
+    },
+    {
+      "folds": "random folds",
+      "seed": 1,
+      "all images": 0.83906,
+      "known painters": 0.83396,
+      "unknown painters": 0.84274
+    },
+    {
+      "folds": "painter folds",
+      "seed": 1,
+      "all images": 0.79609,
+      "known painters": 0.73134,
+      "unknown painters": 0.84274
+    },
+    {
+      "folds": "random folds",
+      "seed": 2,
+      "all images": 0.84688,
+      "known painters": 0.84328,
+      "unknown painters": 0.84946
+    },
+    {
+      "folds": "painter folds",
+      "seed": 2,
+      "all images": 0.79297,
+      "known painters": 0.72388,
+      "unknown painters": 0.84274
+    }
+  ],
+  "probe_seed0_per_class": [
+    {
+      "style": "Baroque",
+      "recall": 0.92857,
+      "precision": 0.88636,
+      "f1": 0.90698,
+      "images": 42
+    },
+    {
+      "style": "Cubism",
+      "recall": 0.71429,
+      "precision": 0.83333,
+      "f1": 0.76923,
+      "images": 42
+    },
+    {
+      "style": "Impressionism",
+      "recall": 0.9,
+      "precision": 0.91837,
+      "f1": 0.90909,
+      "images": 50
+    },
+    {
+      "style": "Pop_Art",
+      "recall": 0.86047,
+      "precision": 0.82222,
+      "f1": 0.84091,
+      "images": 43
+    },
+    {
+      "style": "Ukiyo_e",
+      "recall": 1.0,
+      "precision": 0.93333,
+      "f1": 0.96552,
+      "images": 42
+    }
+  ],
+  "probe_seed0_most_confused": [
+    [
+      "Cubism",
+      "Pop_Art",
+      8
+    ],
+    [
+      "Pop_Art",
+      "Cubism",
+      5
+    ],
+    [
+      "Impressionism",
+      "Baroque",
+      4
+    ]
+  ]
+}
