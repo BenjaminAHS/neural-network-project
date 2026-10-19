@@ -1,0 +1,34 @@
+{
+  "n_images": 1500,
+  "classes": [
+    "Baroque",
+    "Cubism",
+    "Impressionism",
+    "Pop_Art",
+    "Ukiyo_e"
+  ],
+  "split_counts": {
+    "test": 220,
+    "train": 1061,
+    "val": 219
+  },
+  "known_painter_share": {
+    "Baroque": 0.29,
+    "Cubism": 0.52,
+    "Impressionism": 1.0,
+    "Pop_Art": 0.05,
+    "Ukiyo_e": 0.2
+  },
+  "leakage": {
+    "known_painters": 32,
+    "shared_painters_artist_split": 0,
+    "shared_painters_random_split": 23
+  },
+  "near_duplicates": {
+    "candidate_pairs": 242,
+    "confirmed_pairs": 0,
+    "pairs_across_parts": 0,
+    "max_corr_candidates": 0.907,
+    "max_corr_all_pairs": 0.928
+  }
+}

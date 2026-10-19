@@ -1,0 +1,1501 @@
+id,path,label,artist,genre,split
+s09_r0006,Baroque/s09_r0006.jpg,Baroque,rembrandt,Unknown Genre,train
+s09_r0025,Baroque/s09_r0025.jpg,Baroque,rembrandt,Unknown Genre,train
+s09_r0146,Baroque/s09_r0146.jpg,Baroque,rembrandt,religious_painting,train
+s09_r0149,Baroque/s09_r0149.jpg,Baroque,rembrandt,religious_painting,train
+s09_r0178,Baroque/s09_r0178.jpg,Baroque,rembrandt,Unknown Genre,train
+s09_r0199,Baroque/s09_r0199.jpg,Baroque,rembrandt,landscape,train
+s09_r0243,Baroque/s09_r0243.jpg,Baroque,rembrandt,religious_painting,train
+s09_r0246,Baroque/s09_r0246.jpg,Baroque,rembrandt,religious_painting,train
+s09_r0248,Baroque/s09_r0248.jpg,Baroque,rembrandt,genre_painting,train
+s09_r0253,Baroque/s09_r0253.jpg,Baroque,rembrandt,portrait,train
+s09_r0279,Baroque/s09_r0279.jpg,Baroque,rembrandt,religious_painting,train
+s09_r0354,Baroque/s09_r0354.jpg,Baroque,rembrandt,sketch_and_study,train
+s09_r0361,Baroque/s09_r0361.jpg,Baroque,rembrandt,genre_painting,train
+s09_r0365,Baroque/s09_r0365.jpg,Baroque,rembrandt,Unknown Genre,train
+s09_r0397,Baroque/s09_r0397.jpg,Baroque,rembrandt,Unknown Genre,train
+s09_r0459,Baroque/s09_r0459.jpg,Baroque,rembrandt,portrait,train
+s09_r0492,Baroque/s09_r0492.jpg,Baroque,rembrandt,portrait,train
+s09_r0503,Baroque/s09_r0503.jpg,Baroque,rembrandt,portrait,train
+s09_r0525,Baroque/s09_r0525.jpg,Baroque,rembrandt,sketch_and_study,train
+s09_r0526,Baroque/s09_r0526.jpg,Baroque,rembrandt,sketch_and_study,train
+s09_r0553,Baroque/s09_r0553.jpg,Baroque,rembrandt,sketch_and_study,train
+s09_r0570,Baroque/s09_r0570.jpg,Baroque,rembrandt,religious_painting,train
+s09_r0573,Baroque/s09_r0573.jpg,Baroque,rembrandt,religious_painting,train
+s09_r0615,Baroque/s09_r0615.jpg,Baroque,rembrandt,genre_painting,train
+s09_r0638,Baroque/s09_r0638.jpg,Baroque,rembrandt,portrait,train
+s09_r0659,Baroque/s09_r0659.jpg,Baroque,rembrandt,portrait,train
+s09_r0692,Baroque/s09_r0692.jpg,Baroque,rembrandt,sketch_and_study,train
+s09_r0698,Baroque/s09_r0698.jpg,Baroque,rembrandt,portrait,train
+s09_r0705,Baroque/s09_r0705.jpg,Baroque,rembrandt,Unknown Genre,train
+s09_r0765,Baroque/s09_r0765.jpg,Baroque,rembrandt,Unknown Genre,train
+s09_r0778,Baroque/s09_r0778.jpg,Baroque,rembrandt,portrait,train
+s09_r0792,Baroque/s09_r0792.jpg,Baroque,rembrandt,portrait,train
+s09_r0831,Baroque/s09_r0831.jpg,Baroque,rembrandt,genre_painting,train
+s09_r0834,Baroque/s09_r0834.jpg,Baroque,rembrandt,landscape,train
+s09_r0851,Baroque/s09_r0851.jpg,Baroque,rembrandt,genre_painting,train
+s09_r0872,Baroque/s09_r0872.jpg,Baroque,rembrandt,Unknown Genre,train
+s09_r0892,Baroque/s09_r0892.jpg,Baroque,rembrandt,landscape,train
+s09_r0910,Baroque/s09_r0910.jpg,Baroque,rembrandt,religious_painting,train
+s09_r0913,Baroque/s09_r0913.jpg,Baroque,rembrandt,Unknown Genre,train
+s09_r0914,Baroque/s09_r0914.jpg,Baroque,rembrandt,sketch_and_study,train
+s09_r0936,Baroque/s09_r0936.jpg,Baroque,rembrandt,portrait,train
+s09_r0942,Baroque/s09_r0942.jpg,Baroque,rembrandt,religious_painting,train
+s09_r0957,Baroque/s09_r0957.jpg,Baroque,rembrandt,religious_painting,train
+s09_r0970,Baroque/s09_r0970.jpg,Baroque,rembrandt,religious_painting,train
+s09_r1000,Baroque/s09_r1000.jpg,Baroque,rembrandt,genre_painting,train
+s09_r1006,Baroque/s09_r1006.jpg,Baroque,rembrandt,genre_painting,train
+s09_r1037,Baroque/s09_r1037.jpg,Baroque,rembrandt,sketch_and_study,train
+s09_r1048,Baroque/s09_r1048.jpg,Baroque,rembrandt,sketch_and_study,train
+s09_r1067,Baroque/s09_r1067.jpg,Baroque,rembrandt,portrait,train
+s09_r1122,Baroque/s09_r1122.jpg,Baroque,rembrandt,genre_painting,train
+s24_r0003,Baroque/s24_r0003.jpg,Baroque,Unknown Artist,religious_painting,train
+s24_r0006,Baroque/s24_r0006.jpg,Baroque,peter-paul-rubens,portrait,val
+s24_r0013,Baroque/s24_r0013.jpg,Baroque,Unknown Artist,genre_painting,train
+s24_r0027,Baroque/s24_r0027.jpg,Baroque,anthony-van-dyck,portrait,train
+s24_r0029,Baroque/s24_r0029.jpg,Baroque,frans-hals,portrait,train
+s24_r0048,Baroque/s24_r0048.jpg,Baroque,Unknown Artist,nude_painting,train
+s24_r0052,Baroque/s24_r0052.jpg,Baroque,Unknown Artist,religious_painting,train
+s24_r0077,Baroque/s24_r0077.jpg,Baroque,Unknown Artist,religious_painting,val
+s24_r0098,Baroque/s24_r0098.jpg,Baroque,Unknown Artist,religious_painting,test
+s24_r0106,Baroque/s24_r0106.jpg,Baroque,peter-paul-rubens,religious_painting,val
+s24_r0111,Baroque/s24_r0111.jpg,Baroque,bartolome-esteban-murillo,religious_painting,test
+s24_r0155,Baroque/s24_r0155.jpg,Baroque,Unknown Artist,religious_painting,test
+s24_r0158,Baroque/s24_r0158.jpg,Baroque,Unknown Artist,religious_painting,train
+s24_r0195,Baroque/s24_r0195.jpg,Baroque,Unknown Artist,genre_painting,train
+s24_r0243,Baroque/s24_r0243.jpg,Baroque,Unknown Artist,portrait,test
+s24_r0255,Baroque/s24_r0255.jpg,Baroque,Unknown Artist,genre_painting,train
+s24_r0293,Baroque/s24_r0293.jpg,Baroque,Unknown Artist,illustration,train
+s24_r0335,Baroque/s24_r0335.jpg,Baroque,Unknown Artist,religious_painting,train
+s24_r0344,Baroque/s24_r0344.jpg,Baroque,Unknown Artist,religious_painting,test
+s24_r0350,Baroque/s24_r0350.jpg,Baroque,Unknown Artist,genre_painting,train
+s24_r0379,Baroque/s24_r0379.jpg,Baroque,peter-paul-rubens,religious_painting,val
+s24_r0399,Baroque/s24_r0399.jpg,Baroque,canaletto,cityscape,train
+s24_r0436,Baroque/s24_r0436.jpg,Baroque,Unknown Artist,religious_painting,train
+s24_r0458,Baroque/s24_r0458.jpg,Baroque,peter-paul-rubens,religious_painting,val
+s24_r0460,Baroque/s24_r0460.jpg,Baroque,Unknown Artist,religious_painting,test
+s24_r0498,Baroque/s24_r0498.jpg,Baroque,peter-paul-rubens,religious_painting,val
+s24_r0499,Baroque/s24_r0499.jpg,Baroque,Unknown Artist,portrait,train
+s24_r0514,Baroque/s24_r0514.jpg,Baroque,Unknown Artist,religious_painting,train
+s24_r0524,Baroque/s24_r0524.jpg,Baroque,Unknown Artist,religious_painting,train
+s24_r0536,Baroque/s24_r0536.jpg,Baroque,Unknown Artist,genre_painting,train
+s24_r0541,Baroque/s24_r0541.jpg,Baroque,Unknown Artist,genre_painting,test
+s24_r0556,Baroque/s24_r0556.jpg,Baroque,Unknown Artist,religious_painting,val
+s24_r0575,Baroque/s24_r0575.jpg,Baroque,jacob-jordaens,religious_painting,train
+s24_r0582,Baroque/s24_r0582.jpg,Baroque,frans-hals,portrait,train
+s24_r0599,Baroque/s24_r0599.jpg,Baroque,Unknown Artist,landscape,train
+s24_r0634,Baroque/s24_r0634.jpg,Baroque,Unknown Artist,portrait,val
+s24_r0636,Baroque/s24_r0636.jpg,Baroque,Unknown Artist,portrait,train
+s24_r0650,Baroque/s24_r0650.jpg,Baroque,Unknown Artist,religious_painting,train
+s24_r0653,Baroque/s24_r0653.jpg,Baroque,anthony-van-dyck,religious_painting,train
+s24_r0668,Baroque/s24_r0668.jpg,Baroque,peter-paul-rubens,portrait,val
+s24_r0671,Baroque/s24_r0671.jpg,Baroque,joseph-wright,portrait,train
+s24_r0721,Baroque/s24_r0721.jpg,Baroque,joshua-reynolds,portrait,train
+s24_r0736,Baroque/s24_r0736.jpg,Baroque,bartolome-esteban-murillo,religious_painting,test
+s24_r0746,Baroque/s24_r0746.jpg,Baroque,Unknown Artist,cityscape,train
+s24_r0747,Baroque/s24_r0747.jpg,Baroque,frans-hals,portrait,train
+s24_r0752,Baroque/s24_r0752.jpg,Baroque,Unknown Artist,still_life,val
+s24_r0754,Baroque/s24_r0754.jpg,Baroque,Unknown Artist,landscape,val
+s24_r0777,Baroque/s24_r0777.jpg,Baroque,Unknown Artist,religious_painting,train
+s24_r0782,Baroque/s24_r0782.jpg,Baroque,Unknown Artist,still_life,train
+s24_r0791,Baroque/s24_r0791.jpg,Baroque,frans-hals,portrait,train
+s24_r0822,Baroque/s24_r0822.jpg,Baroque,frans-hals,portrait,train
+s24_r0832,Baroque/s24_r0832.jpg,Baroque,Unknown Artist,portrait,train
+s24_r0835,Baroque/s24_r0835.jpg,Baroque,bartolome-esteban-murillo,genre_painting,test
+s24_r0850,Baroque/s24_r0850.jpg,Baroque,Unknown Artist,cityscape,train
+s24_r0884,Baroque/s24_r0884.jpg,Baroque,Unknown Artist,genre_painting,train
+s24_r0898,Baroque/s24_r0898.jpg,Baroque,Unknown Artist,religious_painting,train
+s24_r0909,Baroque/s24_r0909.jpg,Baroque,frans-hals,portrait,train
+s24_r0936,Baroque/s24_r0936.jpg,Baroque,Unknown Artist,genre_painting,train
+s24_r0940,Baroque/s24_r0940.jpg,Baroque,Unknown Artist,genre_painting,test
+s24_r0971,Baroque/s24_r0971.jpg,Baroque,joseph-wright,genre_painting,train
+s24_r0973,Baroque/s24_r0973.jpg,Baroque,joseph-wright,portrait,train
+s24_r0982,Baroque/s24_r0982.jpg,Baroque,Unknown Artist,genre_painting,train
+s24_r0987,Baroque/s24_r0987.jpg,Baroque,Unknown Artist,genre_painting,train
+s24_r0994,Baroque/s24_r0994.jpg,Baroque,bartolome-esteban-murillo,religious_painting,test
+s24_r1028,Baroque/s24_r1028.jpg,Baroque,joshua-reynolds,portrait,train
+s24_r1040,Baroque/s24_r1040.jpg,Baroque,Unknown Artist,still_life,train
+s24_r1043,Baroque/s24_r1043.jpg,Baroque,jacob-jordaens,religious_painting,train
+s24_r1055,Baroque/s24_r1055.jpg,Baroque,bartolome-esteban-murillo,religious_painting,test
+s24_r1068,Baroque/s24_r1068.jpg,Baroque,Unknown Artist,genre_painting,train
+s24_r1094,Baroque/s24_r1094.jpg,Baroque,Unknown Artist,portrait,val
+s24_r1098,Baroque/s24_r1098.jpg,Baroque,Unknown Artist,genre_painting,test
+s24_r1120,Baroque/s24_r1120.jpg,Baroque,Unknown Artist,portrait,train
+s31_r0003,Baroque/s31_r0003.jpg,Baroque,frans-hals,portrait,train
+s31_r0022,Baroque/s31_r0022.jpg,Baroque,Unknown Artist,religious_painting,train
+s31_r0023,Baroque/s31_r0023.jpg,Baroque,Unknown Artist,still_life,train
+s31_r0027,Baroque/s31_r0027.jpg,Baroque,Unknown Artist,genre_painting,test
+s31_r0033,Baroque/s31_r0033.jpg,Baroque,Unknown Artist,religious_painting,train
+s31_r0055,Baroque/s31_r0055.jpg,Baroque,Unknown Artist,portrait,train
+s31_r0060,Baroque/s31_r0060.jpg,Baroque,Unknown Artist,genre_painting,train
+s31_r0069,Baroque/s31_r0069.jpg,Baroque,Unknown Artist,religious_painting,train
+s31_r0112,Baroque/s31_r0112.jpg,Baroque,Unknown Artist,religious_painting,test
+s31_r0135,Baroque/s31_r0135.jpg,Baroque,Unknown Artist,genre_painting,train
+s31_r0148,Baroque/s31_r0148.jpg,Baroque,Unknown Artist,genre_painting,train
+s31_r0155,Baroque/s31_r0155.jpg,Baroque,Unknown Artist,portrait,train
+s31_r0162,Baroque/s31_r0162.jpg,Baroque,Unknown Artist,still_life,val
+s31_r0163,Baroque/s31_r0163.jpg,Baroque,Unknown Artist,genre_painting,train
+s31_r0166,Baroque/s31_r0166.jpg,Baroque,Unknown Artist,genre_painting,train
+s31_r0179,Baroque/s31_r0179.jpg,Baroque,Unknown Artist,genre_painting,val
+s31_r0198,Baroque/s31_r0198.jpg,Baroque,Unknown Artist,religious_painting,val
+s31_r0202,Baroque/s31_r0202.jpg,Baroque,frans-hals,portrait,train
+s31_r0203,Baroque/s31_r0203.jpg,Baroque,bartolome-esteban-murillo,genre_painting,test
+s31_r0212,Baroque/s31_r0212.jpg,Baroque,Unknown Artist,portrait,train
+s31_r0245,Baroque/s31_r0245.jpg,Baroque,peter-paul-rubens,genre_painting,val
+s31_r0273,Baroque/s31_r0273.jpg,Baroque,Unknown Artist,religious_painting,val
+s31_r0302,Baroque/s31_r0302.jpg,Baroque,peter-paul-rubens,religious_painting,val
+s31_r0347,Baroque/s31_r0347.jpg,Baroque,Unknown Artist,genre_painting,train
+s31_r0378,Baroque/s31_r0378.jpg,Baroque,anthony-van-dyck,portrait,train
+s31_r0442,Baroque/s31_r0442.jpg,Baroque,Unknown Artist,religious_painting,val
+s31_r0444,Baroque/s31_r0444.jpg,Baroque,Unknown Artist,religious_painting,train
+s31_r0457,Baroque/s31_r0457.jpg,Baroque,Unknown Artist,religious_painting,train
+s31_r0467,Baroque/s31_r0467.jpg,Baroque,Unknown Artist,religious_painting,val
+s31_r0484,Baroque/s31_r0484.jpg,Baroque,Unknown Artist,genre_painting,val
+s31_r0490,Baroque/s31_r0490.jpg,Baroque,Unknown Artist,religious_painting,train
+s31_r0541,Baroque/s31_r0541.jpg,Baroque,Unknown Artist,genre_painting,test
+s31_r0543,Baroque/s31_r0543.jpg,Baroque,Unknown Artist,portrait,train
+s31_r0547,Baroque/s31_r0547.jpg,Baroque,Unknown Artist,genre_painting,train
+s31_r0548,Baroque/s31_r0548.jpg,Baroque,bartolome-esteban-murillo,religious_painting,test
+s31_r0605,Baroque/s31_r0605.jpg,Baroque,anthony-van-dyck,religious_painting,train
+s31_r0673,Baroque/s31_r0673.jpg,Baroque,Unknown Artist,religious_painting,train
+s31_r0674,Baroque/s31_r0674.jpg,Baroque,Unknown Artist,genre_painting,train
+s31_r0689,Baroque/s31_r0689.jpg,Baroque,Unknown Artist,landscape,train
+s31_r0742,Baroque/s31_r0742.jpg,Baroque,anthony-van-dyck,sketch_and_study,train
+s31_r0780,Baroque/s31_r0780.jpg,Baroque,Unknown Artist,genre_painting,train
+s31_r0790,Baroque/s31_r0790.jpg,Baroque,Unknown Artist,religious_painting,train
+s31_r0812,Baroque/s31_r0812.jpg,Baroque,joshua-reynolds,portrait,train
+s31_r0823,Baroque/s31_r0823.jpg,Baroque,Unknown Artist,genre_painting,train
+s31_r0867,Baroque/s31_r0867.jpg,Baroque,Unknown Artist,portrait,train
+s31_r0876,Baroque/s31_r0876.jpg,Baroque,Unknown Artist,genre_painting,train
+s31_r0891,Baroque/s31_r0891.jpg,Baroque,Unknown Artist,cityscape,train
+s31_r0893,Baroque/s31_r0893.jpg,Baroque,Unknown Artist,religious_painting,train
+s31_r0923,Baroque/s31_r0923.jpg,Baroque,Unknown Artist,landscape,train
+s31_r0953,Baroque/s31_r0953.jpg,Baroque,peter-paul-rubens,religious_painting,val
+s31_r0972,Baroque/s31_r0972.jpg,Baroque,Unknown Artist,portrait,test
+s31_r0981,Baroque/s31_r0981.jpg,Baroque,Unknown Artist,religious_painting,test
+s31_r0995,Baroque/s31_r0995.jpg,Baroque,Unknown Artist,portrait,val
+s31_r1004,Baroque/s31_r1004.jpg,Baroque,Unknown Artist,religious_painting,train
+s31_r1011,Baroque/s31_r1011.jpg,Baroque,Unknown Artist,sketch_and_study,train
+s31_r1022,Baroque/s31_r1022.jpg,Baroque,Unknown Artist,portrait,test
+s31_r1024,Baroque/s31_r1024.jpg,Baroque,Unknown Artist,portrait,train
+s31_r1050,Baroque/s31_r1050.jpg,Baroque,Unknown Artist,religious_painting,train
+s31_r1060,Baroque/s31_r1060.jpg,Baroque,Unknown Artist,religious_painting,train
+s31_r1065,Baroque/s31_r1065.jpg,Baroque,Unknown Artist,religious_painting,train
+s31_r1079,Baroque/s31_r1079.jpg,Baroque,Unknown Artist,portrait,test
+s31_r1087,Baroque/s31_r1087.jpg,Baroque,Unknown Artist,portrait,train
+s31_r1129,Baroque/s31_r1129.jpg,Baroque,Unknown Artist,religious_painting,train
+s64_r0022,Baroque/s64_r0022.jpg,Baroque,Unknown Artist,Unknown Genre,test
+s64_r0028,Baroque/s64_r0028.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s64_r0029,Baroque/s64_r0029.jpg,Baroque,Unknown Artist,Unknown Genre,val
+s64_r0031,Baroque/s64_r0031.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s64_r0044,Baroque/s64_r0044.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s64_r0060,Baroque/s64_r0060.jpg,Baroque,Unknown Artist,Unknown Genre,test
+s64_r0074,Baroque/s64_r0074.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s64_r0081,Baroque/s64_r0081.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s64_r0095,Baroque/s64_r0095.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s64_r0117,Baroque/s64_r0117.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s64_r0154,Baroque/s64_r0154.jpg,Baroque,Unknown Artist,Unknown Genre,val
+s64_r0163,Baroque/s64_r0163.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s64_r0200,Baroque/s64_r0200.jpg,Baroque,Unknown Artist,Unknown Genre,val
+s64_r0214,Baroque/s64_r0214.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s64_r0230,Baroque/s64_r0230.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s64_r0249,Baroque/s64_r0249.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s64_r0251,Baroque/s64_r0251.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s64_r0267,Baroque/s64_r0267.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s64_r0268,Baroque/s64_r0268.jpg,Baroque,Unknown Artist,Unknown Genre,test
+s64_r0271,Baroque/s64_r0271.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s64_r0275,Baroque/s64_r0275.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s64_r0320,Baroque/s64_r0320.jpg,Baroque,Unknown Artist,Unknown Genre,test
+s64_r0371,Baroque/s64_r0371.jpg,Baroque,Unknown Artist,Unknown Genre,test
+s64_r0375,Baroque/s64_r0375.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s64_r0410,Baroque/s64_r0410.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s64_r0414,Baroque/s64_r0414.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s64_r0425,Baroque/s64_r0425.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s64_r0432,Baroque/s64_r0432.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s64_r0464,Baroque/s64_r0464.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s64_r0471,Baroque/s64_r0471.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s64_r0491,Baroque/s64_r0491.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s64_r0511,Baroque/s64_r0511.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s64_r0520,Baroque/s64_r0520.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s64_r0525,Baroque/s64_r0525.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s64_r0584,Baroque/s64_r0584.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s64_r0598,Baroque/s64_r0598.jpg,Baroque,Unknown Artist,Unknown Genre,test
+s64_r0631,Baroque/s64_r0631.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s64_r0676,Baroque/s64_r0676.jpg,Baroque,Unknown Artist,Unknown Genre,test
+s64_r0759,Baroque/s64_r0759.jpg,Baroque,Unknown Artist,Unknown Genre,test
+s64_r0770,Baroque/s64_r0770.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s64_r0856,Baroque/s64_r0856.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s64_r0878,Baroque/s64_r0878.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s64_r0881,Baroque/s64_r0881.jpg,Baroque,Unknown Artist,Unknown Genre,val
+s64_r0883,Baroque/s64_r0883.jpg,Baroque,Unknown Artist,Unknown Genre,val
+s64_r0894,Baroque/s64_r0894.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s64_r0914,Baroque/s64_r0914.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s64_r0931,Baroque/s64_r0931.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s64_r0941,Baroque/s64_r0941.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s64_r0965,Baroque/s64_r0965.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s64_r0975,Baroque/s64_r0975.jpg,Baroque,Unknown Artist,Unknown Genre,val
+s64_r0976,Baroque/s64_r0976.jpg,Baroque,Unknown Artist,Unknown Genre,val
+s64_r0983,Baroque/s64_r0983.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s64_r0985,Baroque/s64_r0985.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s64_r0986,Baroque/s64_r0986.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s64_r1014,Baroque/s64_r1014.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s64_r1035,Baroque/s64_r1035.jpg,Baroque,Unknown Artist,Unknown Genre,val
+s64_r1040,Baroque/s64_r1040.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s64_r1049,Baroque/s64_r1049.jpg,Baroque,Unknown Artist,Unknown Genre,val
+s64_r1057,Baroque/s64_r1057.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s64_r1069,Baroque/s64_r1069.jpg,Baroque,Unknown Artist,Unknown Genre,val
+s64_r1079,Baroque/s64_r1079.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s64_r1102,Baroque/s64_r1102.jpg,Baroque,Unknown Artist,Unknown Genre,val
+s64_r1114,Baroque/s64_r1114.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s67_r0049,Baroque/s67_r0049.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s67_r0108,Baroque/s67_r0108.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s67_r0126,Baroque/s67_r0126.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s67_r0165,Baroque/s67_r0165.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s67_r0233,Baroque/s67_r0233.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s67_r0272,Baroque/s67_r0272.jpg,Baroque,Unknown Artist,Unknown Genre,test
+s67_r0311,Baroque/s67_r0311.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s67_r0322,Baroque/s67_r0322.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s67_r0325,Baroque/s67_r0325.jpg,Baroque,Unknown Artist,Unknown Genre,val
+s67_r0383,Baroque/s67_r0383.jpg,Baroque,Unknown Artist,Unknown Genre,val
+s67_r0388,Baroque/s67_r0388.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s67_r0468,Baroque/s67_r0468.jpg,Baroque,Unknown Artist,Unknown Genre,test
+s67_r0539,Baroque/s67_r0539.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s67_r0541,Baroque/s67_r0541.jpg,Baroque,Unknown Artist,Unknown Genre,val
+s67_r0641,Baroque/s67_r0641.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s67_r0686,Baroque/s67_r0686.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s67_r0694,Baroque/s67_r0694.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s67_r0757,Baroque/s67_r0757.jpg,Baroque,Unknown Artist,Unknown Genre,test
+s67_r0767,Baroque/s67_r0767.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s67_r0887,Baroque/s67_r0887.jpg,Baroque,Unknown Artist,Unknown Genre,val
+s67_r0911,Baroque/s67_r0911.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s67_r0923,Baroque/s67_r0923.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s67_r0927,Baroque/s67_r0927.jpg,Baroque,Unknown Artist,Unknown Genre,test
+s67_r0987,Baroque/s67_r0987.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s67_r1020,Baroque/s67_r1020.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s67_r1054,Baroque/s67_r1054.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s67_r1093,Baroque/s67_r1093.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s67_r1110,Baroque/s67_r1110.jpg,Baroque,Unknown Artist,Unknown Genre,test
+s68_r0051,Baroque/s68_r0051.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s68_r0052,Baroque/s68_r0052.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s68_r0054,Baroque/s68_r0054.jpg,Baroque,Unknown Artist,Unknown Genre,test
+s68_r0093,Baroque/s68_r0093.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s68_r0126,Baroque/s68_r0126.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s68_r0127,Baroque/s68_r0127.jpg,Baroque,Unknown Artist,Unknown Genre,test
+s68_r0174,Baroque/s68_r0174.jpg,Baroque,Unknown Artist,Unknown Genre,test
+s68_r0201,Baroque/s68_r0201.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s68_r0204,Baroque/s68_r0204.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s68_r0223,Baroque/s68_r0223.jpg,Baroque,Unknown Artist,Unknown Genre,test
+s68_r0237,Baroque/s68_r0237.jpg,Baroque,Unknown Artist,Unknown Genre,val
+s68_r0277,Baroque/s68_r0277.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s68_r0280,Baroque/s68_r0280.jpg,Baroque,Unknown Artist,Unknown Genre,test
+s68_r0289,Baroque/s68_r0289.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s68_r0293,Baroque/s68_r0293.jpg,Baroque,Unknown Artist,Unknown Genre,val
+s68_r0301,Baroque/s68_r0301.jpg,Baroque,Unknown Artist,Unknown Genre,val
+s68_r0325,Baroque/s68_r0325.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s68_r0335,Baroque/s68_r0335.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s68_r0349,Baroque/s68_r0349.jpg,Baroque,Unknown Artist,Unknown Genre,test
+s68_r0359,Baroque/s68_r0359.jpg,Baroque,Unknown Artist,Unknown Genre,test
+s68_r0416,Baroque/s68_r0416.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s68_r0468,Baroque/s68_r0468.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s68_r0495,Baroque/s68_r0495.jpg,Baroque,Unknown Artist,Unknown Genre,train
+s68_r0517,Baroque/s68_r0517.jpg,Baroque,Unknown Artist,Unknown Genre,val
+s02_r0250,Cubism/s02_r0250.jpg,Cubism,marc-chagall,genre_painting,val
+s02_r0480,Cubism/s02_r0480.jpg,Cubism,pyotr-konchalovsky,still_life,test
+s02_r0518,Cubism/s02_r0518.jpg,Cubism,paul-cezanne,landscape,train
+s02_r0521,Cubism/s02_r0521.jpg,Cubism,salvador-dali,still_life,train
+s02_r0545,Cubism/s02_r0545.jpg,Cubism,paul-cezanne,landscape,train
+s02_r0659,Cubism/s02_r0659.jpg,Cubism,marc-chagall,portrait,val
+s02_r0690,Cubism/s02_r0690.jpg,Cubism,pyotr-konchalovsky,still_life,test
+s02_r0717,Cubism/s02_r0717.jpg,Cubism,paul-cezanne,landscape,train
+s02_r0876,Cubism/s02_r0876.jpg,Cubism,pyotr-konchalovsky,cityscape,test
+s02_r0923,Cubism/s02_r0923.jpg,Cubism,salvador-dali,landscape,train
+s02_r0925,Cubism/s02_r0925.jpg,Cubism,paul-cezanne,landscape,train
+s02_r1004,Cubism/s02_r1004.jpg,Cubism,pyotr-konchalovsky,sketch_and_study,test
+s03_r0000,Cubism/s03_r0000.jpg,Cubism,pyotr-konchalovsky,landscape,test
+s03_r0002,Cubism/s03_r0002.jpg,Cubism,paul-cezanne,landscape,train
+s03_r0003,Cubism/s03_r0003.jpg,Cubism,paul-cezanne,genre_painting,train
+s03_r0037,Cubism/s03_r0037.jpg,Cubism,marc-chagall,genre_painting,val
+s03_r0172,Cubism/s03_r0172.jpg,Cubism,pablo-picasso,still_life,train
+s03_r0293,Cubism/s03_r0293.jpg,Cubism,pyotr-konchalovsky,still_life,test
+s03_r0320,Cubism/s03_r0320.jpg,Cubism,pablo-picasso,still_life,train
+s03_r0389,Cubism/s03_r0389.jpg,Cubism,paul-cezanne,genre_painting,train
+s03_r0438,Cubism/s03_r0438.jpg,Cubism,marc-chagall,Unknown Genre,val
+s03_r0553,Cubism/s03_r0553.jpg,Cubism,pablo-picasso,still_life,train
+s03_r0590,Cubism/s03_r0590.jpg,Cubism,pablo-picasso,still_life,train
+s03_r0643,Cubism/s03_r0643.jpg,Cubism,marc-chagall,still_life,val
+s03_r0645,Cubism/s03_r0645.jpg,Cubism,pablo-picasso,nude_painting,train
+s03_r0671,Cubism/s03_r0671.jpg,Cubism,marc-chagall,Unknown Genre,val
+s03_r0713,Cubism/s03_r0713.jpg,Cubism,pyotr-konchalovsky,portrait,test
+s03_r0740,Cubism/s03_r0740.jpg,Cubism,pablo-picasso,Unknown Genre,train
+s03_r0833,Cubism/s03_r0833.jpg,Cubism,pyotr-konchalovsky,still_life,test
+s03_r0871,Cubism/s03_r0871.jpg,Cubism,pyotr-konchalovsky,still_life,test
+s03_r0896,Cubism/s03_r0896.jpg,Cubism,paul-cezanne,landscape,train
+s03_r0915,Cubism/s03_r0915.jpg,Cubism,pyotr-konchalovsky,cityscape,test
+s03_r0927,Cubism/s03_r0927.jpg,Cubism,pyotr-konchalovsky,still_life,test
+s03_r0998,Cubism/s03_r0998.jpg,Cubism,pyotr-konchalovsky,landscape,test
+s03_r1007,Cubism/s03_r1007.jpg,Cubism,paul-cezanne,landscape,train
+s03_r1067,Cubism/s03_r1067.jpg,Cubism,pablo-picasso,nude_painting,train
+s03_r1085,Cubism/s03_r1085.jpg,Cubism,pablo-picasso,still_life,train
+s03_r1095,Cubism/s03_r1095.jpg,Cubism,pablo-picasso,genre_painting,train
+s07_r0004,Cubism/s07_r0004.jpg,Cubism,salvador-dali,cityscape,train
+s07_r0012,Cubism/s07_r0012.jpg,Cubism,pablo-picasso,landscape,train
+s07_r0076,Cubism/s07_r0076.jpg,Cubism,marc-chagall,genre_painting,val
+s07_r0099,Cubism/s07_r0099.jpg,Cubism,pablo-picasso,portrait,train
+s07_r0160,Cubism/s07_r0160.jpg,Cubism,pablo-picasso,portrait,train
+s07_r0216,Cubism/s07_r0216.jpg,Cubism,marc-chagall,portrait,val
+s07_r0259,Cubism/s07_r0259.jpg,Cubism,pablo-picasso,portrait,train
+s07_r0287,Cubism/s07_r0287.jpg,Cubism,pablo-picasso,portrait,train
+s07_r0295,Cubism/s07_r0295.jpg,Cubism,pablo-picasso,portrait,train
+s07_r0322,Cubism/s07_r0322.jpg,Cubism,pablo-picasso,nude_painting,train
+s07_r0474,Cubism/s07_r0474.jpg,Cubism,marc-chagall,Unknown Genre,val
+s07_r0490,Cubism/s07_r0490.jpg,Cubism,pablo-picasso,still_life,train
+s07_r0613,Cubism/s07_r0613.jpg,Cubism,pablo-picasso,cityscape,train
+s07_r0631,Cubism/s07_r0631.jpg,Cubism,pyotr-konchalovsky,cityscape,test
+s07_r0659,Cubism/s07_r0659.jpg,Cubism,pyotr-konchalovsky,portrait,test
+s07_r0677,Cubism/s07_r0677.jpg,Cubism,pyotr-konchalovsky,landscape,test
+s07_r0680,Cubism/s07_r0680.jpg,Cubism,pyotr-konchalovsky,cityscape,test
+s07_r0776,Cubism/s07_r0776.jpg,Cubism,marc-chagall,genre_painting,val
+s07_r0813,Cubism/s07_r0813.jpg,Cubism,marc-chagall,genre_painting,val
+s07_r0885,Cubism/s07_r0885.jpg,Cubism,pyotr-konchalovsky,sketch_and_study,test
+s07_r0895,Cubism/s07_r0895.jpg,Cubism,salvador-dali,landscape,train
+s07_r0989,Cubism/s07_r0989.jpg,Cubism,pablo-picasso,nude_painting,train
+s07_r1051,Cubism/s07_r1051.jpg,Cubism,pablo-picasso,nude_painting,train
+s07_r1072,Cubism/s07_r1072.jpg,Cubism,pablo-picasso,still_life,train
+s07_r1129,Cubism/s07_r1129.jpg,Cubism,pablo-picasso,still_life,train
+s08_r0043,Cubism/s08_r0043.jpg,Cubism,marc-chagall,genre_painting,val
+s08_r0071,Cubism/s08_r0071.jpg,Cubism,pablo-picasso,still_life,train
+s08_r0106,Cubism/s08_r0106.jpg,Cubism,pablo-picasso,genre_painting,train
+s08_r0143,Cubism/s08_r0143.jpg,Cubism,marc-chagall,portrait,val
+s08_r0144,Cubism/s08_r0144.jpg,Cubism,marc-chagall,cityscape,val
+s08_r0169,Cubism/s08_r0169.jpg,Cubism,pablo-picasso,nude_painting,train
+s08_r0201,Cubism/s08_r0201.jpg,Cubism,pyotr-konchalovsky,still_life,test
+s08_r0208,Cubism/s08_r0208.jpg,Cubism,paul-cezanne,landscape,train
+s08_r0222,Cubism/s08_r0222.jpg,Cubism,pablo-picasso,nude_painting,train
+s08_r0257,Cubism/s08_r0257.jpg,Cubism,pablo-picasso,still_life,train
+s08_r0277,Cubism/s08_r0277.jpg,Cubism,pablo-picasso,nude_painting,train
+s08_r0301,Cubism/s08_r0301.jpg,Cubism,paul-cezanne,landscape,train
+s08_r0335,Cubism/s08_r0335.jpg,Cubism,pablo-picasso,nude_painting,train
+s08_r0347,Cubism/s08_r0347.jpg,Cubism,pablo-picasso,portrait,train
+s08_r0352,Cubism/s08_r0352.jpg,Cubism,marc-chagall,cityscape,val
+s08_r0368,Cubism/s08_r0368.jpg,Cubism,pyotr-konchalovsky,nude_painting,test
+s08_r0393,Cubism/s08_r0393.jpg,Cubism,paul-cezanne,landscape,train
+s08_r0426,Cubism/s08_r0426.jpg,Cubism,paul-cezanne,landscape,train
+s08_r0457,Cubism/s08_r0457.jpg,Cubism,pablo-picasso,Unknown Genre,train
+s08_r0467,Cubism/s08_r0467.jpg,Cubism,pyotr-konchalovsky,landscape,test
+s08_r0468,Cubism/s08_r0468.jpg,Cubism,pablo-picasso,sketch_and_study,train
+s08_r0501,Cubism/s08_r0501.jpg,Cubism,pablo-picasso,portrait,train
+s08_r0653,Cubism/s08_r0653.jpg,Cubism,pablo-picasso,still_life,train
+s08_r0677,Cubism/s08_r0677.jpg,Cubism,salvador-dali,genre_painting,train
+s08_r0733,Cubism/s08_r0733.jpg,Cubism,pablo-picasso,portrait,train
+s08_r0801,Cubism/s08_r0801.jpg,Cubism,salvador-dali,landscape,train
+s08_r0815,Cubism/s08_r0815.jpg,Cubism,paul-cezanne,landscape,train
+s08_r0818,Cubism/s08_r0818.jpg,Cubism,marc-chagall,Unknown Genre,val
+s08_r0855,Cubism/s08_r0855.jpg,Cubism,pablo-picasso,still_life,train
+s08_r0889,Cubism/s08_r0889.jpg,Cubism,pablo-picasso,nude_painting,train
+s08_r0941,Cubism/s08_r0941.jpg,Cubism,paul-cezanne,landscape,train
+s08_r1011,Cubism/s08_r1011.jpg,Cubism,pablo-picasso,nude_painting,train
+s08_r1041,Cubism/s08_r1041.jpg,Cubism,pablo-picasso,Unknown Genre,train
+s08_r1126,Cubism/s08_r1126.jpg,Cubism,pablo-picasso,nude_painting,train
+s09_r0045,Cubism/s09_r0045.jpg,Cubism,pyotr-konchalovsky,sketch_and_study,test
+s09_r0071,Cubism/s09_r0071.jpg,Cubism,paul-cezanne,portrait,train
+s09_r0086,Cubism/s09_r0086.jpg,Cubism,salvador-dali,still_life,train
+s09_r0170,Cubism/s09_r0170.jpg,Cubism,salvador-dali,still_life,train
+s09_r0245,Cubism/s09_r0245.jpg,Cubism,pyotr-konchalovsky,cityscape,test
+s09_r0296,Cubism/s09_r0296.jpg,Cubism,salvador-dali,genre_painting,train
+s09_r0304,Cubism/s09_r0304.jpg,Cubism,pyotr-konchalovsky,landscape,test
+s09_r0422,Cubism/s09_r0422.jpg,Cubism,pablo-picasso,still_life,train
+s09_r0423,Cubism/s09_r0423.jpg,Cubism,pablo-picasso,genre_painting,train
+s09_r0554,Cubism/s09_r0554.jpg,Cubism,marc-chagall,religious_painting,val
+s09_r0605,Cubism/s09_r0605.jpg,Cubism,pablo-picasso,genre_painting,train
+s09_r0637,Cubism/s09_r0637.jpg,Cubism,salvador-dali,landscape,train
+s09_r0820,Cubism/s09_r0820.jpg,Cubism,marc-chagall,religious_painting,val
+s09_r0821,Cubism/s09_r0821.jpg,Cubism,pablo-picasso,still_life,train
+s09_r0894,Cubism/s09_r0894.jpg,Cubism,marc-chagall,Unknown Genre,val
+s09_r0911,Cubism/s09_r0911.jpg,Cubism,pablo-picasso,still_life,train
+s09_r0937,Cubism/s09_r0937.jpg,Cubism,pyotr-konchalovsky,still_life,test
+s09_r0959,Cubism/s09_r0959.jpg,Cubism,pyotr-konchalovsky,landscape,test
+s09_r1060,Cubism/s09_r1060.jpg,Cubism,pablo-picasso,portrait,train
+s09_r1115,Cubism/s09_r1115.jpg,Cubism,pablo-picasso,genre_painting,train
+s15_r0005,Cubism/s15_r0005.jpg,Cubism,paul-cezanne,still_life,train
+s15_r0020,Cubism/s15_r0020.jpg,Cubism,paul-cezanne,still_life,train
+s15_r0021,Cubism/s15_r0021.jpg,Cubism,paul-cezanne,landscape,train
+s15_r0027,Cubism/s15_r0027.jpg,Cubism,paul-cezanne,Unknown Genre,train
+s15_r0037,Cubism/s15_r0037.jpg,Cubism,paul-cezanne,landscape,train
+s15_r0039,Cubism/s15_r0039.jpg,Cubism,paul-cezanne,landscape,train
+s15_r0075,Cubism/s15_r0075.jpg,Cubism,paul-cezanne,landscape,train
+s15_r0080,Cubism/s15_r0080.jpg,Cubism,paul-cezanne,landscape,train
+s15_r0087,Cubism/s15_r0087.jpg,Cubism,paul-cezanne,genre_painting,train
+s15_r0105,Cubism/s15_r0105.jpg,Cubism,paul-cezanne,landscape,train
+s15_r0116,Cubism/s15_r0116.jpg,Cubism,paul-cezanne,landscape,train
+s15_r0124,Cubism/s15_r0124.jpg,Cubism,paul-cezanne,landscape,train
+s15_r0125,Cubism/s15_r0125.jpg,Cubism,paul-cezanne,landscape,train
+s15_r0137,Cubism/s15_r0137.jpg,Cubism,paul-cezanne,genre_painting,train
+s15_r0142,Cubism/s15_r0142.jpg,Cubism,paul-cezanne,landscape,train
+s15_r0157,Cubism/s15_r0157.jpg,Cubism,paul-cezanne,landscape,train
+s24_r0019,Cubism/s24_r0019.jpg,Cubism,fernand-leger,portrait,train
+s24_r0050,Cubism/s24_r0050.jpg,Cubism,Unknown Artist,portrait,train
+s24_r0075,Cubism/s24_r0075.jpg,Cubism,Unknown Artist,portrait,train
+s24_r0076,Cubism/s24_r0076.jpg,Cubism,Unknown Artist,cityscape,train
+s24_r0097,Cubism/s24_r0097.jpg,Cubism,ernst-ludwig-kirchner,genre_painting,val
+s24_r0113,Cubism/s24_r0113.jpg,Cubism,Unknown Artist,genre_painting,train
+s24_r0174,Cubism/s24_r0174.jpg,Cubism,Unknown Artist,nude_painting,train
+s24_r0186,Cubism/s24_r0186.jpg,Cubism,Unknown Artist,portrait,train
+s24_r0210,Cubism/s24_r0210.jpg,Cubism,Unknown Artist,landscape,train
+s24_r0281,Cubism/s24_r0281.jpg,Cubism,fernand-leger,nude_painting,train
+s24_r0328,Cubism/s24_r0328.jpg,Cubism,Unknown Artist,landscape,train
+s24_r0360,Cubism/s24_r0360.jpg,Cubism,Unknown Artist,genre_painting,val
+s24_r0512,Cubism/s24_r0512.jpg,Cubism,georges-braque,still_life,train
+s24_r0590,Cubism/s24_r0590.jpg,Cubism,Unknown Artist,still_life,train
+s24_r0632,Cubism/s24_r0632.jpg,Cubism,Unknown Artist,landscape,train
+s24_r0686,Cubism/s24_r0686.jpg,Cubism,fernand-leger,still_life,train
+s24_r0728,Cubism/s24_r0728.jpg,Cubism,Unknown Artist,nude_painting,train
+s24_r0743,Cubism/s24_r0743.jpg,Cubism,Unknown Artist,abstract_painting,train
+s24_r0760,Cubism/s24_r0760.jpg,Cubism,Unknown Artist,cityscape,train
+s24_r0763,Cubism/s24_r0763.jpg,Cubism,juan-gris,portrait,train
+s24_r0821,Cubism/s24_r0821.jpg,Cubism,Unknown Artist,portrait,train
+s24_r0823,Cubism/s24_r0823.jpg,Cubism,Unknown Artist,genre_painting,train
+s24_r0831,Cubism/s24_r0831.jpg,Cubism,Unknown Artist,portrait,train
+s24_r0885,Cubism/s24_r0885.jpg,Cubism,Unknown Artist,nude_painting,test
+s24_r0926,Cubism/s24_r0926.jpg,Cubism,Unknown Artist,nude_painting,test
+s24_r0933,Cubism/s24_r0933.jpg,Cubism,georges-braque,still_life,train
+s24_r0956,Cubism/s24_r0956.jpg,Cubism,henri-matisse,still_life,val
+s24_r1070,Cubism/s24_r1070.jpg,Cubism,juan-gris,portrait,train
+s31_r0011,Cubism/s31_r0011.jpg,Cubism,fernand-leger,still_life,train
+s31_r0062,Cubism/s31_r0062.jpg,Cubism,Unknown Artist,landscape,train
+s31_r0066,Cubism/s31_r0066.jpg,Cubism,Unknown Artist,genre_painting,train
+s31_r0097,Cubism/s31_r0097.jpg,Cubism,Unknown Artist,still_life,train
+s31_r0153,Cubism/s31_r0153.jpg,Cubism,Unknown Artist,genre_painting,train
+s31_r0158,Cubism/s31_r0158.jpg,Cubism,Unknown Artist,portrait,train
+s31_r0278,Cubism/s31_r0278.jpg,Cubism,Unknown Artist,portrait,val
+s31_r0376,Cubism/s31_r0376.jpg,Cubism,Unknown Artist,still_life,val
+s31_r0413,Cubism/s31_r0413.jpg,Cubism,Unknown Artist,still_life,val
+s31_r0428,Cubism/s31_r0428.jpg,Cubism,m.c.-escher,portrait,train
+s31_r0454,Cubism/s31_r0454.jpg,Cubism,Unknown Artist,still_life,train
+s31_r0489,Cubism/s31_r0489.jpg,Cubism,fernand-leger,sketch_and_study,train
+s31_r0508,Cubism/s31_r0508.jpg,Cubism,Unknown Artist,portrait,train
+s31_r0544,Cubism/s31_r0544.jpg,Cubism,fernand-leger,still_life,train
+s31_r0651,Cubism/s31_r0651.jpg,Cubism,Unknown Artist,nude_painting,train
+s31_r0661,Cubism/s31_r0661.jpg,Cubism,Unknown Artist,still_life,train
+s31_r0680,Cubism/s31_r0680.jpg,Cubism,Unknown Artist,still_life,train
+s31_r0701,Cubism/s31_r0701.jpg,Cubism,Unknown Artist,still_life,train
+s31_r0718,Cubism/s31_r0718.jpg,Cubism,fernand-leger,portrait,train
+s31_r0763,Cubism/s31_r0763.jpg,Cubism,Unknown Artist,still_life,val
+s31_r0784,Cubism/s31_r0784.jpg,Cubism,Unknown Artist,still_life,train
+s31_r0789,Cubism/s31_r0789.jpg,Cubism,fernand-leger,still_life,train
+s31_r0805,Cubism/s31_r0805.jpg,Cubism,juan-gris,still_life,train
+s31_r0832,Cubism/s31_r0832.jpg,Cubism,Unknown Artist,abstract_painting,train
+s31_r0865,Cubism/s31_r0865.jpg,Cubism,Unknown Artist,cityscape,train
+s31_r0869,Cubism/s31_r0869.jpg,Cubism,Unknown Artist,genre_painting,train
+s31_r0877,Cubism/s31_r0877.jpg,Cubism,fernand-leger,portrait,train
+s31_r0966,Cubism/s31_r0966.jpg,Cubism,fernand-leger,portrait,train
+s31_r0994,Cubism/s31_r0994.jpg,Cubism,Unknown Artist,cityscape,train
+s31_r1014,Cubism/s31_r1014.jpg,Cubism,Unknown Artist,still_life,train
+s31_r1038,Cubism/s31_r1038.jpg,Cubism,georges-braque,still_life,train
+s31_r1048,Cubism/s31_r1048.jpg,Cubism,Unknown Artist,still_life,train
+s31_r1090,Cubism/s31_r1090.jpg,Cubism,raoul-dufy,still_life,train
+s51_r0205,Cubism/s51_r0205.jpg,Cubism,Unknown Artist,cityscape,val
+s51_r0233,Cubism/s51_r0233.jpg,Cubism,Unknown Artist,cityscape,train
+s51_r0364,Cubism/s51_r0364.jpg,Cubism,juan-gris,cityscape,train
+s51_r0395,Cubism/s51_r0395.jpg,Cubism,Unknown Artist,cityscape,train
+s51_r0455,Cubism/s51_r0455.jpg,Cubism,Unknown Artist,cityscape,train
+s51_r0500,Cubism/s51_r0500.jpg,Cubism,Unknown Artist,cityscape,train
+s51_r0650,Cubism/s51_r0650.jpg,Cubism,Unknown Artist,cityscape,train
+s51_r0672,Cubism/s51_r0672.jpg,Cubism,Unknown Artist,cityscape,test
+s51_r0832,Cubism/s51_r0832.jpg,Cubism,Unknown Artist,cityscape,test
+s51_r0870,Cubism/s51_r0870.jpg,Cubism,fernand-leger,cityscape,train
+s64_r0033,Cubism/s64_r0033.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s64_r0088,Cubism/s64_r0088.jpg,Cubism,Unknown Artist,Unknown Genre,val
+s64_r0114,Cubism/s64_r0114.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s64_r0115,Cubism/s64_r0115.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s64_r0120,Cubism/s64_r0120.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s64_r0126,Cubism/s64_r0126.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s64_r0247,Cubism/s64_r0247.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s64_r0257,Cubism/s64_r0257.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s64_r0298,Cubism/s64_r0298.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s64_r0332,Cubism/s64_r0332.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s64_r0359,Cubism/s64_r0359.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s64_r0399,Cubism/s64_r0399.jpg,Cubism,Unknown Artist,Unknown Genre,val
+s64_r0402,Cubism/s64_r0402.jpg,Cubism,Unknown Artist,Unknown Genre,val
+s64_r0444,Cubism/s64_r0444.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s64_r0483,Cubism/s64_r0483.jpg,Cubism,Unknown Artist,Unknown Genre,test
+s64_r0502,Cubism/s64_r0502.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s64_r0515,Cubism/s64_r0515.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s64_r0578,Cubism/s64_r0578.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s64_r0587,Cubism/s64_r0587.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s64_r0611,Cubism/s64_r0611.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s64_r0618,Cubism/s64_r0618.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s64_r0619,Cubism/s64_r0619.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s64_r0625,Cubism/s64_r0625.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s64_r0629,Cubism/s64_r0629.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s64_r0702,Cubism/s64_r0702.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s64_r0707,Cubism/s64_r0707.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s64_r0710,Cubism/s64_r0710.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s64_r0737,Cubism/s64_r0737.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s64_r0744,Cubism/s64_r0744.jpg,Cubism,Unknown Artist,Unknown Genre,test
+s64_r0753,Cubism/s64_r0753.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s64_r0763,Cubism/s64_r0763.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s64_r0780,Cubism/s64_r0780.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s64_r0806,Cubism/s64_r0806.jpg,Cubism,Unknown Artist,Unknown Genre,test
+s64_r0808,Cubism/s64_r0808.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s64_r0828,Cubism/s64_r0828.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s64_r0890,Cubism/s64_r0890.jpg,Cubism,Unknown Artist,Unknown Genre,val
+s64_r0922,Cubism/s64_r0922.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s67_r0000,Cubism/s67_r0000.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s67_r0002,Cubism/s67_r0002.jpg,Cubism,Unknown Artist,Unknown Genre,test
+s67_r0023,Cubism/s67_r0023.jpg,Cubism,Unknown Artist,Unknown Genre,test
+s67_r0042,Cubism/s67_r0042.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s67_r0096,Cubism/s67_r0096.jpg,Cubism,Unknown Artist,Unknown Genre,val
+s67_r0158,Cubism/s67_r0158.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s67_r0173,Cubism/s67_r0173.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s67_r0175,Cubism/s67_r0175.jpg,Cubism,Unknown Artist,Unknown Genre,val
+s67_r0178,Cubism/s67_r0178.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s67_r0183,Cubism/s67_r0183.jpg,Cubism,Unknown Artist,Unknown Genre,test
+s67_r0185,Cubism/s67_r0185.jpg,Cubism,Unknown Artist,Unknown Genre,test
+s67_r0228,Cubism/s67_r0228.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s67_r0271,Cubism/s67_r0271.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s67_r0299,Cubism/s67_r0299.jpg,Cubism,Unknown Artist,Unknown Genre,val
+s67_r0394,Cubism/s67_r0394.jpg,Cubism,Unknown Artist,Unknown Genre,val
+s67_r0410,Cubism/s67_r0410.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s67_r0424,Cubism/s67_r0424.jpg,Cubism,Unknown Artist,Unknown Genre,val
+s67_r0449,Cubism/s67_r0449.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s67_r0591,Cubism/s67_r0591.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s67_r0634,Cubism/s67_r0634.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s67_r0636,Cubism/s67_r0636.jpg,Cubism,Unknown Artist,Unknown Genre,test
+s67_r0645,Cubism/s67_r0645.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s67_r0656,Cubism/s67_r0656.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s67_r0693,Cubism/s67_r0693.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s67_r0695,Cubism/s67_r0695.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s67_r0729,Cubism/s67_r0729.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s67_r0762,Cubism/s67_r0762.jpg,Cubism,Unknown Artist,Unknown Genre,test
+s67_r0829,Cubism/s67_r0829.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s67_r0874,Cubism/s67_r0874.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s67_r0900,Cubism/s67_r0900.jpg,Cubism,Unknown Artist,Unknown Genre,val
+s67_r0903,Cubism/s67_r0903.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s67_r0908,Cubism/s67_r0908.jpg,Cubism,Unknown Artist,Unknown Genre,test
+s67_r0947,Cubism/s67_r0947.jpg,Cubism,Unknown Artist,Unknown Genre,val
+s67_r0960,Cubism/s67_r0960.jpg,Cubism,Unknown Artist,Unknown Genre,test
+s67_r0968,Cubism/s67_r0968.jpg,Cubism,Unknown Artist,Unknown Genre,val
+s67_r0989,Cubism/s67_r0989.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s67_r1025,Cubism/s67_r1025.jpg,Cubism,Unknown Artist,Unknown Genre,val
+s67_r1082,Cubism/s67_r1082.jpg,Cubism,Unknown Artist,Unknown Genre,test
+s67_r1118,Cubism/s67_r1118.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s67_r1122,Cubism/s67_r1122.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s68_r0010,Cubism/s68_r0010.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s68_r0011,Cubism/s68_r0011.jpg,Cubism,Unknown Artist,Unknown Genre,val
+s68_r0012,Cubism/s68_r0012.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s68_r0016,Cubism/s68_r0016.jpg,Cubism,Unknown Artist,Unknown Genre,test
+s68_r0030,Cubism/s68_r0030.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s68_r0064,Cubism/s68_r0064.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s68_r0068,Cubism/s68_r0068.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s68_r0078,Cubism/s68_r0078.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s68_r0120,Cubism/s68_r0120.jpg,Cubism,Unknown Artist,Unknown Genre,val
+s68_r0138,Cubism/s68_r0138.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s68_r0142,Cubism/s68_r0142.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s68_r0234,Cubism/s68_r0234.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s68_r0236,Cubism/s68_r0236.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s68_r0294,Cubism/s68_r0294.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s68_r0351,Cubism/s68_r0351.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s68_r0401,Cubism/s68_r0401.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s68_r0425,Cubism/s68_r0425.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s68_r0443,Cubism/s68_r0443.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s68_r0527,Cubism/s68_r0527.jpg,Cubism,Unknown Artist,Unknown Genre,train
+s08_r0006,Impressionism/s08_r0006.jpg,Impressionism,eugene-boudin,landscape,train
+s08_r0104,Impressionism/s08_r0104.jpg,Impressionism,childe-hassam,genre_painting,train
+s08_r0160,Impressionism/s08_r0160.jpg,Impressionism,eugene-boudin,genre_painting,train
+s08_r0200,Impressionism/s08_r0200.jpg,Impressionism,pablo-picasso,genre_painting,train
+s08_r0212,Impressionism/s08_r0212.jpg,Impressionism,childe-hassam,landscape,train
+s08_r0328,Impressionism/s08_r0328.jpg,Impressionism,edgar-degas,sketch_and_study,train
+s08_r0434,Impressionism/s08_r0434.jpg,Impressionism,paul-cezanne,landscape,train
+s08_r0871,Impressionism/s08_r0871.jpg,Impressionism,childe-hassam,landscape,train
+s08_r0990,Impressionism/s08_r0990.jpg,Impressionism,camille-pissarro,landscape,val
+s08_r1112,Impressionism/s08_r1112.jpg,Impressionism,childe-hassam,cityscape,train
+s09_r0002,Impressionism/s09_r0002.jpg,Impressionism,childe-hassam,genre_painting,train
+s09_r0007,Impressionism/s09_r0007.jpg,Impressionism,pierre-auguste-renoir,landscape,train
+s09_r0009,Impressionism/s09_r0009.jpg,Impressionism,john-singer-sargent,portrait,train
+s09_r0011,Impressionism/s09_r0011.jpg,Impressionism,pierre-auguste-renoir,genre_painting,train
+s09_r0016,Impressionism/s09_r0016.jpg,Impressionism,claude-monet,landscape,test
+s09_r0017,Impressionism/s09_r0017.jpg,Impressionism,claude-monet,landscape,test
+s09_r0019,Impressionism/s09_r0019.jpg,Impressionism,claude-monet,landscape,test
+s09_r0024,Impressionism/s09_r0024.jpg,Impressionism,camille-pissarro,landscape,val
+s09_r0026,Impressionism/s09_r0026.jpg,Impressionism,edgar-degas,genre_painting,train
+s09_r0034,Impressionism/s09_r0034.jpg,Impressionism,eugene-boudin,genre_painting,train
+s09_r0036,Impressionism/s09_r0036.jpg,Impressionism,camille-pissarro,portrait,val
+s09_r0041,Impressionism/s09_r0041.jpg,Impressionism,edgar-degas,genre_painting,train
+s09_r0044,Impressionism/s09_r0044.jpg,Impressionism,claude-monet,landscape,test
+s09_r0049,Impressionism/s09_r0049.jpg,Impressionism,edgar-degas,genre_painting,train
+s09_r0061,Impressionism/s09_r0061.jpg,Impressionism,camille-pissarro,portrait,val
+s09_r0062,Impressionism/s09_r0062.jpg,Impressionism,pierre-auguste-renoir,landscape,train
+s09_r0063,Impressionism/s09_r0063.jpg,Impressionism,claude-monet,Unknown Genre,test
+s09_r0065,Impressionism/s09_r0065.jpg,Impressionism,camille-pissarro,genre_painting,val
+s09_r0068,Impressionism/s09_r0068.jpg,Impressionism,childe-hassam,cityscape,train
+s09_r0069,Impressionism/s09_r0069.jpg,Impressionism,edgar-degas,genre_painting,train
+s09_r0070,Impressionism/s09_r0070.jpg,Impressionism,edgar-degas,genre_painting,train
+s09_r0073,Impressionism/s09_r0073.jpg,Impressionism,eugene-boudin,genre_painting,train
+s09_r0074,Impressionism/s09_r0074.jpg,Impressionism,claude-monet,Unknown Genre,test
+s09_r0078,Impressionism/s09_r0078.jpg,Impressionism,claude-monet,landscape,test
+s09_r0080,Impressionism/s09_r0080.jpg,Impressionism,edgar-degas,genre_painting,train
+s09_r0083,Impressionism/s09_r0083.jpg,Impressionism,camille-pissarro,landscape,val
+s09_r0089,Impressionism/s09_r0089.jpg,Impressionism,childe-hassam,genre_painting,train
+s09_r0092,Impressionism/s09_r0092.jpg,Impressionism,claude-monet,cityscape,test
+s09_r0102,Impressionism/s09_r0102.jpg,Impressionism,camille-pissarro,landscape,val
+s09_r0103,Impressionism/s09_r0103.jpg,Impressionism,pierre-auguste-renoir,genre_painting,train
+s09_r0105,Impressionism/s09_r0105.jpg,Impressionism,childe-hassam,cityscape,train
+s09_r0106,Impressionism/s09_r0106.jpg,Impressionism,edgar-degas,genre_painting,train
+s09_r0108,Impressionism/s09_r0108.jpg,Impressionism,john-singer-sargent,portrait,train
+s09_r0109,Impressionism/s09_r0109.jpg,Impressionism,camille-pissarro,cityscape,val
+s09_r0114,Impressionism/s09_r0114.jpg,Impressionism,claude-monet,Unknown Genre,test
+s09_r0116,Impressionism/s09_r0116.jpg,Impressionism,eugene-boudin,genre_painting,train
+s09_r0119,Impressionism/s09_r0119.jpg,Impressionism,claude-monet,landscape,test
+s09_r0122,Impressionism/s09_r0122.jpg,Impressionism,paul-cezanne,landscape,train
+s09_r0128,Impressionism/s09_r0128.jpg,Impressionism,claude-monet,cityscape,test
+s09_r0134,Impressionism/s09_r0134.jpg,Impressionism,claude-monet,landscape,test
+s09_r0137,Impressionism/s09_r0137.jpg,Impressionism,pierre-auguste-renoir,genre_painting,train
+s09_r0142,Impressionism/s09_r0142.jpg,Impressionism,salvador-dali,landscape,train
+s09_r0143,Impressionism/s09_r0143.jpg,Impressionism,pierre-auguste-renoir,Unknown Genre,train
+s09_r0147,Impressionism/s09_r0147.jpg,Impressionism,camille-pissarro,landscape,val
+s09_r0151,Impressionism/s09_r0151.jpg,Impressionism,edgar-degas,sketch_and_study,train
+s09_r0154,Impressionism/s09_r0154.jpg,Impressionism,claude-monet,landscape,test
+s09_r0158,Impressionism/s09_r0158.jpg,Impressionism,camille-pissarro,landscape,val
+s09_r0159,Impressionism/s09_r0159.jpg,Impressionism,paul-cezanne,landscape,train
+s09_r0160,Impressionism/s09_r0160.jpg,Impressionism,camille-pissarro,landscape,val
+s09_r0165,Impressionism/s09_r0165.jpg,Impressionism,claude-monet,landscape,test
+s09_r0167,Impressionism/s09_r0167.jpg,Impressionism,pierre-auguste-renoir,portrait,train
+s09_r0168,Impressionism/s09_r0168.jpg,Impressionism,camille-pissarro,landscape,val
+s09_r0175,Impressionism/s09_r0175.jpg,Impressionism,pierre-auguste-renoir,genre_painting,train
+s09_r0177,Impressionism/s09_r0177.jpg,Impressionism,childe-hassam,genre_painting,train
+s09_r0181,Impressionism/s09_r0181.jpg,Impressionism,pierre-auguste-renoir,portrait,train
+s09_r0182,Impressionism/s09_r0182.jpg,Impressionism,john-singer-sargent,cityscape,train
+s09_r0184,Impressionism/s09_r0184.jpg,Impressionism,childe-hassam,Unknown Genre,train
+s09_r0185,Impressionism/s09_r0185.jpg,Impressionism,edgar-degas,genre_painting,train
+s09_r0194,Impressionism/s09_r0194.jpg,Impressionism,childe-hassam,landscape,train
+s09_r0195,Impressionism/s09_r0195.jpg,Impressionism,edgar-degas,genre_painting,train
+s09_r0204,Impressionism/s09_r0204.jpg,Impressionism,edgar-degas,genre_painting,train
+s09_r0207,Impressionism/s09_r0207.jpg,Impressionism,eugene-boudin,Unknown Genre,train
+s09_r0208,Impressionism/s09_r0208.jpg,Impressionism,childe-hassam,landscape,train
+s09_r0210,Impressionism/s09_r0210.jpg,Impressionism,edgar-degas,portrait,train
+s09_r0212,Impressionism/s09_r0212.jpg,Impressionism,childe-hassam,cityscape,train
+s09_r0216,Impressionism/s09_r0216.jpg,Impressionism,childe-hassam,cityscape,train
+s09_r0226,Impressionism/s09_r0226.jpg,Impressionism,eugene-boudin,genre_painting,train
+s09_r0228,Impressionism/s09_r0228.jpg,Impressionism,eugene-boudin,genre_painting,train
+s09_r0230,Impressionism/s09_r0230.jpg,Impressionism,john-singer-sargent,genre_painting,train
+s09_r0235,Impressionism/s09_r0235.jpg,Impressionism,pierre-auguste-renoir,genre_painting,train
+s09_r0236,Impressionism/s09_r0236.jpg,Impressionism,camille-pissarro,portrait,val
+s09_r0237,Impressionism/s09_r0237.jpg,Impressionism,claude-monet,landscape,test
+s09_r0238,Impressionism/s09_r0238.jpg,Impressionism,camille-pissarro,genre_painting,val
+s09_r0239,Impressionism/s09_r0239.jpg,Impressionism,eugene-boudin,sketch_and_study,train
+s09_r0241,Impressionism/s09_r0241.jpg,Impressionism,john-singer-sargent,genre_painting,train
+s09_r0249,Impressionism/s09_r0249.jpg,Impressionism,pierre-auguste-renoir,landscape,train
+s09_r0260,Impressionism/s09_r0260.jpg,Impressionism,edgar-degas,nude_painting,train
+s09_r0262,Impressionism/s09_r0262.jpg,Impressionism,john-singer-sargent,genre_painting,train
+s09_r0265,Impressionism/s09_r0265.jpg,Impressionism,claude-monet,landscape,test
+s09_r0274,Impressionism/s09_r0274.jpg,Impressionism,claude-monet,Unknown Genre,test
+s09_r0287,Impressionism/s09_r0287.jpg,Impressionism,childe-hassam,landscape,train
+s09_r0288,Impressionism/s09_r0288.jpg,Impressionism,claude-monet,landscape,test
+s09_r0293,Impressionism/s09_r0293.jpg,Impressionism,camille-pissarro,genre_painting,val
+s09_r0295,Impressionism/s09_r0295.jpg,Impressionism,camille-pissarro,cityscape,val
+s09_r0316,Impressionism/s09_r0316.jpg,Impressionism,salvador-dali,landscape,train
+s09_r0317,Impressionism/s09_r0317.jpg,Impressionism,edgar-degas,genre_painting,train
+s09_r0324,Impressionism/s09_r0324.jpg,Impressionism,camille-pissarro,genre_painting,val
+s09_r0326,Impressionism/s09_r0326.jpg,Impressionism,childe-hassam,cityscape,train
+s09_r0329,Impressionism/s09_r0329.jpg,Impressionism,paul-cezanne,landscape,train
+s09_r0333,Impressionism/s09_r0333.jpg,Impressionism,pierre-auguste-renoir,portrait,train
+s09_r0334,Impressionism/s09_r0334.jpg,Impressionism,pierre-auguste-renoir,portrait,train
+s09_r0345,Impressionism/s09_r0345.jpg,Impressionism,edgar-degas,portrait,train
+s09_r0349,Impressionism/s09_r0349.jpg,Impressionism,camille-pissarro,portrait,val
+s09_r0351,Impressionism/s09_r0351.jpg,Impressionism,eugene-boudin,genre_painting,train
+s09_r0357,Impressionism/s09_r0357.jpg,Impressionism,childe-hassam,cityscape,train
+s09_r0359,Impressionism/s09_r0359.jpg,Impressionism,claude-monet,genre_painting,test
+s09_r0367,Impressionism/s09_r0367.jpg,Impressionism,john-singer-sargent,cityscape,train
+s09_r0379,Impressionism/s09_r0379.jpg,Impressionism,claude-monet,landscape,test
+s09_r0386,Impressionism/s09_r0386.jpg,Impressionism,eugene-boudin,portrait,train
+s09_r0388,Impressionism/s09_r0388.jpg,Impressionism,childe-hassam,genre_painting,train
+s09_r0389,Impressionism/s09_r0389.jpg,Impressionism,john-singer-sargent,cityscape,train
+s09_r0390,Impressionism/s09_r0390.jpg,Impressionism,pierre-auguste-renoir,genre_painting,train
+s09_r0396,Impressionism/s09_r0396.jpg,Impressionism,paul-cezanne,Unknown Genre,train
+s09_r0403,Impressionism/s09_r0403.jpg,Impressionism,childe-hassam,Unknown Genre,train
+s09_r0406,Impressionism/s09_r0406.jpg,Impressionism,claude-monet,landscape,test
+s09_r0410,Impressionism/s09_r0410.jpg,Impressionism,claude-monet,landscape,test
+s09_r0417,Impressionism/s09_r0417.jpg,Impressionism,edgar-degas,portrait,train
+s09_r0424,Impressionism/s09_r0424.jpg,Impressionism,pierre-auguste-renoir,landscape,train
+s09_r0428,Impressionism/s09_r0428.jpg,Impressionism,pierre-auguste-renoir,landscape,train
+s09_r0431,Impressionism/s09_r0431.jpg,Impressionism,paul-cezanne,portrait,train
+s09_r0432,Impressionism/s09_r0432.jpg,Impressionism,edgar-degas,genre_painting,train
+s09_r0433,Impressionism/s09_r0433.jpg,Impressionism,john-singer-sargent,cityscape,train
+s09_r0438,Impressionism/s09_r0438.jpg,Impressionism,childe-hassam,landscape,train
+s09_r0439,Impressionism/s09_r0439.jpg,Impressionism,eugene-boudin,landscape,train
+s09_r0441,Impressionism/s09_r0441.jpg,Impressionism,paul-cezanne,landscape,train
+s09_r0443,Impressionism/s09_r0443.jpg,Impressionism,camille-pissarro,landscape,val
+s09_r0446,Impressionism/s09_r0446.jpg,Impressionism,pablo-picasso,genre_painting,train
+s09_r0449,Impressionism/s09_r0449.jpg,Impressionism,childe-hassam,genre_painting,train
+s09_r0451,Impressionism/s09_r0451.jpg,Impressionism,eugene-boudin,genre_painting,train
+s09_r0453,Impressionism/s09_r0453.jpg,Impressionism,pierre-auguste-renoir,landscape,train
+s09_r0460,Impressionism/s09_r0460.jpg,Impressionism,edgar-degas,genre_painting,train
+s09_r0465,Impressionism/s09_r0465.jpg,Impressionism,camille-pissarro,landscape,val
+s09_r0468,Impressionism/s09_r0468.jpg,Impressionism,pierre-auguste-renoir,sketch_and_study,train
+s09_r0470,Impressionism/s09_r0470.jpg,Impressionism,camille-pissarro,genre_painting,val
+s09_r0473,Impressionism/s09_r0473.jpg,Impressionism,pierre-auguste-renoir,genre_painting,train
+s09_r0481,Impressionism/s09_r0481.jpg,Impressionism,john-singer-sargent,genre_painting,train
+s09_r0482,Impressionism/s09_r0482.jpg,Impressionism,camille-pissarro,cityscape,val
+s09_r0484,Impressionism/s09_r0484.jpg,Impressionism,pierre-auguste-renoir,landscape,train
+s09_r0497,Impressionism/s09_r0497.jpg,Impressionism,childe-hassam,genre_painting,train
+s09_r0500,Impressionism/s09_r0500.jpg,Impressionism,john-singer-sargent,portrait,train
+s09_r0501,Impressionism/s09_r0501.jpg,Impressionism,eugene-boudin,genre_painting,train
+s09_r0502,Impressionism/s09_r0502.jpg,Impressionism,pierre-auguste-renoir,nude_painting,train
+s09_r0505,Impressionism/s09_r0505.jpg,Impressionism,pierre-auguste-renoir,landscape,train
+s09_r0509,Impressionism/s09_r0509.jpg,Impressionism,john-singer-sargent,cityscape,train
+s09_r0511,Impressionism/s09_r0511.jpg,Impressionism,claude-monet,landscape,test
+s09_r0521,Impressionism/s09_r0521.jpg,Impressionism,paul-cezanne,genre_painting,train
+s09_r0530,Impressionism/s09_r0530.jpg,Impressionism,claude-monet,landscape,test
+s09_r0534,Impressionism/s09_r0534.jpg,Impressionism,camille-pissarro,landscape,val
+s09_r0538,Impressionism/s09_r0538.jpg,Impressionism,camille-pissarro,landscape,val
+s09_r0545,Impressionism/s09_r0545.jpg,Impressionism,claude-monet,landscape,test
+s09_r0548,Impressionism/s09_r0548.jpg,Impressionism,camille-pissarro,landscape,val
+s09_r0549,Impressionism/s09_r0549.jpg,Impressionism,claude-monet,landscape,test
+s09_r0550,Impressionism/s09_r0550.jpg,Impressionism,claude-monet,landscape,test
+s09_r0552,Impressionism/s09_r0552.jpg,Impressionism,pierre-auguste-renoir,portrait,train
+s09_r0558,Impressionism/s09_r0558.jpg,Impressionism,edgar-degas,portrait,train
+s09_r0563,Impressionism/s09_r0563.jpg,Impressionism,eugene-boudin,genre_painting,train
+s09_r0576,Impressionism/s09_r0576.jpg,Impressionism,claude-monet,landscape,test
+s09_r0579,Impressionism/s09_r0579.jpg,Impressionism,childe-hassam,still_life,train
+s09_r0590,Impressionism/s09_r0590.jpg,Impressionism,john-singer-sargent,Unknown Genre,train
+s09_r0596,Impressionism/s09_r0596.jpg,Impressionism,childe-hassam,still_life,train
+s09_r0600,Impressionism/s09_r0600.jpg,Impressionism,edgar-degas,genre_painting,train
+s09_r0602,Impressionism/s09_r0602.jpg,Impressionism,claude-monet,landscape,test
+s09_r0619,Impressionism/s09_r0619.jpg,Impressionism,pierre-auguste-renoir,portrait,train
+s09_r0621,Impressionism/s09_r0621.jpg,Impressionism,claude-monet,Unknown Genre,test
+s09_r0624,Impressionism/s09_r0624.jpg,Impressionism,childe-hassam,genre_painting,train
+s09_r0629,Impressionism/s09_r0629.jpg,Impressionism,eugene-boudin,genre_painting,train
+s09_r0630,Impressionism/s09_r0630.jpg,Impressionism,salvador-dali,landscape,train
+s09_r0632,Impressionism/s09_r0632.jpg,Impressionism,john-singer-sargent,portrait,train
+s09_r0633,Impressionism/s09_r0633.jpg,Impressionism,edgar-degas,genre_painting,train
+s09_r0634,Impressionism/s09_r0634.jpg,Impressionism,pierre-auguste-renoir,genre_painting,train
+s09_r0642,Impressionism/s09_r0642.jpg,Impressionism,claude-monet,landscape,test
+s09_r0643,Impressionism/s09_r0643.jpg,Impressionism,camille-pissarro,cityscape,val
+s09_r0650,Impressionism/s09_r0650.jpg,Impressionism,john-singer-sargent,genre_painting,train
+s09_r0652,Impressionism/s09_r0652.jpg,Impressionism,edgar-degas,genre_painting,train
+s09_r0653,Impressionism/s09_r0653.jpg,Impressionism,paul-cezanne,still_life,train
+s09_r0662,Impressionism/s09_r0662.jpg,Impressionism,pierre-auguste-renoir,portrait,train
+s09_r0665,Impressionism/s09_r0665.jpg,Impressionism,john-singer-sargent,cityscape,train
+s09_r0666,Impressionism/s09_r0666.jpg,Impressionism,john-singer-sargent,cityscape,train
+s09_r0670,Impressionism/s09_r0670.jpg,Impressionism,claude-monet,cityscape,test
+s09_r0677,Impressionism/s09_r0677.jpg,Impressionism,edgar-degas,genre_painting,train
+s09_r0683,Impressionism/s09_r0683.jpg,Impressionism,john-singer-sargent,cityscape,train
+s09_r0687,Impressionism/s09_r0687.jpg,Impressionism,pierre-auguste-renoir,cityscape,train
+s09_r0688,Impressionism/s09_r0688.jpg,Impressionism,edgar-degas,portrait,train
+s09_r0690,Impressionism/s09_r0690.jpg,Impressionism,camille-pissarro,landscape,val
+s09_r0699,Impressionism/s09_r0699.jpg,Impressionism,claude-monet,Unknown Genre,test
+s09_r0701,Impressionism/s09_r0701.jpg,Impressionism,claude-monet,landscape,test
+s09_r0703,Impressionism/s09_r0703.jpg,Impressionism,camille-pissarro,landscape,val
+s09_r0704,Impressionism/s09_r0704.jpg,Impressionism,camille-pissarro,landscape,val
+s09_r0706,Impressionism/s09_r0706.jpg,Impressionism,pierre-auguste-renoir,portrait,train
+s09_r0710,Impressionism/s09_r0710.jpg,Impressionism,eugene-boudin,cityscape,train
+s09_r0711,Impressionism/s09_r0711.jpg,Impressionism,childe-hassam,landscape,train
+s09_r0715,Impressionism/s09_r0715.jpg,Impressionism,eugene-boudin,cityscape,train
+s09_r0722,Impressionism/s09_r0722.jpg,Impressionism,edgar-degas,sketch_and_study,train
+s09_r0725,Impressionism/s09_r0725.jpg,Impressionism,claude-monet,landscape,test
+s09_r0730,Impressionism/s09_r0730.jpg,Impressionism,ilya-repin,genre_painting,train
+s09_r0735,Impressionism/s09_r0735.jpg,Impressionism,pierre-auguste-renoir,genre_painting,train
+s09_r0736,Impressionism/s09_r0736.jpg,Impressionism,camille-pissarro,cityscape,val
+s09_r0742,Impressionism/s09_r0742.jpg,Impressionism,pierre-auguste-renoir,Unknown Genre,train
+s09_r0746,Impressionism/s09_r0746.jpg,Impressionism,pierre-auguste-renoir,portrait,train
+s09_r0754,Impressionism/s09_r0754.jpg,Impressionism,camille-pissarro,landscape,val
+s09_r0755,Impressionism/s09_r0755.jpg,Impressionism,edgar-degas,genre_painting,train
+s09_r0757,Impressionism/s09_r0757.jpg,Impressionism,camille-pissarro,landscape,val
+s09_r0762,Impressionism/s09_r0762.jpg,Impressionism,camille-pissarro,portrait,val
+s09_r0764,Impressionism/s09_r0764.jpg,Impressionism,claude-monet,Unknown Genre,test
+s09_r0769,Impressionism/s09_r0769.jpg,Impressionism,john-singer-sargent,landscape,train
+s09_r0771,Impressionism/s09_r0771.jpg,Impressionism,pierre-auguste-renoir,portrait,train
+s09_r0774,Impressionism/s09_r0774.jpg,Impressionism,pierre-auguste-renoir,portrait,train
+s09_r0776,Impressionism/s09_r0776.jpg,Impressionism,edgar-degas,Unknown Genre,train
+s09_r0779,Impressionism/s09_r0779.jpg,Impressionism,pierre-auguste-renoir,portrait,train
+s09_r0782,Impressionism/s09_r0782.jpg,Impressionism,claude-monet,landscape,test
+s09_r0784,Impressionism/s09_r0784.jpg,Impressionism,john-singer-sargent,landscape,train
+s09_r0790,Impressionism/s09_r0790.jpg,Impressionism,claude-monet,landscape,test
+s09_r0793,Impressionism/s09_r0793.jpg,Impressionism,paul-cezanne,genre_painting,train
+s09_r0794,Impressionism/s09_r0794.jpg,Impressionism,pierre-auguste-renoir,genre_painting,train
+s09_r0798,Impressionism/s09_r0798.jpg,Impressionism,john-singer-sargent,landscape,train
+s09_r0799,Impressionism/s09_r0799.jpg,Impressionism,eugene-boudin,landscape,train
+s09_r0802,Impressionism/s09_r0802.jpg,Impressionism,pablo-picasso,cityscape,train
+s09_r0806,Impressionism/s09_r0806.jpg,Impressionism,pierre-auguste-renoir,portrait,train
+s09_r0808,Impressionism/s09_r0808.jpg,Impressionism,childe-hassam,genre_painting,train
+s09_r0815,Impressionism/s09_r0815.jpg,Impressionism,camille-pissarro,landscape,val
+s09_r0816,Impressionism/s09_r0816.jpg,Impressionism,camille-pissarro,genre_painting,val
+s09_r0824,Impressionism/s09_r0824.jpg,Impressionism,john-singer-sargent,Unknown Genre,train
+s09_r0828,Impressionism/s09_r0828.jpg,Impressionism,childe-hassam,cityscape,train
+s09_r0836,Impressionism/s09_r0836.jpg,Impressionism,camille-pissarro,landscape,val
+s09_r0839,Impressionism/s09_r0839.jpg,Impressionism,eugene-boudin,Unknown Genre,train
+s09_r0844,Impressionism/s09_r0844.jpg,Impressionism,john-singer-sargent,genre_painting,train
+s09_r0853,Impressionism/s09_r0853.jpg,Impressionism,john-singer-sargent,genre_painting,train
+s09_r0857,Impressionism/s09_r0857.jpg,Impressionism,pierre-auguste-renoir,portrait,train
+s09_r0859,Impressionism/s09_r0859.jpg,Impressionism,childe-hassam,genre_painting,train
+s09_r0862,Impressionism/s09_r0862.jpg,Impressionism,claude-monet,cityscape,test
+s09_r0863,Impressionism/s09_r0863.jpg,Impressionism,eugene-boudin,landscape,train
+s09_r0866,Impressionism/s09_r0866.jpg,Impressionism,edgar-degas,genre_painting,train
+s09_r0871,Impressionism/s09_r0871.jpg,Impressionism,childe-hassam,genre_painting,train
+s09_r0874,Impressionism/s09_r0874.jpg,Impressionism,pierre-auguste-renoir,still_life,train
+s09_r0876,Impressionism/s09_r0876.jpg,Impressionism,edgar-degas,genre_painting,train
+s09_r0878,Impressionism/s09_r0878.jpg,Impressionism,claude-monet,portrait,test
+s09_r0879,Impressionism/s09_r0879.jpg,Impressionism,claude-monet,landscape,test
+s09_r0880,Impressionism/s09_r0880.jpg,Impressionism,pierre-auguste-renoir,portrait,train
+s09_r0887,Impressionism/s09_r0887.jpg,Impressionism,edgar-degas,sketch_and_study,train
+s09_r0890,Impressionism/s09_r0890.jpg,Impressionism,john-singer-sargent,cityscape,train
+s09_r0895,Impressionism/s09_r0895.jpg,Impressionism,pierre-auguste-renoir,Unknown Genre,train
+s09_r0897,Impressionism/s09_r0897.jpg,Impressionism,edgar-degas,portrait,train
+s09_r0905,Impressionism/s09_r0905.jpg,Impressionism,camille-pissarro,landscape,val
+s09_r0915,Impressionism/s09_r0915.jpg,Impressionism,camille-pissarro,landscape,val
+s09_r0919,Impressionism/s09_r0919.jpg,Impressionism,john-singer-sargent,genre_painting,train
+s09_r0922,Impressionism/s09_r0922.jpg,Impressionism,claude-monet,Unknown Genre,test
+s09_r0927,Impressionism/s09_r0927.jpg,Impressionism,pierre-auguste-renoir,portrait,train
+s09_r0930,Impressionism/s09_r0930.jpg,Impressionism,camille-pissarro,cityscape,val
+s09_r0931,Impressionism/s09_r0931.jpg,Impressionism,pierre-auguste-renoir,portrait,train
+s09_r0934,Impressionism/s09_r0934.jpg,Impressionism,pierre-auguste-renoir,portrait,train
+s09_r0940,Impressionism/s09_r0940.jpg,Impressionism,camille-pissarro,landscape,val
+s09_r0946,Impressionism/s09_r0946.jpg,Impressionism,claude-monet,Unknown Genre,test
+s09_r0948,Impressionism/s09_r0948.jpg,Impressionism,claude-monet,Unknown Genre,test
+s09_r0949,Impressionism/s09_r0949.jpg,Impressionism,john-singer-sargent,landscape,train
+s09_r0955,Impressionism/s09_r0955.jpg,Impressionism,eugene-boudin,Unknown Genre,train
+s09_r0961,Impressionism/s09_r0961.jpg,Impressionism,edgar-degas,nude_painting,train
+s09_r0966,Impressionism/s09_r0966.jpg,Impressionism,john-singer-sargent,cityscape,train
+s09_r0967,Impressionism/s09_r0967.jpg,Impressionism,pierre-auguste-renoir,landscape,train
+s09_r0976,Impressionism/s09_r0976.jpg,Impressionism,camille-pissarro,cityscape,val
+s09_r0977,Impressionism/s09_r0977.jpg,Impressionism,camille-pissarro,genre_painting,val
+s09_r0978,Impressionism/s09_r0978.jpg,Impressionism,eugene-boudin,Unknown Genre,train
+s09_r0986,Impressionism/s09_r0986.jpg,Impressionism,edgar-degas,genre_painting,train
+s09_r0992,Impressionism/s09_r0992.jpg,Impressionism,camille-pissarro,genre_painting,val
+s09_r0993,Impressionism/s09_r0993.jpg,Impressionism,pierre-auguste-renoir,portrait,train
+s09_r0994,Impressionism/s09_r0994.jpg,Impressionism,childe-hassam,landscape,train
+s09_r0998,Impressionism/s09_r0998.jpg,Impressionism,edgar-degas,portrait,train
+s09_r1008,Impressionism/s09_r1008.jpg,Impressionism,pierre-auguste-renoir,portrait,train
+s09_r1010,Impressionism/s09_r1010.jpg,Impressionism,childe-hassam,landscape,train
+s09_r1013,Impressionism/s09_r1013.jpg,Impressionism,childe-hassam,cityscape,train
+s09_r1020,Impressionism/s09_r1020.jpg,Impressionism,camille-pissarro,portrait,val
+s09_r1021,Impressionism/s09_r1021.jpg,Impressionism,childe-hassam,genre_painting,train
+s09_r1024,Impressionism/s09_r1024.jpg,Impressionism,claude-monet,landscape,test
+s09_r1026,Impressionism/s09_r1026.jpg,Impressionism,camille-pissarro,genre_painting,val
+s09_r1027,Impressionism/s09_r1027.jpg,Impressionism,childe-hassam,genre_painting,train
+s09_r1030,Impressionism/s09_r1030.jpg,Impressionism,pierre-auguste-renoir,portrait,train
+s09_r1040,Impressionism/s09_r1040.jpg,Impressionism,eugene-boudin,Unknown Genre,train
+s09_r1043,Impressionism/s09_r1043.jpg,Impressionism,edgar-degas,genre_painting,train
+s09_r1045,Impressionism/s09_r1045.jpg,Impressionism,camille-pissarro,portrait,val
+s09_r1046,Impressionism/s09_r1046.jpg,Impressionism,childe-hassam,cityscape,train
+s09_r1049,Impressionism/s09_r1049.jpg,Impressionism,edgar-degas,genre_painting,train
+s09_r1053,Impressionism/s09_r1053.jpg,Impressionism,childe-hassam,cityscape,train
+s09_r1056,Impressionism/s09_r1056.jpg,Impressionism,camille-pissarro,genre_painting,val
+s09_r1061,Impressionism/s09_r1061.jpg,Impressionism,eugene-boudin,cityscape,train
+s09_r1063,Impressionism/s09_r1063.jpg,Impressionism,pierre-auguste-renoir,Unknown Genre,train
+s09_r1066,Impressionism/s09_r1066.jpg,Impressionism,john-singer-sargent,genre_painting,train
+s09_r1071,Impressionism/s09_r1071.jpg,Impressionism,eugene-boudin,Unknown Genre,train
+s09_r1074,Impressionism/s09_r1074.jpg,Impressionism,edgar-degas,genre_painting,train
+s09_r1075,Impressionism/s09_r1075.jpg,Impressionism,pierre-auguste-renoir,portrait,train
+s09_r1076,Impressionism/s09_r1076.jpg,Impressionism,claude-monet,landscape,test
+s09_r1085,Impressionism/s09_r1085.jpg,Impressionism,claude-monet,landscape,test
+s09_r1086,Impressionism/s09_r1086.jpg,Impressionism,eugene-boudin,genre_painting,train
+s09_r1091,Impressionism/s09_r1091.jpg,Impressionism,claude-monet,landscape,test
+s09_r1092,Impressionism/s09_r1092.jpg,Impressionism,paul-cezanne,cityscape,train
+s09_r1095,Impressionism/s09_r1095.jpg,Impressionism,camille-pissarro,genre_painting,val
+s09_r1105,Impressionism/s09_r1105.jpg,Impressionism,camille-pissarro,cityscape,val
+s09_r1106,Impressionism/s09_r1106.jpg,Impressionism,camille-pissarro,cityscape,val
+s09_r1109,Impressionism/s09_r1109.jpg,Impressionism,childe-hassam,landscape,train
+s09_r1119,Impressionism/s09_r1119.jpg,Impressionism,claude-monet,still_life,test
+s09_r1126,Impressionism/s09_r1126.jpg,Impressionism,claude-monet,landscape,test
+s09_r1128,Impressionism/s09_r1128.jpg,Impressionism,pierre-auguste-renoir,landscape,train
+s21_r0020,Pop_Art/s21_r0020.jpg,Pop_Art,Unknown Artist,portrait,train
+s21_r0069,Pop_Art/s21_r0069.jpg,Pop_Art,Unknown Artist,portrait,test
+s21_r0173,Pop_Art/s21_r0173.jpg,Pop_Art,Unknown Artist,portrait,val
+s21_r0327,Pop_Art/s21_r0327.jpg,Pop_Art,Unknown Artist,portrait,val
+s21_r0474,Pop_Art/s21_r0474.jpg,Pop_Art,Unknown Artist,cityscape,train
+s21_r0506,Pop_Art/s21_r0506.jpg,Pop_Art,Unknown Artist,portrait,train
+s21_r0628,Pop_Art/s21_r0628.jpg,Pop_Art,Unknown Artist,portrait,train
+s21_r0664,Pop_Art/s21_r0664.jpg,Pop_Art,andy-warhol,portrait,train
+s21_r0682,Pop_Art/s21_r0682.jpg,Pop_Art,Unknown Artist,cityscape,train
+s21_r0708,Pop_Art/s21_r0708.jpg,Pop_Art,Unknown Artist,cityscape,train
+s21_r0711,Pop_Art/s21_r0711.jpg,Pop_Art,Unknown Artist,portrait,train
+s21_r0861,Pop_Art/s21_r0861.jpg,Pop_Art,Unknown Artist,still_life,train
+s21_r0909,Pop_Art/s21_r0909.jpg,Pop_Art,Unknown Artist,cityscape,val
+s21_r0924,Pop_Art/s21_r0924.jpg,Pop_Art,Unknown Artist,portrait,train
+s21_r0925,Pop_Art/s21_r0925.jpg,Pop_Art,Unknown Artist,genre_painting,train
+s21_r0981,Pop_Art/s21_r0981.jpg,Pop_Art,Unknown Artist,nude_painting,val
+s21_r1016,Pop_Art/s21_r1016.jpg,Pop_Art,andy-warhol,portrait,train
+s24_r0032,Pop_Art/s24_r0032.jpg,Pop_Art,Unknown Artist,portrait,val
+s24_r0185,Pop_Art/s24_r0185.jpg,Pop_Art,Unknown Artist,portrait,train
+s24_r0199,Pop_Art/s24_r0199.jpg,Pop_Art,andy-warhol,portrait,train
+s24_r0232,Pop_Art/s24_r0232.jpg,Pop_Art,Unknown Artist,cityscape,test
+s24_r0304,Pop_Art/s24_r0304.jpg,Pop_Art,Unknown Artist,cityscape,train
+s24_r0420,Pop_Art/s24_r0420.jpg,Pop_Art,Unknown Artist,landscape,test
+s24_r0479,Pop_Art/s24_r0479.jpg,Pop_Art,Unknown Artist,portrait,train
+s24_r0503,Pop_Art/s24_r0503.jpg,Pop_Art,andy-warhol,portrait,train
+s24_r0511,Pop_Art/s24_r0511.jpg,Pop_Art,Unknown Artist,still_life,train
+s24_r0562,Pop_Art/s24_r0562.jpg,Pop_Art,Unknown Artist,genre_painting,train
+s24_r0621,Pop_Art/s24_r0621.jpg,Pop_Art,Unknown Artist,cityscape,train
+s24_r0953,Pop_Art/s24_r0953.jpg,Pop_Art,Unknown Artist,portrait,train
+s24_r1092,Pop_Art/s24_r1092.jpg,Pop_Art,andy-warhol,portrait,train
+s30_r0073,Pop_Art/s30_r0073.jpg,Pop_Art,andy-warhol,portrait,train
+s30_r0089,Pop_Art/s30_r0089.jpg,Pop_Art,Unknown Artist,still_life,val
+s30_r0108,Pop_Art/s30_r0108.jpg,Pop_Art,Unknown Artist,abstract_painting,train
+s30_r0214,Pop_Art/s30_r0214.jpg,Pop_Art,Unknown Artist,landscape,train
+s30_r0319,Pop_Art/s30_r0319.jpg,Pop_Art,andy-warhol,genre_painting,train
+s30_r0338,Pop_Art/s30_r0338.jpg,Pop_Art,Unknown Artist,still_life,test
+s30_r0412,Pop_Art/s30_r0412.jpg,Pop_Art,Unknown Artist,genre_painting,train
+s30_r0451,Pop_Art/s30_r0451.jpg,Pop_Art,Unknown Artist,abstract_painting,train
+s30_r0539,Pop_Art/s30_r0539.jpg,Pop_Art,Unknown Artist,nude_painting,test
+s30_r0687,Pop_Art/s30_r0687.jpg,Pop_Art,Unknown Artist,landscape,test
+s30_r0732,Pop_Art/s30_r0732.jpg,Pop_Art,Unknown Artist,abstract_painting,train
+s30_r1019,Pop_Art/s30_r1019.jpg,Pop_Art,Unknown Artist,landscape,train
+s31_r0014,Pop_Art/s31_r0014.jpg,Pop_Art,andy-warhol,still_life,train
+s31_r0018,Pop_Art/s31_r0018.jpg,Pop_Art,Unknown Artist,cityscape,train
+s31_r0107,Pop_Art/s31_r0107.jpg,Pop_Art,Unknown Artist,portrait,train
+s31_r0343,Pop_Art/s31_r0343.jpg,Pop_Art,Unknown Artist,cityscape,train
+s31_r0385,Pop_Art/s31_r0385.jpg,Pop_Art,Unknown Artist,cityscape,train
+s31_r0411,Pop_Art/s31_r0411.jpg,Pop_Art,Unknown Artist,nude_painting,train
+s31_r0447,Pop_Art/s31_r0447.jpg,Pop_Art,andy-warhol,portrait,train
+s31_r0491,Pop_Art/s31_r0491.jpg,Pop_Art,Unknown Artist,genre_painting,test
+s31_r0564,Pop_Art/s31_r0564.jpg,Pop_Art,Unknown Artist,portrait,train
+s31_r0581,Pop_Art/s31_r0581.jpg,Pop_Art,andy-warhol,still_life,train
+s31_r0659,Pop_Art/s31_r0659.jpg,Pop_Art,Unknown Artist,abstract_painting,train
+s31_r0888,Pop_Art/s31_r0888.jpg,Pop_Art,Unknown Artist,sketch_and_study,val
+s31_r1045,Pop_Art/s31_r1045.jpg,Pop_Art,Unknown Artist,genre_painting,test
+s49_r0020,Pop_Art/s49_r0020.jpg,Pop_Art,Unknown Artist,genre_painting,train
+s49_r0040,Pop_Art/s49_r0040.jpg,Pop_Art,Unknown Artist,genre_painting,train
+s49_r0747,Pop_Art/s49_r0747.jpg,Pop_Art,Unknown Artist,religious_painting,train
+s49_r1084,Pop_Art/s49_r1084.jpg,Pop_Art,andy-warhol,religious_painting,train
+s51_r0065,Pop_Art/s51_r0065.jpg,Pop_Art,Unknown Artist,cityscape,train
+s51_r0079,Pop_Art/s51_r0079.jpg,Pop_Art,Unknown Artist,cityscape,train
+s51_r0113,Pop_Art/s51_r0113.jpg,Pop_Art,Unknown Artist,cityscape,train
+s51_r0169,Pop_Art/s51_r0169.jpg,Pop_Art,Unknown Artist,cityscape,val
+s51_r0223,Pop_Art/s51_r0223.jpg,Pop_Art,Unknown Artist,cityscape,val
+s51_r0230,Pop_Art/s51_r0230.jpg,Pop_Art,Unknown Artist,cityscape,test
+s51_r0277,Pop_Art/s51_r0277.jpg,Pop_Art,Unknown Artist,cityscape,train
+s51_r0281,Pop_Art/s51_r0281.jpg,Pop_Art,Unknown Artist,cityscape,train
+s51_r0286,Pop_Art/s51_r0286.jpg,Pop_Art,Unknown Artist,cityscape,train
+s51_r0302,Pop_Art/s51_r0302.jpg,Pop_Art,Unknown Artist,cityscape,val
+s51_r0306,Pop_Art/s51_r0306.jpg,Pop_Art,Unknown Artist,cityscape,train
+s51_r0333,Pop_Art/s51_r0333.jpg,Pop_Art,Unknown Artist,cityscape,train
+s51_r0340,Pop_Art/s51_r0340.jpg,Pop_Art,Unknown Artist,cityscape,val
+s51_r0389,Pop_Art/s51_r0389.jpg,Pop_Art,Unknown Artist,cityscape,train
+s51_r0491,Pop_Art/s51_r0491.jpg,Pop_Art,Unknown Artist,cityscape,test
+s51_r0550,Pop_Art/s51_r0550.jpg,Pop_Art,Unknown Artist,cityscape,val
+s51_r0570,Pop_Art/s51_r0570.jpg,Pop_Art,Unknown Artist,cityscape,train
+s51_r0585,Pop_Art/s51_r0585.jpg,Pop_Art,Unknown Artist,cityscape,train
+s51_r0595,Pop_Art/s51_r0595.jpg,Pop_Art,Unknown Artist,cityscape,test
+s51_r0603,Pop_Art/s51_r0603.jpg,Pop_Art,Unknown Artist,cityscape,train
+s51_r0622,Pop_Art/s51_r0622.jpg,Pop_Art,Unknown Artist,cityscape,train
+s51_r0665,Pop_Art/s51_r0665.jpg,Pop_Art,Unknown Artist,cityscape,train
+s51_r0692,Pop_Art/s51_r0692.jpg,Pop_Art,Unknown Artist,cityscape,train
+s51_r0736,Pop_Art/s51_r0736.jpg,Pop_Art,Unknown Artist,cityscape,test
+s51_r0740,Pop_Art/s51_r0740.jpg,Pop_Art,Unknown Artist,cityscape,train
+s51_r0822,Pop_Art/s51_r0822.jpg,Pop_Art,Unknown Artist,cityscape,train
+s51_r1006,Pop_Art/s51_r1006.jpg,Pop_Art,Unknown Artist,landscape,val
+s51_r1009,Pop_Art/s51_r1009.jpg,Pop_Art,Unknown Artist,landscape,train
+s54_r0234,Pop_Art/s54_r0234.jpg,Pop_Art,Unknown Artist,still_life,train
+s54_r0235,Pop_Art/s54_r0235.jpg,Pop_Art,Unknown Artist,still_life,val
+s54_r0270,Pop_Art/s54_r0270.jpg,Pop_Art,Unknown Artist,still_life,train
+s54_r0477,Pop_Art/s54_r0477.jpg,Pop_Art,Unknown Artist,still_life,val
+s54_r0501,Pop_Art/s54_r0501.jpg,Pop_Art,Unknown Artist,still_life,train
+s54_r0510,Pop_Art/s54_r0510.jpg,Pop_Art,andy-warhol,still_life,train
+s54_r0523,Pop_Art/s54_r0523.jpg,Pop_Art,andy-warhol,still_life,train
+s54_r0549,Pop_Art/s54_r0549.jpg,Pop_Art,andy-warhol,still_life,train
+s54_r0590,Pop_Art/s54_r0590.jpg,Pop_Art,Unknown Artist,still_life,train
+s54_r0598,Pop_Art/s54_r0598.jpg,Pop_Art,Unknown Artist,still_life,train
+s54_r0617,Pop_Art/s54_r0617.jpg,Pop_Art,Unknown Artist,still_life,test
+s54_r0621,Pop_Art/s54_r0621.jpg,Pop_Art,Unknown Artist,still_life,train
+s54_r0755,Pop_Art/s54_r0755.jpg,Pop_Art,Unknown Artist,still_life,train
+s54_r0783,Pop_Art/s54_r0783.jpg,Pop_Art,Unknown Artist,still_life,val
+s54_r0847,Pop_Art/s54_r0847.jpg,Pop_Art,Unknown Artist,still_life,val
+s54_r1008,Pop_Art/s54_r1008.jpg,Pop_Art,Unknown Artist,sketch_and_study,train
+s64_r0009,Pop_Art/s64_r0009.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s64_r0036,Pop_Art/s64_r0036.jpg,Pop_Art,Unknown Artist,Unknown Genre,test
+s64_r0091,Pop_Art/s64_r0091.jpg,Pop_Art,Unknown Artist,Unknown Genre,val
+s64_r0099,Pop_Art/s64_r0099.jpg,Pop_Art,Unknown Artist,Unknown Genre,val
+s64_r0108,Pop_Art/s64_r0108.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s64_r0110,Pop_Art/s64_r0110.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s64_r0116,Pop_Art/s64_r0116.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s64_r0131,Pop_Art/s64_r0131.jpg,Pop_Art,Unknown Artist,Unknown Genre,val
+s64_r0143,Pop_Art/s64_r0143.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s64_r0146,Pop_Art/s64_r0146.jpg,Pop_Art,Unknown Artist,Unknown Genre,test
+s64_r0164,Pop_Art/s64_r0164.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s64_r0166,Pop_Art/s64_r0166.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s64_r0172,Pop_Art/s64_r0172.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s64_r0183,Pop_Art/s64_r0183.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s64_r0189,Pop_Art/s64_r0189.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s64_r0235,Pop_Art/s64_r0235.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s64_r0263,Pop_Art/s64_r0263.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s64_r0279,Pop_Art/s64_r0279.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s64_r0316,Pop_Art/s64_r0316.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s64_r0342,Pop_Art/s64_r0342.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s64_r0344,Pop_Art/s64_r0344.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s64_r0345,Pop_Art/s64_r0345.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s64_r0360,Pop_Art/s64_r0360.jpg,Pop_Art,Unknown Artist,Unknown Genre,test
+s64_r0392,Pop_Art/s64_r0392.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s64_r0409,Pop_Art/s64_r0409.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s64_r0415,Pop_Art/s64_r0415.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s64_r0418,Pop_Art/s64_r0418.jpg,Pop_Art,Unknown Artist,Unknown Genre,test
+s64_r0433,Pop_Art/s64_r0433.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s64_r0446,Pop_Art/s64_r0446.jpg,Pop_Art,Unknown Artist,Unknown Genre,test
+s64_r0449,Pop_Art/s64_r0449.jpg,Pop_Art,Unknown Artist,Unknown Genre,test
+s64_r0454,Pop_Art/s64_r0454.jpg,Pop_Art,Unknown Artist,Unknown Genre,val
+s64_r0482,Pop_Art/s64_r0482.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s64_r0492,Pop_Art/s64_r0492.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s64_r0524,Pop_Art/s64_r0524.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s64_r0529,Pop_Art/s64_r0529.jpg,Pop_Art,Unknown Artist,Unknown Genre,test
+s64_r0531,Pop_Art/s64_r0531.jpg,Pop_Art,Unknown Artist,Unknown Genre,test
+s64_r0568,Pop_Art/s64_r0568.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s64_r0571,Pop_Art/s64_r0571.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s64_r0576,Pop_Art/s64_r0576.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s64_r0585,Pop_Art/s64_r0585.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s64_r0604,Pop_Art/s64_r0604.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s64_r0620,Pop_Art/s64_r0620.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s64_r0679,Pop_Art/s64_r0679.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s64_r0691,Pop_Art/s64_r0691.jpg,Pop_Art,Unknown Artist,Unknown Genre,val
+s64_r0703,Pop_Art/s64_r0703.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s64_r0713,Pop_Art/s64_r0713.jpg,Pop_Art,Unknown Artist,Unknown Genre,test
+s64_r0722,Pop_Art/s64_r0722.jpg,Pop_Art,Unknown Artist,Unknown Genre,val
+s64_r0729,Pop_Art/s64_r0729.jpg,Pop_Art,Unknown Artist,Unknown Genre,test
+s64_r0755,Pop_Art/s64_r0755.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s64_r0766,Pop_Art/s64_r0766.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s64_r0769,Pop_Art/s64_r0769.jpg,Pop_Art,Unknown Artist,Unknown Genre,test
+s64_r0792,Pop_Art/s64_r0792.jpg,Pop_Art,Unknown Artist,Unknown Genre,test
+s64_r0798,Pop_Art/s64_r0798.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s64_r0817,Pop_Art/s64_r0817.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s64_r0869,Pop_Art/s64_r0869.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s64_r0887,Pop_Art/s64_r0887.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s64_r0889,Pop_Art/s64_r0889.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s64_r0905,Pop_Art/s64_r0905.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s64_r0917,Pop_Art/s64_r0917.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s64_r0940,Pop_Art/s64_r0940.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s64_r0958,Pop_Art/s64_r0958.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s64_r0971,Pop_Art/s64_r0971.jpg,Pop_Art,Unknown Artist,Unknown Genre,test
+s64_r0991,Pop_Art/s64_r0991.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s64_r0994,Pop_Art/s64_r0994.jpg,Pop_Art,Unknown Artist,Unknown Genre,test
+s64_r0997,Pop_Art/s64_r0997.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s64_r0998,Pop_Art/s64_r0998.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s64_r1003,Pop_Art/s64_r1003.jpg,Pop_Art,Unknown Artist,Unknown Genre,test
+s64_r1015,Pop_Art/s64_r1015.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s64_r1021,Pop_Art/s64_r1021.jpg,Pop_Art,Unknown Artist,Unknown Genre,test
+s64_r1022,Pop_Art/s64_r1022.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s64_r1036,Pop_Art/s64_r1036.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s64_r1038,Pop_Art/s64_r1038.jpg,Pop_Art,Unknown Artist,Unknown Genre,val
+s64_r1046,Pop_Art/s64_r1046.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s64_r1078,Pop_Art/s64_r1078.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s64_r1086,Pop_Art/s64_r1086.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s64_r1095,Pop_Art/s64_r1095.jpg,Pop_Art,Unknown Artist,Unknown Genre,val
+s64_r1110,Pop_Art/s64_r1110.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s64_r1126,Pop_Art/s64_r1126.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s64_r1130,Pop_Art/s64_r1130.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s67_r0012,Pop_Art/s67_r0012.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s67_r0018,Pop_Art/s67_r0018.jpg,Pop_Art,Unknown Artist,Unknown Genre,val
+s67_r0026,Pop_Art/s67_r0026.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s67_r0031,Pop_Art/s67_r0031.jpg,Pop_Art,Unknown Artist,Unknown Genre,test
+s67_r0035,Pop_Art/s67_r0035.jpg,Pop_Art,Unknown Artist,Unknown Genre,test
+s67_r0064,Pop_Art/s67_r0064.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s67_r0083,Pop_Art/s67_r0083.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s67_r0097,Pop_Art/s67_r0097.jpg,Pop_Art,Unknown Artist,Unknown Genre,val
+s67_r0117,Pop_Art/s67_r0117.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s67_r0136,Pop_Art/s67_r0136.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s67_r0142,Pop_Art/s67_r0142.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s67_r0149,Pop_Art/s67_r0149.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s67_r0154,Pop_Art/s67_r0154.jpg,Pop_Art,Unknown Artist,Unknown Genre,test
+s67_r0159,Pop_Art/s67_r0159.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s67_r0163,Pop_Art/s67_r0163.jpg,Pop_Art,Unknown Artist,Unknown Genre,test
+s67_r0176,Pop_Art/s67_r0176.jpg,Pop_Art,Unknown Artist,Unknown Genre,test
+s67_r0192,Pop_Art/s67_r0192.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s67_r0212,Pop_Art/s67_r0212.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s67_r0213,Pop_Art/s67_r0213.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s67_r0216,Pop_Art/s67_r0216.jpg,Pop_Art,Unknown Artist,Unknown Genre,test
+s67_r0231,Pop_Art/s67_r0231.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s67_r0237,Pop_Art/s67_r0237.jpg,Pop_Art,Unknown Artist,Unknown Genre,val
+s67_r0244,Pop_Art/s67_r0244.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s67_r0323,Pop_Art/s67_r0323.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s67_r0342,Pop_Art/s67_r0342.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s67_r0354,Pop_Art/s67_r0354.jpg,Pop_Art,Unknown Artist,Unknown Genre,test
+s67_r0390,Pop_Art/s67_r0390.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s67_r0419,Pop_Art/s67_r0419.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s67_r0432,Pop_Art/s67_r0432.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s67_r0447,Pop_Art/s67_r0447.jpg,Pop_Art,Unknown Artist,Unknown Genre,val
+s67_r0474,Pop_Art/s67_r0474.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s67_r0525,Pop_Art/s67_r0525.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s67_r0546,Pop_Art/s67_r0546.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s67_r0567,Pop_Art/s67_r0567.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s67_r0592,Pop_Art/s67_r0592.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s67_r0608,Pop_Art/s67_r0608.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s67_r0611,Pop_Art/s67_r0611.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s67_r0618,Pop_Art/s67_r0618.jpg,Pop_Art,Unknown Artist,Unknown Genre,val
+s67_r0624,Pop_Art/s67_r0624.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s67_r0629,Pop_Art/s67_r0629.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s67_r0639,Pop_Art/s67_r0639.jpg,Pop_Art,Unknown Artist,Unknown Genre,val
+s67_r0677,Pop_Art/s67_r0677.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s67_r0684,Pop_Art/s67_r0684.jpg,Pop_Art,Unknown Artist,Unknown Genre,val
+s67_r0691,Pop_Art/s67_r0691.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s67_r0702,Pop_Art/s67_r0702.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s67_r0727,Pop_Art/s67_r0727.jpg,Pop_Art,Unknown Artist,Unknown Genre,test
+s67_r0730,Pop_Art/s67_r0730.jpg,Pop_Art,Unknown Artist,Unknown Genre,test
+s67_r0750,Pop_Art/s67_r0750.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s67_r0758,Pop_Art/s67_r0758.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s67_r0759,Pop_Art/s67_r0759.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s67_r0763,Pop_Art/s67_r0763.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s67_r0786,Pop_Art/s67_r0786.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s67_r0792,Pop_Art/s67_r0792.jpg,Pop_Art,Unknown Artist,Unknown Genre,val
+s67_r0835,Pop_Art/s67_r0835.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s67_r0837,Pop_Art/s67_r0837.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s67_r0854,Pop_Art/s67_r0854.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s67_r0858,Pop_Art/s67_r0858.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s67_r0876,Pop_Art/s67_r0876.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s67_r0877,Pop_Art/s67_r0877.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s67_r0891,Pop_Art/s67_r0891.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s67_r0893,Pop_Art/s67_r0893.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s67_r0901,Pop_Art/s67_r0901.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s67_r0950,Pop_Art/s67_r0950.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s67_r0961,Pop_Art/s67_r0961.jpg,Pop_Art,Unknown Artist,Unknown Genre,val
+s67_r0972,Pop_Art/s67_r0972.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s67_r0976,Pop_Art/s67_r0976.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s67_r0980,Pop_Art/s67_r0980.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s67_r1002,Pop_Art/s67_r1002.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s67_r1009,Pop_Art/s67_r1009.jpg,Pop_Art,Unknown Artist,Unknown Genre,test
+s67_r1016,Pop_Art/s67_r1016.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s67_r1022,Pop_Art/s67_r1022.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s67_r1048,Pop_Art/s67_r1048.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s67_r1053,Pop_Art/s67_r1053.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s67_r1114,Pop_Art/s67_r1114.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s67_r1127,Pop_Art/s67_r1127.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s68_r0020,Pop_Art/s68_r0020.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s68_r0038,Pop_Art/s68_r0038.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s68_r0063,Pop_Art/s68_r0063.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s68_r0069,Pop_Art/s68_r0069.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s68_r0088,Pop_Art/s68_r0088.jpg,Pop_Art,Unknown Artist,Unknown Genre,val
+s68_r0097,Pop_Art/s68_r0097.jpg,Pop_Art,Unknown Artist,Unknown Genre,val
+s68_r0101,Pop_Art/s68_r0101.jpg,Pop_Art,Unknown Artist,Unknown Genre,val
+s68_r0106,Pop_Art/s68_r0106.jpg,Pop_Art,Unknown Artist,Unknown Genre,test
+s68_r0110,Pop_Art/s68_r0110.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s68_r0112,Pop_Art/s68_r0112.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s68_r0157,Pop_Art/s68_r0157.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s68_r0162,Pop_Art/s68_r0162.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s68_r0168,Pop_Art/s68_r0168.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s68_r0181,Pop_Art/s68_r0181.jpg,Pop_Art,Unknown Artist,Unknown Genre,test
+s68_r0182,Pop_Art/s68_r0182.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s68_r0195,Pop_Art/s68_r0195.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s68_r0215,Pop_Art/s68_r0215.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s68_r0231,Pop_Art/s68_r0231.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s68_r0242,Pop_Art/s68_r0242.jpg,Pop_Art,Unknown Artist,Unknown Genre,test
+s68_r0245,Pop_Art/s68_r0245.jpg,Pop_Art,Unknown Artist,Unknown Genre,val
+s68_r0246,Pop_Art/s68_r0246.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s68_r0248,Pop_Art/s68_r0248.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s68_r0259,Pop_Art/s68_r0259.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s68_r0262,Pop_Art/s68_r0262.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s68_r0285,Pop_Art/s68_r0285.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s68_r0298,Pop_Art/s68_r0298.jpg,Pop_Art,Unknown Artist,Unknown Genre,test
+s68_r0311,Pop_Art/s68_r0311.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s68_r0319,Pop_Art/s68_r0319.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s68_r0330,Pop_Art/s68_r0330.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s68_r0338,Pop_Art/s68_r0338.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s68_r0346,Pop_Art/s68_r0346.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s68_r0398,Pop_Art/s68_r0398.jpg,Pop_Art,Unknown Artist,Unknown Genre,val
+s68_r0405,Pop_Art/s68_r0405.jpg,Pop_Art,Unknown Artist,Unknown Genre,val
+s68_r0407,Pop_Art/s68_r0407.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s68_r0412,Pop_Art/s68_r0412.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s68_r0424,Pop_Art/s68_r0424.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s68_r0435,Pop_Art/s68_r0435.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s68_r0438,Pop_Art/s68_r0438.jpg,Pop_Art,Unknown Artist,Unknown Genre,val
+s68_r0474,Pop_Art/s68_r0474.jpg,Pop_Art,Unknown Artist,Unknown Genre,val
+s68_r0475,Pop_Art/s68_r0475.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s68_r0489,Pop_Art/s68_r0489.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s68_r0498,Pop_Art/s68_r0498.jpg,Pop_Art,Unknown Artist,Unknown Genre,train
+s68_r0507,Pop_Art/s68_r0507.jpg,Pop_Art,Unknown Artist,Unknown Genre,val
+s21_r0049,Ukiyo_e/s21_r0049.jpg,Ukiyo_e,utagawa-kuniyoshi,landscape,train
+s21_r0080,Ukiyo_e/s21_r0080.jpg,Ukiyo_e,katsushika-hokusai,landscape,train
+s21_r0111,Ukiyo_e/s21_r0111.jpg,Ukiyo_e,Unknown Artist,portrait,train
+s21_r0172,Ukiyo_e/s21_r0172.jpg,Ukiyo_e,utagawa-kuniyoshi,portrait,train
+s21_r0225,Ukiyo_e/s21_r0225.jpg,Ukiyo_e,utagawa-kuniyoshi,portrait,train
+s21_r0281,Ukiyo_e/s21_r0281.jpg,Ukiyo_e,katsushika-hokusai,sketch_and_study,train
+s21_r0306,Ukiyo_e/s21_r0306.jpg,Ukiyo_e,Unknown Artist,genre_painting,train
+s21_r0376,Ukiyo_e/s21_r0376.jpg,Ukiyo_e,Unknown Artist,portrait,train
+s21_r0386,Ukiyo_e/s21_r0386.jpg,Ukiyo_e,Unknown Artist,landscape,train
+s21_r0492,Ukiyo_e/s21_r0492.jpg,Ukiyo_e,katsushika-hokusai,genre_painting,train
+s21_r0505,Ukiyo_e/s21_r0505.jpg,Ukiyo_e,katsushika-hokusai,sketch_and_study,train
+s21_r0573,Ukiyo_e/s21_r0573.jpg,Ukiyo_e,utagawa-kuniyoshi,portrait,train
+s21_r0589,Ukiyo_e/s21_r0589.jpg,Ukiyo_e,utagawa-kuniyoshi,genre_painting,train
+s21_r0620,Ukiyo_e/s21_r0620.jpg,Ukiyo_e,Unknown Artist,genre_painting,train
+s21_r0716,Ukiyo_e/s21_r0716.jpg,Ukiyo_e,Unknown Artist,portrait,train
+s21_r0730,Ukiyo_e/s21_r0730.jpg,Ukiyo_e,utagawa-kuniyoshi,portrait,train
+s21_r0735,Ukiyo_e/s21_r0735.jpg,Ukiyo_e,utagawa-kuniyoshi,genre_painting,train
+s21_r0766,Ukiyo_e/s21_r0766.jpg,Ukiyo_e,katsushika-hokusai,genre_painting,train
+s21_r0796,Ukiyo_e/s21_r0796.jpg,Ukiyo_e,Unknown Artist,portrait,train
+s21_r0845,Ukiyo_e/s21_r0845.jpg,Ukiyo_e,katsushika-hokusai,genre_painting,train
+s21_r0877,Ukiyo_e/s21_r0877.jpg,Ukiyo_e,Unknown Artist,genre_painting,train
+s21_r0953,Ukiyo_e/s21_r0953.jpg,Ukiyo_e,Unknown Artist,genre_painting,train
+s21_r1059,Ukiyo_e/s21_r1059.jpg,Ukiyo_e,katsushika-hokusai,genre_painting,train
+s21_r1128,Ukiyo_e/s21_r1128.jpg,Ukiyo_e,Unknown Artist,genre_painting,test
+s24_r0001,Ukiyo_e/s24_r0001.jpg,Ukiyo_e,Unknown Artist,landscape,train
+s24_r0014,Ukiyo_e/s24_r0014.jpg,Ukiyo_e,utagawa-kuniyoshi,portrait,train
+s24_r0055,Ukiyo_e/s24_r0055.jpg,Ukiyo_e,Unknown Artist,genre_painting,train
+s24_r0121,Ukiyo_e/s24_r0121.jpg,Ukiyo_e,Unknown Artist,portrait,train
+s24_r0300,Ukiyo_e/s24_r0300.jpg,Ukiyo_e,utagawa-kuniyoshi,landscape,train
+s24_r0320,Ukiyo_e/s24_r0320.jpg,Ukiyo_e,Unknown Artist,portrait,train
+s24_r0341,Ukiyo_e/s24_r0341.jpg,Ukiyo_e,katsushika-hokusai,genre_painting,train
+s24_r0363,Ukiyo_e/s24_r0363.jpg,Ukiyo_e,Unknown Artist,landscape,train
+s24_r0390,Ukiyo_e/s24_r0390.jpg,Ukiyo_e,katsushika-hokusai,genre_painting,train
+s24_r0442,Ukiyo_e/s24_r0442.jpg,Ukiyo_e,katsushika-hokusai,genre_painting,train
+s24_r0452,Ukiyo_e/s24_r0452.jpg,Ukiyo_e,utagawa-kuniyoshi,genre_painting,train
+s24_r0457,Ukiyo_e/s24_r0457.jpg,Ukiyo_e,utagawa-kuniyoshi,portrait,train
+s24_r0481,Ukiyo_e/s24_r0481.jpg,Ukiyo_e,Unknown Artist,portrait,train
+s24_r0525,Ukiyo_e/s24_r0525.jpg,Ukiyo_e,utagawa-kuniyoshi,genre_painting,train
+s24_r0537,Ukiyo_e/s24_r0537.jpg,Ukiyo_e,Unknown Artist,genre_painting,train
+s24_r0600,Ukiyo_e/s24_r0600.jpg,Ukiyo_e,Unknown Artist,landscape,train
+s24_r0628,Ukiyo_e/s24_r0628.jpg,Ukiyo_e,Unknown Artist,portrait,train
+s24_r0661,Ukiyo_e/s24_r0661.jpg,Ukiyo_e,Unknown Artist,genre_painting,train
+s24_r0679,Ukiyo_e/s24_r0679.jpg,Ukiyo_e,utagawa-kuniyoshi,portrait,train
+s24_r0683,Ukiyo_e/s24_r0683.jpg,Ukiyo_e,Unknown Artist,portrait,test
+s24_r0685,Ukiyo_e/s24_r0685.jpg,Ukiyo_e,Unknown Artist,genre_painting,train
+s24_r0872,Ukiyo_e/s24_r0872.jpg,Ukiyo_e,Unknown Artist,portrait,train
+s24_r0948,Ukiyo_e/s24_r0948.jpg,Ukiyo_e,Unknown Artist,genre_painting,val
+s24_r0968,Ukiyo_e/s24_r0968.jpg,Ukiyo_e,Unknown Artist,portrait,train
+s24_r1053,Ukiyo_e/s24_r1053.jpg,Ukiyo_e,Unknown Artist,nude_painting,test
+s24_r1054,Ukiyo_e/s24_r1054.jpg,Ukiyo_e,Unknown Artist,portrait,train
+s24_r1071,Ukiyo_e/s24_r1071.jpg,Ukiyo_e,katsushika-hokusai,landscape,train
+s24_r1084,Ukiyo_e/s24_r1084.jpg,Ukiyo_e,Unknown Artist,genre_painting,train
+s24_r1116,Ukiyo_e/s24_r1116.jpg,Ukiyo_e,utagawa-kuniyoshi,portrait,train
+s30_r0039,Ukiyo_e/s30_r0039.jpg,Ukiyo_e,katsushika-hokusai,landscape,train
+s30_r0067,Ukiyo_e/s30_r0067.jpg,Ukiyo_e,Unknown Artist,genre_painting,train
+s30_r0075,Ukiyo_e/s30_r0075.jpg,Ukiyo_e,utagawa-kuniyoshi,genre_painting,train
+s30_r0115,Ukiyo_e/s30_r0115.jpg,Ukiyo_e,Unknown Artist,still_life,train
+s30_r0134,Ukiyo_e/s30_r0134.jpg,Ukiyo_e,Unknown Artist,portrait,test
+s30_r0271,Ukiyo_e/s30_r0271.jpg,Ukiyo_e,Unknown Artist,genre_painting,train
+s30_r0350,Ukiyo_e/s30_r0350.jpg,Ukiyo_e,utagawa-kuniyoshi,portrait,train
+s30_r0562,Ukiyo_e/s30_r0562.jpg,Ukiyo_e,katsushika-hokusai,illustration,train
+s30_r0569,Ukiyo_e/s30_r0569.jpg,Ukiyo_e,Unknown Artist,genre_painting,val
+s30_r0586,Ukiyo_e/s30_r0586.jpg,Ukiyo_e,Unknown Artist,landscape,train
+s30_r0616,Ukiyo_e/s30_r0616.jpg,Ukiyo_e,katsushika-hokusai,landscape,train
+s30_r0637,Ukiyo_e/s30_r0637.jpg,Ukiyo_e,Unknown Artist,genre_painting,train
+s30_r0701,Ukiyo_e/s30_r0701.jpg,Ukiyo_e,katsushika-hokusai,portrait,train
+s30_r0860,Ukiyo_e/s30_r0860.jpg,Ukiyo_e,utagawa-kuniyoshi,portrait,train
+s30_r0870,Ukiyo_e/s30_r0870.jpg,Ukiyo_e,katsushika-hokusai,landscape,train
+s30_r0996,Ukiyo_e/s30_r0996.jpg,Ukiyo_e,Unknown Artist,genre_painting,train
+s30_r1003,Ukiyo_e/s30_r1003.jpg,Ukiyo_e,Unknown Artist,portrait,val
+s30_r1010,Ukiyo_e/s30_r1010.jpg,Ukiyo_e,utagawa-kuniyoshi,genre_painting,train
+s30_r1021,Ukiyo_e/s30_r1021.jpg,Ukiyo_e,Unknown Artist,landscape,train
+s30_r1057,Ukiyo_e/s30_r1057.jpg,Ukiyo_e,utagawa-kuniyoshi,illustration,train
+s31_r0235,Ukiyo_e/s31_r0235.jpg,Ukiyo_e,utagawa-kuniyoshi,portrait,train
+s31_r0345,Ukiyo_e/s31_r0345.jpg,Ukiyo_e,utagawa-kuniyoshi,genre_painting,train
+s31_r0432,Ukiyo_e/s31_r0432.jpg,Ukiyo_e,katsushika-hokusai,genre_painting,train
+s31_r0477,Ukiyo_e/s31_r0477.jpg,Ukiyo_e,utagawa-kuniyoshi,genre_painting,train
+s31_r0530,Ukiyo_e/s31_r0530.jpg,Ukiyo_e,Unknown Artist,landscape,test
+s31_r0557,Ukiyo_e/s31_r0557.jpg,Ukiyo_e,Unknown Artist,genre_painting,val
+s31_r0580,Ukiyo_e/s31_r0580.jpg,Ukiyo_e,Unknown Artist,portrait,train
+s31_r0584,Ukiyo_e/s31_r0584.jpg,Ukiyo_e,katsushika-hokusai,genre_painting,train
+s31_r0628,Ukiyo_e/s31_r0628.jpg,Ukiyo_e,Unknown Artist,nude_painting,val
+s31_r0635,Ukiyo_e/s31_r0635.jpg,Ukiyo_e,utagawa-kuniyoshi,portrait,train
+s31_r0679,Ukiyo_e/s31_r0679.jpg,Ukiyo_e,katsushika-hokusai,still_life,train
+s31_r0713,Ukiyo_e/s31_r0713.jpg,Ukiyo_e,Unknown Artist,portrait,test
+s31_r0723,Ukiyo_e/s31_r0723.jpg,Ukiyo_e,utagawa-kuniyoshi,portrait,train
+s31_r1008,Ukiyo_e/s31_r1008.jpg,Ukiyo_e,utagawa-kuniyoshi,illustration,train
+s31_r1041,Ukiyo_e/s31_r1041.jpg,Ukiyo_e,Unknown Artist,genre_painting,test
+s31_r1066,Ukiyo_e/s31_r1066.jpg,Ukiyo_e,Unknown Artist,genre_painting,val
+s31_r1123,Ukiyo_e/s31_r1123.jpg,Ukiyo_e,Unknown Artist,portrait,train
+s49_r0015,Ukiyo_e/s49_r0015.jpg,Ukiyo_e,utagawa-kuniyoshi,genre_painting,train
+s49_r0019,Ukiyo_e/s49_r0019.jpg,Ukiyo_e,Unknown Artist,genre_painting,train
+s49_r0070,Ukiyo_e/s49_r0070.jpg,Ukiyo_e,Unknown Artist,genre_painting,train
+s49_r0141,Ukiyo_e/s49_r0141.jpg,Ukiyo_e,Unknown Artist,genre_painting,train
+s49_r0157,Ukiyo_e/s49_r0157.jpg,Ukiyo_e,katsushika-hokusai,genre_painting,train
+s49_r0168,Ukiyo_e/s49_r0168.jpg,Ukiyo_e,Unknown Artist,genre_painting,train
+s51_r0206,Ukiyo_e/s51_r0206.jpg,Ukiyo_e,katsushika-hokusai,cityscape,train
+s51_r0473,Ukiyo_e/s51_r0473.jpg,Ukiyo_e,utagawa-kuniyoshi,cityscape,train
+s51_r0514,Ukiyo_e/s51_r0514.jpg,Ukiyo_e,katsushika-hokusai,cityscape,train
+s51_r0694,Ukiyo_e/s51_r0694.jpg,Ukiyo_e,utagawa-kuniyoshi,cityscape,train
+s51_r0786,Ukiyo_e/s51_r0786.jpg,Ukiyo_e,utagawa-kuniyoshi,cityscape,train
+s51_r1033,Ukiyo_e/s51_r1033.jpg,Ukiyo_e,Unknown Artist,landscape,val
+s51_r1080,Ukiyo_e/s51_r1080.jpg,Ukiyo_e,katsushika-hokusai,landscape,train
+s54_r0050,Ukiyo_e/s54_r0050.jpg,Ukiyo_e,katsushika-hokusai,landscape,train
+s54_r0134,Ukiyo_e/s54_r0134.jpg,Ukiyo_e,Unknown Artist,landscape,test
+s54_r0151,Ukiyo_e/s54_r0151.jpg,Ukiyo_e,katsushika-hokusai,landscape,train
+s54_r0225,Ukiyo_e/s54_r0225.jpg,Ukiyo_e,katsushika-hokusai,still_life,train
+s54_r0237,Ukiyo_e/s54_r0237.jpg,Ukiyo_e,Unknown Artist,still_life,train
+s54_r0246,Ukiyo_e/s54_r0246.jpg,Ukiyo_e,Unknown Artist,still_life,train
+s54_r0310,Ukiyo_e/s54_r0310.jpg,Ukiyo_e,katsushika-hokusai,still_life,train
+s54_r0644,Ukiyo_e/s54_r0644.jpg,Ukiyo_e,katsushika-hokusai,still_life,train
+s54_r0842,Ukiyo_e/s54_r0842.jpg,Ukiyo_e,katsushika-hokusai,still_life,train
+s54_r0871,Ukiyo_e/s54_r0871.jpg,Ukiyo_e,katsushika-hokusai,sketch_and_study,train
+s54_r0926,Ukiyo_e/s54_r0926.jpg,Ukiyo_e,katsushika-hokusai,sketch_and_study,train
+s54_r1127,Ukiyo_e/s54_r1127.jpg,Ukiyo_e,katsushika-hokusai,sketch_and_study,train
+s55_r0827,Ukiyo_e/s55_r0827.jpg,Ukiyo_e,Unknown Artist,portrait,train
+s64_r0019,Ukiyo_e/s64_r0019.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s64_r0080,Ukiyo_e/s64_r0080.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s64_r0090,Ukiyo_e/s64_r0090.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s64_r0094,Ukiyo_e/s64_r0094.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s64_r0138,Ukiyo_e/s64_r0138.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s64_r0150,Ukiyo_e/s64_r0150.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,test
+s64_r0160,Ukiyo_e/s64_r0160.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s64_r0278,Ukiyo_e/s64_r0278.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,test
+s64_r0361,Ukiyo_e/s64_r0361.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,val
+s64_r0376,Ukiyo_e/s64_r0376.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,val
+s64_r0400,Ukiyo_e/s64_r0400.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s64_r0423,Ukiyo_e/s64_r0423.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s64_r0450,Ukiyo_e/s64_r0450.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s64_r0497,Ukiyo_e/s64_r0497.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,test
+s64_r0527,Ukiyo_e/s64_r0527.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s64_r0562,Ukiyo_e/s64_r0562.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,test
+s64_r0577,Ukiyo_e/s64_r0577.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s64_r0589,Ukiyo_e/s64_r0589.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s64_r0616,Ukiyo_e/s64_r0616.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,val
+s64_r0663,Ukiyo_e/s64_r0663.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,val
+s64_r0667,Ukiyo_e/s64_r0667.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,test
+s64_r0681,Ukiyo_e/s64_r0681.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s64_r0783,Ukiyo_e/s64_r0783.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,val
+s64_r0831,Ukiyo_e/s64_r0831.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s64_r0860,Ukiyo_e/s64_r0860.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,val
+s64_r0884,Ukiyo_e/s64_r0884.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,val
+s64_r0908,Ukiyo_e/s64_r0908.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s64_r0948,Ukiyo_e/s64_r0948.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s64_r0950,Ukiyo_e/s64_r0950.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s64_r0988,Ukiyo_e/s64_r0988.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s64_r1000,Ukiyo_e/s64_r1000.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,val
+s64_r1048,Ukiyo_e/s64_r1048.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s64_r1053,Ukiyo_e/s64_r1053.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s64_r1097,Ukiyo_e/s64_r1097.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s64_r1101,Ukiyo_e/s64_r1101.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s64_r1108,Ukiyo_e/s64_r1108.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s67_r0091,Ukiyo_e/s67_r0091.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,val
+s67_r0296,Ukiyo_e/s67_r0296.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,test
+s67_r0385,Ukiyo_e/s67_r0385.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s67_r0438,Ukiyo_e/s67_r0438.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,val
+s67_r0453,Ukiyo_e/s67_r0453.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,val
+s67_r0464,Ukiyo_e/s67_r0464.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s67_r0491,Ukiyo_e/s67_r0491.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s67_r0516,Ukiyo_e/s67_r0516.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s67_r0533,Ukiyo_e/s67_r0533.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s67_r0542,Ukiyo_e/s67_r0542.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s67_r0560,Ukiyo_e/s67_r0560.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s67_r0586,Ukiyo_e/s67_r0586.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,test
+s67_r0671,Ukiyo_e/s67_r0671.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s67_r0696,Ukiyo_e/s67_r0696.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,test
+s67_r0724,Ukiyo_e/s67_r0724.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s67_r0744,Ukiyo_e/s67_r0744.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s67_r0789,Ukiyo_e/s67_r0789.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,val
+s67_r0848,Ukiyo_e/s67_r0848.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s67_r0904,Ukiyo_e/s67_r0904.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s67_r0935,Ukiyo_e/s67_r0935.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s67_r1012,Ukiyo_e/s67_r1012.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,test
+s67_r1037,Ukiyo_e/s67_r1037.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s67_r1090,Ukiyo_e/s67_r1090.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,val
+s67_r1097,Ukiyo_e/s67_r1097.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s68_r0039,Ukiyo_e/s68_r0039.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s68_r0053,Ukiyo_e/s68_r0053.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s68_r0075,Ukiyo_e/s68_r0075.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s68_r0087,Ukiyo_e/s68_r0087.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s68_r0159,Ukiyo_e/s68_r0159.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s68_r0170,Ukiyo_e/s68_r0170.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,test
+s68_r0200,Ukiyo_e/s68_r0200.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,test
+s68_r0296,Ukiyo_e/s68_r0296.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s68_r0327,Ukiyo_e/s68_r0327.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s68_r0352,Ukiyo_e/s68_r0352.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,test
+s68_r0356,Ukiyo_e/s68_r0356.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,test
+s68_r0357,Ukiyo_e/s68_r0357.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s68_r0358,Ukiyo_e/s68_r0358.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,test
+s68_r0479,Ukiyo_e/s68_r0479.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0060,Ukiyo_e/s70_r0060.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,test
+s70_r0061,Ukiyo_e/s70_r0061.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0062,Ukiyo_e/s70_r0062.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0063,Ukiyo_e/s70_r0063.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0064,Ukiyo_e/s70_r0064.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0065,Ukiyo_e/s70_r0065.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,val
+s70_r0066,Ukiyo_e/s70_r0066.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0067,Ukiyo_e/s70_r0067.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0068,Ukiyo_e/s70_r0068.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,test
+s70_r0069,Ukiyo_e/s70_r0069.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0070,Ukiyo_e/s70_r0070.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,val
+s70_r0071,Ukiyo_e/s70_r0071.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0072,Ukiyo_e/s70_r0072.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,test
+s70_r0073,Ukiyo_e/s70_r0073.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0074,Ukiyo_e/s70_r0074.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,test
+s70_r0075,Ukiyo_e/s70_r0075.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0076,Ukiyo_e/s70_r0076.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0077,Ukiyo_e/s70_r0077.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0078,Ukiyo_e/s70_r0078.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0079,Ukiyo_e/s70_r0079.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,val
+s70_r0080,Ukiyo_e/s70_r0080.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0081,Ukiyo_e/s70_r0081.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0082,Ukiyo_e/s70_r0082.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,val
+s70_r0083,Ukiyo_e/s70_r0083.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0084,Ukiyo_e/s70_r0084.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0085,Ukiyo_e/s70_r0085.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0086,Ukiyo_e/s70_r0086.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,val
+s70_r0087,Ukiyo_e/s70_r0087.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0088,Ukiyo_e/s70_r0088.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,val
+s70_r0089,Ukiyo_e/s70_r0089.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0090,Ukiyo_e/s70_r0090.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0091,Ukiyo_e/s70_r0091.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0092,Ukiyo_e/s70_r0092.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,test
+s70_r0093,Ukiyo_e/s70_r0093.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,test
+s70_r0094,Ukiyo_e/s70_r0094.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0095,Ukiyo_e/s70_r0095.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0096,Ukiyo_e/s70_r0096.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,val
+s70_r0097,Ukiyo_e/s70_r0097.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0098,Ukiyo_e/s70_r0098.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0099,Ukiyo_e/s70_r0099.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0100,Ukiyo_e/s70_r0100.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,val
+s70_r0101,Ukiyo_e/s70_r0101.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0102,Ukiyo_e/s70_r0102.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0103,Ukiyo_e/s70_r0103.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0104,Ukiyo_e/s70_r0104.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0105,Ukiyo_e/s70_r0105.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0106,Ukiyo_e/s70_r0106.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0107,Ukiyo_e/s70_r0107.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,val
+s70_r0108,Ukiyo_e/s70_r0108.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0109,Ukiyo_e/s70_r0109.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0110,Ukiyo_e/s70_r0110.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0111,Ukiyo_e/s70_r0111.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0112,Ukiyo_e/s70_r0112.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,test
+s70_r0113,Ukiyo_e/s70_r0113.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,test
+s70_r0114,Ukiyo_e/s70_r0114.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,val
+s70_r0115,Ukiyo_e/s70_r0115.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,test
+s70_r0116,Ukiyo_e/s70_r0116.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0117,Ukiyo_e/s70_r0117.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0118,Ukiyo_e/s70_r0118.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0119,Ukiyo_e/s70_r0119.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,test
+s70_r0120,Ukiyo_e/s70_r0120.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,test
+s70_r0121,Ukiyo_e/s70_r0121.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,test
+s70_r0122,Ukiyo_e/s70_r0122.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,test
+s70_r0123,Ukiyo_e/s70_r0123.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0124,Ukiyo_e/s70_r0124.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0125,Ukiyo_e/s70_r0125.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0126,Ukiyo_e/s70_r0126.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0127,Ukiyo_e/s70_r0127.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0128,Ukiyo_e/s70_r0128.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0129,Ukiyo_e/s70_r0129.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,test
+s70_r0130,Ukiyo_e/s70_r0130.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,val
+s70_r0131,Ukiyo_e/s70_r0131.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0132,Ukiyo_e/s70_r0132.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0133,Ukiyo_e/s70_r0133.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,val
+s70_r0134,Ukiyo_e/s70_r0134.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0135,Ukiyo_e/s70_r0135.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0136,Ukiyo_e/s70_r0136.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,val
+s70_r0137,Ukiyo_e/s70_r0137.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,test
+s70_r0138,Ukiyo_e/s70_r0138.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0139,Ukiyo_e/s70_r0139.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,test
+s70_r0140,Ukiyo_e/s70_r0140.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0141,Ukiyo_e/s70_r0141.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0142,Ukiyo_e/s70_r0142.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0143,Ukiyo_e/s70_r0143.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0144,Ukiyo_e/s70_r0144.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,val
+s70_r0145,Ukiyo_e/s70_r0145.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,val
+s70_r0146,Ukiyo_e/s70_r0146.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,test
+s70_r0147,Ukiyo_e/s70_r0147.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0148,Ukiyo_e/s70_r0148.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,val
+s70_r0149,Ukiyo_e/s70_r0149.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,val
+s70_r0150,Ukiyo_e/s70_r0150.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0151,Ukiyo_e/s70_r0151.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0152,Ukiyo_e/s70_r0152.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0153,Ukiyo_e/s70_r0153.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0154,Ukiyo_e/s70_r0154.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0155,Ukiyo_e/s70_r0155.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,val
+s70_r0156,Ukiyo_e/s70_r0156.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,test
+s70_r0157,Ukiyo_e/s70_r0157.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,val
+s70_r0158,Ukiyo_e/s70_r0158.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0159,Ukiyo_e/s70_r0159.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0160,Ukiyo_e/s70_r0160.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,val
+s70_r0161,Ukiyo_e/s70_r0161.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0162,Ukiyo_e/s70_r0162.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,test
+s70_r0163,Ukiyo_e/s70_r0163.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,test
+s70_r0164,Ukiyo_e/s70_r0164.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0165,Ukiyo_e/s70_r0165.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,val
+s70_r0166,Ukiyo_e/s70_r0166.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,val
+s70_r0167,Ukiyo_e/s70_r0167.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
+s70_r0168,Ukiyo_e/s70_r0168.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,test
+s70_r0169,Ukiyo_e/s70_r0169.jpg,Ukiyo_e,Unknown Artist,Unknown Genre,train
