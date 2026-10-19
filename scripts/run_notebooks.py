@@ -17,8 +17,10 @@ NOTEBOOKS = Path(__file__).resolve().parents[1] / "notebooks"
 def run(source):
     t0 = time.perf_counter()
     subprocess.run([sys.executable, "-m", "jupytext", "--to", "ipynb", source.name], cwd=NOTEBOOKS, check=True)
+    # record_timing=False: no execution timestamps, so a re-run only changes the notebook if a result changes
     subprocess.run([sys.executable, "-m", "jupyter", "nbconvert", "--to", "notebook", "--execute", "--inplace",
-                    "--ExecutePreprocessor.timeout=-1", source.with_suffix(".ipynb").name],
+                    "--ExecutePreprocessor.timeout=-1", "--ExecutePreprocessor.record_timing=False",
+                    source.with_suffix(".ipynb").name],
                    cwd=NOTEBOOKS, check=True)
     print(f"{source.stem}: done in {time.perf_counter() - t0:.0f} s")
 

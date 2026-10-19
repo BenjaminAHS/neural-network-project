@@ -165,7 +165,7 @@ print("split saved to reports/split.csv")
 # and in test (50 for Impressionism, because its painters come in blocks of up to 50 images).
 #
 # With our split grouped by painter, **none** of the 32 known painters appears in two parts. With a
-# plain random split, 23 of the 32 painters would be in two parts or more. In notebook 03 we measure
+# plain random split, 23 of the 32 painters would be in two parts or more. In notebook 05 we measure
 # how much this changes the score of a model.
 #
 # The split is saved in `reports/split.csv`, so every notebook uses exactly the same images.
