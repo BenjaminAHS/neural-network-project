@@ -80,15 +80,21 @@ def standardise(images, mean, std):
     return (images.float() / 255 - mean) / std
 
 
-def load_split_tensors(size, by_artist=True, include_test=False, seed=SEED, data_dir=DATA_DIR):
-    """Standardised tensors for the MLP: {'train': (X, y), 'val': (X, y)} and the metadata with
-    a 'split' column. The test set stays locked (include_test=False) until the final comparison."""
+def load_split_images(size, by_artist=True, include_test=False, seed=SEED, data_dir=DATA_DIR):
+    """Raw uint8 images per part: {'train': (images, y), 'val': (images, y)} and the metadata with a
+    'split' column. The test set stays locked (include_test=False) until the final comparison."""
     meta = load_metadata(data_dir)
     split = make_split(meta, by_artist=by_artist, seed=seed)
     images = load_images(meta, size, data_dir)
     y = torch.tensor(meta["label_idx"].to_numpy())
     parts = SPLITS if include_test else SPLITS[:2]
     masks = {s: torch.from_numpy(split == s) for s in parts}
-    mean, std = channel_stats(images[masks["train"]])
-    data = {s: (standardise(images[m], mean, std), y[m]) for s, m in masks.items()}
-    return data, meta.assign(split=split)
+    return {s: (images[m], y[m]) for s, m in masks.items()}, meta.assign(split=split)
+
+
+def load_split_tensors(size, by_artist=True, include_test=False, seed=SEED, data_dir=DATA_DIR):
+    """Standardised tensors for the MLP (statistics of the training images only), same parts as
+    load_split_images."""
+    data, meta = load_split_images(size, by_artist, include_test, seed, data_dir)
+    mean, std = channel_stats(data["train"][0])
+    return {s: (standardise(x, mean, std), y) for s, (x, y) in data.items()}, meta

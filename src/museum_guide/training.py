@@ -31,6 +31,14 @@ def random_hflip(xb):
     return xb
 
 
+def crop_and_flip(xb, size=224, scale=(0.6, 1.0)):
+    """Data augmentation for the ResNet: a random crop (60 to 100 % of the area) resized back to
+    size x size, then a random left-right flip. Works on uint8 images."""
+    from torchvision.transforms import v2
+    crop = v2.RandomResizedCrop(size, scale=scale, antialias=True)
+    return random_hflip(torch.stack([crop(x) for x in xb]))
+
+
 def train_one_epoch(model, loader, loss_fn, optimizer, augment=None, clip_norm=None):
     """One pass over the training data with the 5 lines of the training loop; returns the mean loss."""
     model.train()
