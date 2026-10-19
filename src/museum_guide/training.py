@@ -83,11 +83,12 @@ def record(history, model, optimizer, loaders, loss_fn, epoch_time):
 
 
 def fit(model, optimizer, loaders, n_epochs, loss_fn=None, scheduler=None, patience=None, augment=None,
-        clip_norm=None, train_epoch_fn=train_one_epoch, verbose=False, seed=1):
+        clip_norm=None, train_epoch_fn=train_one_epoch, on_epoch_end=None, verbose=False, seed=1):
     """Train for n_epochs and return the history (one value per epoch in each list).
 
     patience=k turns on early stopping: training stops k epochs after the best validation loss,
     and the weights of the best epoch are loaded back into the model.
+    on_epoch_end(model, history) is called after each epoch, e.g. to record gradient norms.
     """
     loss_fn = loss_fn or nn.CrossEntropyLoss()
     torch.manual_seed(seed)  # same order of the mini-batches for every run
@@ -97,6 +98,8 @@ def fit(model, optimizer, loaders, n_epochs, loss_fn=None, scheduler=None, patie
         t0 = time.perf_counter()
         train_epoch_fn(model, loaders.train, loss_fn, optimizer, augment, clip_norm)
         record(history, model, optimizer, loaders, loss_fn, time.perf_counter() - t0)
+        if on_epoch_end is not None:
+            on_epoch_end(model, history)
         if scheduler is not None:
             scheduler.step()
         if verbose:
