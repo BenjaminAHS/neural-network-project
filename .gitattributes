@@ -1,0 +1,5 @@
+# Normalise line endings; shell scripts must keep LF to run on Linux and macOS
+* text=auto
+*.sh text eol=lf
+*.ipynb text eol=lf
+*.png binary

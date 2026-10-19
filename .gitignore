@@ -1,0 +1,25 @@
+# Data: WikiArt images keep their authors' rights (licence unknown), never commit them
+data/
+
+# Model weights and tensor caches (large, can be rebuilt)
+*.pt
+*.pth
+*.ckpt
+
+# Outputs that may show artworks (kept on the local machine only)
+reports/private/
+presentation/
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# OS and editors
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/

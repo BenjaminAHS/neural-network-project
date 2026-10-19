@@ -1,0 +1,19 @@
+# Tested with Python 3.14, CPU only (no GPU needed).
+# For a light CPU-only install of PyTorch on Linux:
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+torch>=2.4
+torchvision>=0.19
+numpy>=2.0
+pandas>=2.2
+scikit-learn>=1.5
+matplotlib>=3.8
+pillow>=10.0
+
+# Data download (make_wikiart_subset.py)
+datasets>=3.0
+
+# Notebooks and tests
+jupytext>=1.16
+nbconvert>=7.0
+ipykernel>=6.0
+pytest>=8.0
