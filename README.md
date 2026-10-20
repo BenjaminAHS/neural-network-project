@@ -192,6 +192,14 @@ python scripts/run_notebooks.py           # rebuilds and runs every notebook (FA
 The notebooks are stored twice: the `.py` file is the source (easy to read in a Git diff) and the
 `.ipynb` file is the same notebook with its outputs. Everything runs on a laptop CPU.
 
+## Presentation and study guide
+
+- [docs/museum_guide_presentation.pptx](docs/museum_guide_presentation.pptx): the 10-minute defence (11 slides,
+  4 backup slides, speaker notes). In this public copy the paintings of the title slide are replaced by colour
+  squares (WikiArt licence).
+- [docs/oral_study_guide.pdf](docs/oral_study_guide.pdf) ([.docx](docs/oral_study_guide.docx)): every step, every
+  number, a glossary and the questions we expect, with short answers.
+
 ## Repository structure
 
 ```
@@ -201,6 +209,7 @@ src/museum_guide/        our Python code (data, models, training loop, diagnosti
 notebooks/               the experiments, run in order (01 to 06)
 tests/                   small automatic checks (data split, model, training loop)
 reports/                 figures, the split and every measured result (JSON), no artwork images
+docs/                    the presentation and the oral study guide
 ```
 
 ## Project status
