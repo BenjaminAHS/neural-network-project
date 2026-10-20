@@ -1,0 +1,356 @@
+{
+  "classical_tuning": {
+    "logistic regression on pixels": {
+      "C=0.0001": 0.40639,
+      "C=0.001": 0.36986,
+      "C=0.01": 0.33333,
+      "C=0.1": 0.3105
+    },
+    "logistic regression on hand-made features": {
+      "C=0.001": 0.58447,
+      "C=0.01": 0.57078,
+      "C=0.1": 0.60274,
+      "C=1.0": 0.61187,
+      "C=10.0": 0.61187
+    },
+    "random forest on hand-made features": {
+      "min_samples_leaf=1, max_features=sqrt": 0.6347,
+      "min_samples_leaf=1, max_features=0.3": 0.61187,
+      "min_samples_leaf=3, max_features=sqrt": 0.60731,
+      "min_samples_leaf=3, max_features=0.3": 0.60731
+    },
+    "logistic regression on ResNet features": {
+      "C=0.001": 0.84932,
+      "C=0.01": 0.88128,
+      "C=0.1": 0.85845,
+      "C=1.0": 0.86301
+    }
+  },
+  "classical_settings": {
+    "logistic regression on pixels": {
+      "C": 0.0001
+    },
+    "logistic regression on hand-made features": {
+      "C": 1.0
+    },
+    "random forest on hand-made features": {
+      "min_samples_leaf": 1,
+      "max_features": "sqrt"
+    },
+    "logistic regression on ResNet features": {
+      "C": 0.01
+    }
+  },
+  "reproducibility_check": [
+    {
+      "model": "regularised MLP on pixels",
+      "seed": 0,
+      "val_acc_now": 0.46119,
+      "val_acc_before": 0.46119,
+      "same": true
+    },
+    {
+      "model": "regularised MLP on pixels",
+      "seed": 1,
+      "val_acc_now": 0.45662,
+      "val_acc_before": 0.45662,
+      "same": true
+    },
+    {
+      "model": "regularised MLP on pixels",
+      "seed": 2,
+      "val_acc_now": 0.44749,
+      "val_acc_before": 0.44749,
+      "same": true
+    },
+    {
+      "model": "ResNet18 frozen + linear head",
+      "seed": 0,
+      "val_acc_now": 0.88128,
+      "val_acc_before": 0.88128,
+      "same": true
+    },
+    {
+      "model": "ResNet18 frozen + linear head",
+      "seed": 1,
+      "val_acc_now": 0.88128,
+      "val_acc_before": 0.88128,
+      "same": true
+    },
+    {
+      "model": "ResNet18 frozen + linear head",
+      "seed": 2,
+      "val_acc_now": 0.88128,
+      "val_acc_before": 0.88128,
+      "same": true
+    },
+    {
+      "model": "ResNet18 fine-tuned (layer4)",
+      "seed": 0,
+      "val_acc_now": 0.85845,
+      "val_acc_before": 0.85845,
+      "same": true
+    },
+    {
+      "model": "ResNet18 fine-tuned (layer4)",
+      "seed": 1,
+      "val_acc_now": 0.84932,
+      "val_acc_before": 0.84932,
+      "same": true
+    },
+    {
+      "model": "ResNet18 fine-tuned (layer4)",
+      "seed": 2,
+      "val_acc_now": 0.85388,
+      "val_acc_before": 0.85388,
+      "same": true
+    }
+  ],
+  "test": [
+    {
+      "model": "always the most frequent style",
+      "family": "baseline",
+      "test_acc": 0.19091,
+      "test_acc_std": 0.0,
+      "ci_low": 0.14091,
+      "ci_high": 0.24545,
+      "macro_f1": 0.06412
+    },
+    {
+      "model": "logistic regression on pixels",
+      "family": "classical",
+      "test_acc": 0.32727,
+      "test_acc_std": 0.0,
+      "ci_low": 0.26818,
+      "ci_high": 0.39091,
+      "macro_f1": 0.31241
+    },
+    {
+      "model": "logistic regression on hand-made features",
+      "family": "classical",
+      "test_acc": 0.61364,
+      "test_acc_std": 0.0,
+      "ci_low": 0.55,
+      "ci_high": 0.67727,
+      "macro_f1": 0.61239
+    },
+    {
+      "model": "random forest on hand-made features",
+      "family": "classical",
+      "test_acc": 0.67273,
+      "test_acc_std": 0.0,
+      "ci_low": 0.60909,
+      "ci_high": 0.73636,
+      "macro_f1": 0.66694
+    },
+    {
+      "model": "regularised MLP on pixels",
+      "family": "neural",
+      "test_acc": 0.41364,
+      "test_acc_std": 0.00455,
+      "ci_low": 0.34545,
+      "ci_high": 0.47273,
+      "macro_f1": 0.40137
+    },
+    {
+      "model": "ResNet18 fine-tuned (layer4)",
+      "family": "neural",
+      "test_acc": 0.87879,
+      "test_acc_std": 0.00946,
+      "ci_low": 0.84091,
+      "ci_high": 0.92727,
+      "macro_f1": 0.87603
+    },
+    {
+      "model": "logistic regression on ResNet features",
+      "family": "hybrid",
+      "test_acc": 0.84545,
+      "test_acc_std": 0.0,
+      "ci_low": 0.79545,
+      "ci_high": 0.89091,
+      "macro_f1": 0.84532
+    },
+    {
+      "model": "ResNet18 frozen + linear head",
+      "family": "neural",
+      "test_acc": 0.8303,
+      "test_acc_std": 0.0105,
+      "ci_low": 0.78636,
+      "ci_high": 0.88636,
+      "macro_f1": 0.82902
+    }
+  ],
+  "paired": [
+    {
+      "A": "ResNet18 frozen + linear head",
+      "B": "random forest on hand-made features",
+      "diff": 0.16364,
+      "ci_low": 0.09091,
+      "ci_high": 0.24091,
+      "share_not_better": 0.0
+    },
+    {
+      "A": "ResNet18 frozen + linear head",
+      "B": "regularised MLP on pixels",
+      "diff": 0.42727,
+      "ci_low": 0.35,
+      "ci_high": 0.50455,
+      "share_not_better": 0.0
+    },
+    {
+      "A": "random forest on hand-made features",
+      "B": "regularised MLP on pixels",
+      "diff": 0.26364,
+      "ci_low": 0.19545,
+      "ci_high": 0.33182,
+      "share_not_better": 0.0
+    },
+    {
+      "A": "ResNet18 frozen + linear head",
+      "B": "ResNet18 fine-tuned (layer4)",
+      "diff": -0.05,
+      "ci_low": -0.09091,
+      "ci_high": -0.00909,
+      "share_not_better": 0.9928
+    },
+    {
+      "A": "ResNet18 frozen + linear head",
+      "B": "logistic regression on ResNet features",
+      "diff": -0.00909,
+      "ci_low": -0.03636,
+      "ci_high": 0.01818,
+      "share_not_better": 0.8136
+    }
+  ],
+  "best_model_test_per_class": [
+    {
+      "style": "Baroque",
+      "recall": 0.83333,
+      "precision": 0.83333,
+      "f1": 0.83333,
+      "images": 42
+    },
+    {
+      "style": "Cubism",
+      "recall": 0.78571,
+      "precision": 0.75,
+      "f1": 0.76744,
+      "images": 42
+    },
+    {
+      "style": "Impressionism",
+      "recall": 0.88,
+      "precision": 0.89796,
+      "f1": 0.88889,
+      "images": 50
+    },
+    {
+      "style": "Pop_Art",
+      "recall": 0.76744,
+      "precision": 0.78571,
+      "f1": 0.77647,
+      "images": 43
+    },
+    {
+      "style": "Ukiyo_e",
+      "recall": 0.90698,
+      "precision": 0.90698,
+      "f1": 0.90698,
+      "images": 43
+    }
+  ],
+  "speed": [
+    {
+      "model": "logistic regression on pixels",
+      "ms_1_thread": 0.3541,
+      "p95_ms_1_thread": 0.43582,
+      "ms_2_thread": 0.3475,
+      "p95_ms_2_thread": 0.57412,
+      "ms_4_thread": 0.35585,
+      "p95_ms_4_thread": 0.5121,
+      "size_mb": 0.13632,
+      "trained_parameters": null,
+      "training_seconds": 1.20272,
+      "test_acc": 0.32727
+    },
+    {
+      "model": "logistic regression on hand-made features",
+      "ms_1_thread": 1.4913,
+      "p95_ms_1_thread": 2.2206,
+      "ms_2_thread": 1.36735,
+      "p95_ms_2_thread": 2.22788,
+      "ms_4_thread": 1.57775,
+      "p95_ms_4_thread": 2.34596,
+      "size_mb": 0.00563,
+      "trained_parameters": null,
+      "training_seconds": 0.03081,
+      "test_acc": 0.61364
+    },
+    {
+      "model": "random forest on hand-made features",
+      "ms_1_thread": 24.4459,
+      "p95_ms_1_thread": 30.45201,
+      "ms_2_thread": 23.32215,
+      "p95_ms_2_thread": 27.17585,
+      "ms_4_thread": 23.5012,
+      "p95_ms_4_thread": 25.42996,
+      "size_mb": 25.85047,
+      "trained_parameters": null,
+      "training_seconds": 1.01443,
+      "test_acc": 0.67273
+    },
+    {
+      "model": "regularised MLP on pixels",
+      "ms_1_thread": 0.35775,
+      "p95_ms_1_thread": 0.57749,
+      "ms_2_thread": 0.4368,
+      "p95_ms_2_thread": 0.6761,
+      "ms_4_thread": 0.39175,
+      "p95_ms_4_thread": 0.67894,
+      "size_mb": 6.8414,
+      "trained_parameters": 1707525.0,
+      "training_seconds": 10.34896,
+      "test_acc": 0.41364
+    },
+    {
+      "model": "ResNet18 fine-tuned (layer4)",
+      "ms_1_thread": 52.78925,
+      "p95_ms_1_thread": 55.52819,
+      "ms_2_thread": 36.7498,
+      "p95_ms_2_thread": 48.3443,
+      "ms_4_thread": 26.64165,
+      "p95_ms_4_thread": 27.52794,
+      "size_mb": 44.79578,
+      "trained_parameters": 8396293.0,
+      "training_seconds": 152.71653,
+      "test_acc": 0.87879
+    },
+    {
+      "model": "logistic regression on ResNet features",
+      "ms_1_thread": 52.8413,
+      "p95_ms_1_thread": 55.45384,
+      "ms_2_thread": 37.0072,
+      "p95_ms_2_thread": 49.82655,
+      "ms_4_thread": 27.06835,
+      "p95_ms_4_thread": 28.23169,
+      "size_mb": 44.80615,
+      "trained_parameters": null,
+      "training_seconds": 0.04146,
+      "test_acc": 0.84545
+    },
+    {
+      "model": "ResNet18 frozen + linear head",
+      "ms_1_thread": 52.6848,
+      "p95_ms_1_thread": 54.89254,
+      "ms_2_thread": 37.00145,
+      "p95_ms_2_thread": 49.4761,
+      "ms_4_thread": 26.1033,
+      "p95_ms_4_thread": 27.27546,
+      "size_mb": 44.80058,
+      "trained_parameters": 2565.0,
+      "training_seconds": 16.93582,
+      "test_acc": 0.8303
+    }
+  ],
+  "cpu_threads_available": 8
+}
