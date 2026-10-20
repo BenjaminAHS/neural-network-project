@@ -12,6 +12,9 @@ pillow>=10.0
 # Data download (make_wikiart_subset.py)
 datasets>=3.0
 
+# Bonus notebook 07 only (CLIP through Hugging Face)
+transformers>=4.40
+
 # Notebooks and tests
 jupytext>=1.16
 nbconvert>=7.0
