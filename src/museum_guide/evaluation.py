@@ -25,6 +25,30 @@ def per_class_report(cm, classes):
                          "images": cm.sum(dim=1).long().numpy()}, index=classes)
 
 
+def macro_f1(y_true, y_pred, n_classes):
+    """Mean of the F1 scores of the classes (each style counts the same)."""
+    return float(per_class_report(confusion_matrix(y_true, y_pred, n_classes), list(range(n_classes)))["f1"].mean())
+
+
+def bootstrap_ci(correct, n_boot=5000, level=0.95, seed=0):
+    """95 % interval of an accuracy by bootstrap: we redraw the test images with replacement many times
+    and look at how much the accuracy moves. correct: one True/False per test image."""
+    c = np.asarray(correct, dtype=float)
+    idx = np.random.default_rng(seed).integers(0, len(c), (n_boot, len(c)))
+    lo, hi = np.percentile(c[idx].mean(axis=1), [50 * (1 - level), 50 * (1 + level)])
+    return float(lo), float(hi)
+
+
+def paired_bootstrap(correct_a, correct_b, n_boot=5000, level=0.95, seed=0):
+    """Difference of accuracy A - B on the same test images, with its bootstrap interval, and the share
+    of redraws where A is not better than B (small = the difference is not luck)."""
+    d = np.asarray(correct_a, dtype=float) - np.asarray(correct_b, dtype=float)
+    idx = np.random.default_rng(seed).integers(0, len(d), (n_boot, len(d)))
+    diffs = d[idx].mean(axis=1)
+    lo, hi = np.percentile(diffs, [50 * (1 - level), 50 * (1 + level)])
+    return {"diff": float(d.mean()), "ci_low": float(lo), "ci_high": float(hi), "share_not_better": float((diffs <= 0).mean())}
+
+
 def most_confused(cm, classes, k=3):
     """The k most frequent mistakes, as (true class, predicted class, count)."""
     off = cm.clone()
