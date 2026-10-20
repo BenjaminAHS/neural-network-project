@@ -23,6 +23,7 @@ every claim backed by evidence.
 | 2 | Failure diagnosis: four broken runs, diagnosed and fixed | [04_training_doctor](notebooks/04_training_doctor.ipynb) |
 | 3 | A pretrained CNN (ResNet18) used as a feature extractor and fine-tuned | [05_resnet](notebooks/05_resnet.ipynb) |
 | 4 | Classical models, the final test, CPU speed tests and our recommendation to the director | [06_final_comparison](notebooks/06_final_comparison.ipynb) |
+| Bonus | Transformers (ViT, CLIP) against ResNet18, on validation | [07_transformers](notebooks/07_transformers.ipynb) |
 
 ## Our answer to the director, in short
 
@@ -180,6 +181,25 @@ Our MLP on pixels and the classical models alone are not accurate enough for a m
 
 ![Accuracy against speed](reports/figures/06_accuracy_vs_speed.png)
 
+## Bonus: what about transformers (BERT)?
+
+BERT reads words, not pixels, so it cannot classify paintings by itself. [Notebook 07](notebooks/07_transformers.ipynb)
+tests its two image cousins as frozen feature extractors, with the same split and the same linear head as
+ResNet18. These are **validation** numbers: the test set was used once, in notebook 06, and stays closed.
+
+| Frozen network | Validation accuracy (219 paintings) | Time per photo vs ResNet18 | Parameters |
+|---|---|---|---|
+| ResNet18 + linear head (our choice) | 88.1 % | x 1 | 11 M |
+| ViT-B/16 (the BERT architecture on 16 x 16 image patches) + linear head | 88.1 % | x 9 | 86 M |
+| CLIP ViT-B/32, zero-shot (no training: one sentence per style) | 89.0 % | x 2.7 | 151 M (88 M for images) |
+| CLIP ViT-B/32 + linear head | **94.7 %** | x 2.7 | 151 M (88 M for images) |
+
+- ViT is as accurate as ResNet18 and 9 times slower: no gain.
+- CLIP, trained on 400 million images with their captions, is 6.8 points better than ResNet18 on the same
+  validation paintings (paired interval 2.3 to 11.4). But it has very probably seen WikiArt during its training,
+  and it is a bigger, slower model. It is our first next step: test it on real kiosk photos. It also links
+  sentences to images, so it could answer visitors' questions (part 2 of the brief).
+
 ## How to run
 
 ```bash
@@ -195,7 +215,7 @@ The notebooks are stored twice: the `.py` file is the source (easy to read in a 
 ## Presentation and study guide
 
 - [docs/museum_guide_presentation.pptx](docs/museum_guide_presentation.pptx): the 10-minute defence (11 slides,
-  4 backup slides, speaker notes). In this public copy the paintings of the title slide are replaced by colour
+  5 backup slides, speaker notes). In this public copy the paintings of the title slide are replaced by colour
   squares (WikiArt licence).
 - [docs/oral_study_guide.pdf](docs/oral_study_guide.pdf) ([.docx](docs/oral_study_guide.docx)): every step, every
   number, a glossary and the questions we expect, with short answers.
@@ -206,7 +226,7 @@ The notebooks are stored twice: the `.py` file is the source (easy to read in a 
 make_wikiart_subset.py   builds the data subset (script given by the course)
 scripts/                 the exact data command, and a script that runs all the notebooks
 src/museum_guide/        our Python code (data, models, training loop, diagnostics)
-notebooks/               the experiments, run in order (01 to 06)
+notebooks/               the experiments, run in order (01 to 06, then the bonus 07)
 tests/                   small automatic checks (data split, model, training loop)
 reports/                 figures, the split and every measured result (JSON), no artwork images
 docs/                    the presentation and the oral study guide
@@ -217,5 +237,6 @@ docs/                    the presentation and the oral study guide
 - [x] Repository and data subset
 - [x] **m1**: data split and a first MLP baseline
 - [x] **m2**: monitoring curves and failure diagnosis
-- [x] Pretrained ResNet18 (feature extractor, fine-tuning, painter leakage)
+- [x] **m3**: pretrained ResNet18 (feature extractor, fine-tuning, painter leakage)
 - [x] **v1.0**: classical models, CPU benchmark, final test and recommendation
+- [x] Bonus: transformers (ViT, CLIP) on validation

@@ -1,0 +1,190 @@
+{
+  "probe_runs": [
+    {
+      "model": "ResNet18 frozen + linear head",
+      "seed": 0,
+      "features": 512,
+      "val_acc": 0.88128
+    },
+    {
+      "model": "ResNet18 frozen + linear head",
+      "seed": 1,
+      "features": 512,
+      "val_acc": 0.88128
+    },
+    {
+      "model": "ResNet18 frozen + linear head",
+      "seed": 2,
+      "features": 512,
+      "val_acc": 0.88128
+    },
+    {
+      "model": "ViT-B/16 frozen + linear head",
+      "seed": 0,
+      "features": 768,
+      "val_acc": 0.88584
+    },
+    {
+      "model": "ViT-B/16 frozen + linear head",
+      "seed": 1,
+      "features": 768,
+      "val_acc": 0.87671
+    },
+    {
+      "model": "ViT-B/16 frozen + linear head",
+      "seed": 2,
+      "features": 768,
+      "val_acc": 0.88128
+    },
+    {
+      "model": "CLIP ViT-B/32 frozen + linear head",
+      "seed": 0,
+      "features": 512,
+      "val_acc": 0.94977
+    },
+    {
+      "model": "CLIP ViT-B/32 frozen + linear head",
+      "seed": 1,
+      "features": 512,
+      "val_acc": 0.94521
+    },
+    {
+      "model": "CLIP ViT-B/32 frozen + linear head",
+      "seed": 2,
+      "features": 512,
+      "val_acc": 0.94521
+    }
+  ],
+  "probe_table": [
+    {
+      "model": "ResNet18 frozen + linear head",
+      "features": 512,
+      "val_acc": 0.88128,
+      "val_acc_std": 0.0
+    },
+    {
+      "model": "ViT-B/16 frozen + linear head",
+      "features": 768,
+      "val_acc": 0.88128,
+      "val_acc_std": 0.00457
+    },
+    {
+      "model": "CLIP ViT-B/32 frozen + linear head",
+      "features": 512,
+      "val_acc": 0.94673,
+      "val_acc_std": 0.00264
+    }
+  ],
+  "clip_zero_shot": {
+    "val_acc": 0.89041,
+    "prompts": {
+      "Baroque": [
+        "a Baroque painting",
+        "a painting in the Baroque style"
+      ],
+      "Cubism": [
+        "a Cubist painting",
+        "a painting in the Cubism style"
+      ],
+      "Impressionism": [
+        "an Impressionist painting",
+        "a painting in the Impressionism style"
+      ],
+      "Pop_Art": [
+        "a Pop Art painting",
+        "a painting in the Pop Art style"
+      ],
+      "Ukiyo_e": [
+        "a Ukiyo-e Japanese woodblock print",
+        "a painting in the Ukiyo-e style"
+      ]
+    },
+    "per_class": [
+      {
+        "style": "Baroque",
+        "recall": 1.0,
+        "precision": 0.97674,
+        "f1": 0.98824,
+        "images": 42
+      },
+      {
+        "style": "Cubism",
+        "recall": 0.92857,
+        "precision": 0.76471,
+        "f1": 0.83871,
+        "images": 42
+      },
+      {
+        "style": "Impressionism",
+        "recall": 0.94,
+        "precision": 0.97917,
+        "f1": 0.95918,
+        "images": 50
+      },
+      {
+        "style": "Pop_Art",
+        "recall": 0.5814,
+        "precision": 0.96154,
+        "f1": 0.72464,
+        "images": 43
+      },
+      {
+        "style": "Ukiyo_e",
+        "recall": 1.0,
+        "precision": 0.82353,
+        "f1": 0.90323,
+        "images": 42
+      }
+    ]
+  },
+  "paired_validation": [
+    {
+      "A": "CLIP ViT-B/32 + linear head",
+      "B": "ResNet18 + linear head",
+      "diff": 0.06849,
+      "ci_low": 0.02283,
+      "ci_high": 0.11416,
+      "share_not_better": 0.0008
+    },
+    {
+      "A": "CLIP zero-shot",
+      "B": "ResNet18 + linear head",
+      "diff": 0.00913,
+      "ci_low": -0.05023,
+      "ci_high": 0.06849,
+      "share_not_better": 0.413
+    },
+    {
+      "A": "ViT-B/16 + linear head",
+      "B": "ResNet18 + linear head",
+      "diff": 0.00457,
+      "ci_low": -0.04566,
+      "ci_high": 0.05936,
+      "share_not_better": 0.4736
+    }
+  ],
+  "speed": [
+    {
+      "model": "ResNet18 + linear head",
+      "parameters_millions": 11.17908,
+      "ms_1_thread": 38.20355,
+      "ms_4_thread": 12.8447
+    },
+    {
+      "model": "ViT-B/16 + linear head",
+      "parameters_millions": 85.8025,
+      "ms_1_thread": 349.3801,
+      "ms_4_thread": 125.96995
+    },
+    {
+      "model": "CLIP ViT-B/32 + linear head",
+      "parameters_millions": 151.27988,
+      "ms_1_thread": 104.93365,
+      "ms_4_thread": 45.9103
+    }
+  ],
+  "feature_seconds_per_image_batch32": {
+    "ViT-B/16": 0.07784,
+    "CLIP ViT-B/32": 0.02237
+  }
+}
