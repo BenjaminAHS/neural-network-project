@@ -22,7 +22,15 @@ every claim backed by evidence.
 | 2 | Training monitoring (curves, gradients, dead neurons, learning rate) and regularisation | [03_monitoring](notebooks/03_monitoring.ipynb) |
 | 2 | Failure diagnosis: four broken runs, diagnosed and fixed | [04_training_doctor](notebooks/04_training_doctor.ipynb) |
 | 3 | A pretrained CNN (ResNet18) used as a feature extractor and fine-tuned | [05_resnet](notebooks/05_resnet.ipynb) |
-| 4 | Classical models, CPU speed tests and our recommendation to the director | `notebooks/06_final_comparison` |
+| 4 | Classical models, the final test, CPU speed tests and our recommendation to the director | [06_final_comparison](notebooks/06_final_comparison.ipynb) |
+
+## Our answer to the director, in short
+
+**Yes, a neural network is worth it, but a pretrained one that we reuse (ResNet18, frozen, with a linear
+head), not one we train from zero.** On 220 paintings never seen before, it reaches **83.0 %**, against
+**67.3 %** for the best classical model and 41.4 % for our MLP on pixels. It classifies one photo in about
+53 ms on one CPU thread and trains in 17 s on a laptop, without a GPU. Details and limits:
+[see below](#final-test-and-recommendation).
 
 ## Data
 
@@ -47,7 +55,7 @@ the same part (0 known painter in two parts, against 23 of 32 with a random spli
 measure the style and not the memory of a painter. The test set is used only once, at the very end.
 The split is saved in [reports/split.csv](reports/split.csv).
 
-## Results so far
+## Validation results (notebooks 02 to 05)
 
 | Model | Validation accuracy | Notes |
 |---|---|---|
@@ -123,6 +131,55 @@ blocks and the training loop are ours.
 
 ![Painter leakage](reports/figures/05_painter_leakage.png)
 
+## Final test and recommendation
+
+[Notebook 06](notebooks/06_final_comparison.ipynb) trains classical models (no neural network), trains
+our neural models again with the same recipes (the validation scores match notebooks 03 and 05
+exactly), then scores every model **once** on the 220 test paintings. The interval is a 95 % bootstrap
+interval: with only 220 paintings, a score can move by about 5 points just by chance. For the models
+trained with 3 seeds, the accuracy is the mean of the seeds and the interval comes from seed 0. The
+times are medians over 50 photos, one photo at a time, including the resizing and the features.
+
+| Model | Family | Test accuracy (95 % interval) | Time per photo, 1 CPU thread | Model file |
+|---|---|---|---|---|
+| Always the most frequent style | baseline | 19.1 % | | |
+| Logistic regression on pixels | classical | 32.7 % (26.8 to 39.1) | 0.35 ms | 0.1 MB |
+| Logistic regression on hand-made colour and texture features | classical | 61.4 % (55.0 to 67.7) | 1.5 ms | 0.006 MB |
+| Random forest on hand-made features | classical | 67.3 % (60.9 to 73.6) | 24 ms | 26 MB |
+| Regularised MLP on pixels (ours), 3 seeds | neural | 41.4 % (34.5 to 47.3) | 0.36 ms | 6.8 MB |
+| ResNet18 frozen + logistic regression | hybrid | 84.5 % (79.5 to 89.1) | 53 ms | 45 MB |
+| **ResNet18 frozen + linear head (ours), 3 seeds** | neural | **83.0 %** (78.6 to 88.6) | 53 ms | 45 MB |
+| ResNet18 with `layer4` fine-tuned, 3 seeds | neural | 87.9 % (84.1 to 92.7) | 53 ms | 45 MB |
+
+- **The pretrained network wins clearly**: the frozen ResNet + linear head is 16.4 points better than the
+  random forest (interval of the difference: 9.1 to 24.1 points, on the same test paintings).
+- **Frozen or fine-tuned?** The validation and the test disagree (88.1 % against 85.4 % on validation, 83.0 %
+  against 87.9 % on test): with about 220 paintings per set, our data cannot separate them. We chose the
+  frozen model on validation, before the test, and we keep it; fine-tuning is the first thing to try again
+  with more data.
+- **Speed is not a problem**: every model classifies a photo in well under a tenth of a second on one
+  CPU thread.
+
+![Test accuracy](reports/figures/06_test_accuracy.png)
+
+**Our recommendation**: ResNet18 frozen, with a linear head.
+
+- It is much more accurate than any classical model: about one visitor in six gets a wrong style, against
+  one in three.
+- It is fast enough for a modest CPU.
+- It is cheap to maintain for a small team: the ResNet is used as downloaded, and only a small layer is
+  trained, in seconds, when the collection changes.
+
+**Before production**:
+
+1. Test it on a few hundred real photos taken at the kiosks (angles, reflections, frames).
+2. Add more styles and more paintings.
+3. Measure the speed on the real kiosk hardware.
+
+Our MLP on pixels and the classical models alone are not accurate enough for a museum guide.
+
+![Accuracy against speed](reports/figures/06_accuracy_vs_speed.png)
+
 ## How to run
 
 ```bash
@@ -152,4 +209,4 @@ reports/                 figures, the split and every measured result (JSON), no
 - [x] **m1**: data split and a first MLP baseline
 - [x] **m2**: monitoring curves and failure diagnosis
 - [x] Pretrained ResNet18 (feature extractor, fine-tuning, painter leakage)
-- [ ] **v1.0**: classical models, CPU benchmark, final test and recommendation
+- [x] **v1.0**: classical models, CPU benchmark, final test and recommendation
