@@ -326,12 +326,12 @@ stepTag(s, 4);
   arrow(s, 5.6, mid, "arrow 2");
   diagramBox(s, 5.9, y, 1.3, h, "512 numbers", "a summary of the painting");
   arrow(s, 7.2, mid, "arrow 3");
-  diagramBox(s, 7.5, y, 2.0, h, "1 linear layer", `512 → 5 styles: ${heads["linear probe"].trained_parameters.toLocaleString("en-US").replace(",", " ")} weights, the only part we train`,
+  diagramBox(s, 7.5, y, 2.0, h, "Our new last layer", `replaces ResNet's own: 512 → 5 styles, ${heads["linear probe"].trained_parameters.toLocaleString("en-US").replace(",", " ")} weights, the only part we train`,
     { fill: C.accent1, headColor: C.background1, color: C.background1, size: 12 });
   const why = [
     ["Made for images", "Small filters slide over the picture and look at neighbouring pixels, wherever they are. Our MLP saw 12 288 separate pixels."],
     ["Why ResNet18", "The brief asks for a pretrained ResNet; ResNet18 is the smallest (45 MB), light enough for a kiosk CPU. Shortcuts between layers let its 18 layers learn well."],
-    ["Why frozen", `Only ${d01.split_counts.train.toLocaleString("en-US").replace(",", " ")} paintings: too few for 11 million weights. We reuse what it learned and train only the last layer, in ${heads["linear probe"].seconds.toFixed(1)} s.`],
+    ["Why frozen", `Only ${d01.split_counts.train.toLocaleString("en-US").replace(",", " ")} paintings: too few for 11 million weights. We reuse what it learned and train only our new last layer, in ${heads["linear probe"].seconds.toFixed(1)} s.`],
   ];
   why.forEach(([hd, body], i) => noteCard(s, 0.5 + i * 3.05, 3.15, 2.9, 1.9, hd, body, { headSize: 14, size: 12 }));
 }
@@ -353,8 +353,8 @@ s.addChart(pres.charts.BAR, [
 const cubism = (rows) => rows.find((r) => r.style === "Cubism").recall;
 noteCard(s, 5.55, 1.15, 3.95, 1.2, "It sees shapes",
   `Cubist paintings found (validation): ${pct(cubism(d03.regularised_seed0_per_class), 0)} with our MLP, ${pct(cubism(d05.probe_seed0_per_class), 0)} with the ResNet.`);
-noteCard(s, 5.55, 2.5, 3.95, 1.2, "Fine-tuning layer4",
-  `Its last block learns too: 8.4 M weights for 1 061 images, 99.9 % on train, ${pct(ftMean)} on validation. It overfits.`);
+noteCard(s, 5.55, 2.5, 3.95, 1.2, "Fine-tuning: less convincing",
+  `We also unfreeze its last block (8.4 M weights) to learn from our paintings: ${pct(ftMean)} on validation, below the frozen version.`);
 noteCard(s, 5.55, 3.85, 3.95, 1.2, "Monitored like the MLP",
   `Train and validation curves for every run. Frozen + linear head: gap of only ${heads["linear probe"].gap.toFixed(2)} (our first MLP: ${tools["baseline (lr 0.0001)"].gap.toFixed(2)}).`);
 s.addNotes("A network that can see shapes is a convolutional network. With 1 061 images we cannot train one from zero, so we reuse ResNet18, trained on 1.2 million ImageNet photos. We freeze it: each painting becomes 512 numbers, and we train only one linear layer, 2 565 weights, in 0.4 seconds. Result: 88.1 percent on validation, almost twice our best MLP. We monitored it like the MLP: the gap between train and validation is only 0.09. Fine-tuning the last block, 8.4 million weights, does not help here: it overfits.");
