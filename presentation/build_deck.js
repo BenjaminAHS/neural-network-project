@@ -316,8 +316,8 @@ stepTag(s, 4);
   arrow(s, 1.8, mid, "arrow 1");
   card(s, 2.1, y, 3.5, h, "box resnet", C.text2);
   s.addText([
-    { text: "ResNet18, pretrained and frozen", options: { bold: true, fontSize: 14, color: C.background1, breakLine: true } },
-    { text: `18 layers, ${Math.round(d05.parameters["ResNet18 + linear head (total)"] / 1e6)} million weights learned on 1.2 million ImageNet photos. We do not change them.`,
+    { text: "ResNet18, pretrained, frozen first", options: { bold: true, fontSize: 14, color: C.background1, breakLine: true } },
+    { text: `18 layers, ${Math.round(d05.parameters["ResNet18 + linear head (total)"] / 1e6)} million weights learned on 1.2 million ImageNet photos. Fine-tuning will unfreeze the last block.`,
       options: { fontSize: 11, color: MUTED_DARK } },
   ], { x: 2.25, y: y + 0.1, w: 3.2, h: 0.85, valign: "top", margin: 0, isTextBox: true, objectName: "resnet text" });
   [["first layers", "edges, colours"], ["middle layers", "textures"], ["last layers", "shapes"]].forEach(([when, what], i) => {
@@ -331,12 +331,12 @@ stepTag(s, 4);
   arrow(s, 5.6, mid, "arrow 2");
   diagramBox(s, 5.9, y, 1.3, h, "512 numbers", "a summary of the painting");
   arrow(s, 7.2, mid, "arrow 3");
-  diagramBox(s, 7.5, y, 2.0, h, "Our new last layer", `replaces ResNet's own: 512 → 5 styles, ${heads["linear probe"].trained_parameters.toLocaleString("en-US").replace(",", " ")} weights, the only part we train`,
+  diagramBox(s, 7.5, y, 2.0, h, "Our new last layer", `replaces ResNet's own: 512 → 5 styles, ${heads["linear probe"].trained_parameters.toLocaleString("en-US").replace(",", " ")} weights, always trained`,
     { fill: C.accent1, headColor: C.background1, color: C.background1, size: 12 });
   const why = [
     ["Made for images", "Small filters slide over the picture and look at neighbouring pixels, wherever they are. Our MLP saw 12 288 separate pixels."],
     ["Why ResNet18", "The brief asks for a pretrained ResNet; ResNet18 is the smallest (45 MB), light enough for a kiosk CPU. Shortcuts between layers let its 18 layers learn well."],
-    ["Why frozen", `Only ${d01.split_counts.train.toLocaleString("en-US").replace(",", " ")} paintings: too few for 11 million weights. We reuse what it learned and train only our new last layer, in ${heads["linear probe"].seconds.toFixed(1)} s.`],
+    ["Why frozen first", `Only ${d01.split_counts.train.toLocaleString("en-US").replace(",", " ")} paintings: too few for 11 million weights. We reuse what it learned and first train only our new last layer, in ${heads["linear probe"].seconds.toFixed(1)} s.`],
   ];
   why.forEach(([hd, body], i) => noteCard(s, 0.5 + i * 3.05, 3.15, 2.9, 1.9, hd, body, { headSize: 14, size: 12 }));
 }
