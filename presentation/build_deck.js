@@ -463,15 +463,14 @@ s.addText(`Test, ${d01.split_counts.test} new paintings:  our MLP ${pct(test[MLP
   { x: 0.5, y: 1.15, w: 9, h: 0.4, fontSize: 14, color: MUTED_DARK, align: "center", margin: 0, isTextBox: true, objectName: "journey" });
 const cols = [
   ["Why", C.accent3, ["1 visitor in 6 gets a wrong style, against 1 in 3 with the best classical model", "53 ms per photo on a modest CPU", "Retrained in seconds when the collection changes"]],
-  ["Not now", C.accent2, ["Our MLP on pixels: 41 %", `The random forest alone: ${pct(test[RF].test_acc)}`, "Fine-tuning: slower, not proven better"]],
   ["Before launch", C.accent4, ["Test a few hundred real kiosk photos", "Add more styles and paintings", "Measure the real kiosk hardware"]],
 ];
 cols.forEach(([headText, color, items], i) => {
-  const x = 0.5 + i * 3.1;
-  card(s, x, 1.75, 2.8, 3.15, `column ${headText}`, CARD_DARK);
-  s.addText(headText, { x: x + 0.2, y: 1.88, w: 2.4, h: 0.45, fontSize: 20, bold: true, fontFace: THEME.headFontFace, color,
+  const x = 0.5 + i * 4.65;
+  card(s, x, 1.75, 4.35, 3.15, `column ${headText}`, CARD_DARK);
+  s.addText(headText, { x: x + 0.25, y: 1.9, w: 3.85, h: 0.45, fontSize: 22, bold: true, fontFace: THEME.headFontFace, color,
     margin: 0, isTextBox: true, objectName: `head ${headText}` });
-  s.addText(bullets(items, 14), { x: x + 0.2, y: 2.42, w: 2.45, h: 2.4, valign: "top", margin: 0, color: C.background1,
+  s.addText(bullets(items, 16), { x: x + 0.25, y: 2.5, w: 3.85, h: 2.3, valign: "top", margin: 0, color: C.background1,
     isTextBox: true, objectName: `items ${headText}` });
 });
 s.addNotes("So our recommendation: deploy a frozen ResNet18 with a linear head. It is the accurate choice: one visitor in six gets a wrong style, against one in three with the best classical model. It is fast enough, and cheap to maintain for a small team. We do not recommend our MLP on pixels, a classical model alone, or fine-tuning for now. Before the launch, we must test real photos taken at the kiosks, add more styles, and measure the real hardware. Everything is reproducible in our Git repository. Thank you, we are happy to take your questions.");
