@@ -696,6 +696,35 @@ s.addText("Backup: inside ResNet18 + our linear head", { placeholder: "title" })
 }
 s.addNotes("If asked how ResNet18 is built: the painting (224 by 224 pixels, 3 colours) goes through a first convolution and four layers of residual blocks. At each layer the picture gets smaller (56, 28, 14, 7 pixels) but the number of channels grows (64 to 512): from edges and colours to textures, patterns and shapes. The average of the last 512 maps gives 512 numbers. All of this is frozen: 11.2 million weights learned on ImageNet. Our linear head turns the 512 numbers into 5 scores, one per style: 2 565 weights, the only ones we train. Residual means each block adds its input back through a shortcut, so the gradient reaches every layer.");
 
+// Why pretrained? The same ResNet18 trained from zero (scripts/resnet_from_zero.py), validation only.
+const ZERO_FILE = path.join(ROOT, "reports", "results", "resnet_from_zero.json");
+if (fs.existsSync(ZERO_FILE)) {
+  const zero = JSON.parse(fs.readFileSync(ZERO_FILE, "utf8"));
+  s = addSlide({ masterName: "CONTENT", sectionTitle: "Backup" });
+  s.addText("Backup: why pretrained? ResNet18 from zero", { placeholder: "title" });
+  const zLabels = ["Our best MLP (pixels)", "ResNet18 from zero", "Random forest, 102 numbers", "ResNet18, layer4 fine-tuned", "ResNet18 frozen + linear head"];
+  const zValues = [tools["all together"].val_acc, zero.best_val_acc, Math.max(...Object.values(d06.classical_tuning[RF])), ftMean, heads["linear probe"].val_acc];
+  const pick = (k) => zValues.map((v, i) => (i === k ? T10(v) : 0));
+  s.addChart(pres.charts.BAR, [
+    { name: "other", labels: zLabels, values: zValues.map((v, i) => (i === 1 || i === 4 ? 0 : T10(v))) },
+    { name: "from zero", labels: zLabels, values: pick(1) },
+    { name: "chosen", labels: zLabels, values: pick(4) },
+  ], { x: 0.4, y: 1.1, w: 5.4, h: 3.95, barDir: "bar", barGrouping: "stacked", chartColors: [HEX.quiet, "EDA100", HEX.neural],
+    showValue: true, dataLabelPosition: "inEnd", dataLabelFormatCode: FMT, dataLabelColor: "FFFFFF",
+    valAxisHidden: true, valAxisMinVal: 0, valAxisMaxVal: 1000, valGridLine: { style: "none" }, catGridLine: { style: "none" },
+    showLegend: false, showTitle: true, title: "Validation accuracy (219 paintings)", barGapWidthPct: 45, ...chartText,
+    objectName: "chart from zero" });
+  statCard(s, 6.05, 1.15, 3.45, 1.55, `-${(100 * (heads["linear probe"].val_acc - zero.best_val_acc)).toFixed(1)}`,
+    "points without the pretraining: same network, same paintings", { strong: true, size: 36, captionSize: 12 });
+  noteCard(s, 6.05, 2.85, 3.45, 1.05, "How we trained it",
+    `Random weights, every layer learns (11.2 M). Crop + flip, AdamW, ${zero.settings.epochs} epochs, ${Math.round(zero.minutes)} min. One seed.`,
+    { headSize: 13, size: 11 });
+  noteCard(s, 6.05, 4.0, 3.45, 1.05, "What it shows",
+    "Better than our MLP, but only like the random forest: the 1.2 million ImageNet photos make the difference.",
+    { headSize: 13, size: 11 });
+  s.addNotes(`If asked why we did not train ResNet18 from zero: we measured it. With random weights and every layer learning, the same network reaches only ${pct(zero.best_val_acc)} on validation at best, against ${pct(heads["linear probe"].val_acc)} for the frozen pretrained one: about the level of the random forest. It is better than our MLP, because convolutions see shapes, but 1 061 paintings are far too few to learn 11 million weights. It also took ${Math.round(zero.minutes)} minutes of CPU, against less than a second for our linear head. One seed, validation only.`);
+}
+
 // pptxgenjs writes the notes of a slide as one run of text. The transition sentence of the oral script
 // comes after a blank line: make it a paragraph of its own, in bold, so it stands out while presenting.
 async function splitTransitionNotes(file) {

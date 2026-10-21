@@ -127,6 +127,9 @@ blocks and the training loop are ours.
 - **Fine-tuning the last block** (8.4 million trained parameters, with random crops and flips): 85.4 %.
   It overfits 1 061 images and takes 1.7 to 3.6 minutes of training per run, against 0.4 s for the
   linear probe, so the frozen features win here.
+- **Trained from zero** ([scripts/resnet_from_zero.py](scripts/resnet_from_zero.py), one seed, 30 epochs,
+  24 minutes): with random weights, the same ResNet18 reaches only 61.6 % on validation, about the level of
+  the random forest. The pretraining on ImageNet is what makes the difference.
 - **Errors**: Ukiyo-e is always found; Cubism is the hardest style (recall 71 %, against 7 % for the MLP),
   mostly confused with Pop Art.
 
@@ -215,7 +218,7 @@ The notebooks are stored twice: the `.py` file is the source (easy to read in a 
 ## Presentation and study guide
 
 - [docs/museum_guide_presentation.pptx](docs/museum_guide_presentation.pptx): the 10-minute defence (11 slides,
-  9 backup slides, speaker notes). In this public copy the paintings of the title slide are replaced by colour
+  10 backup slides, speaker notes). In this public copy the paintings of the title slide are replaced by colour
   squares (WikiArt licence).
 - [docs/oral_study_guide.pdf](docs/oral_study_guide.pdf) ([.docx](docs/oral_study_guide.docx)): every step, every
   number, a glossary and the questions we expect, with short answers.
