@@ -8,7 +8,6 @@ data/
 
 # Outputs that may show artworks (kept on the local machine only)
 reports/private/
-presentation/
 
 # Python
 __pycache__/
