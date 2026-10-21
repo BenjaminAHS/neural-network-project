@@ -151,6 +151,33 @@ const bullets = (items, size = 15) => items.map((t, i) => ({ text: t,
   options: { bullet: true, fontSize: size, breakLine: i < items.length - 1, paraSpaceAfter: 8 } }));
 const head = (t) => ({ text: t, options: { bold: true, color: C.background1, fill: { color: C.text2 } } });
 
+// Diagram pieces: a box with a heading and a short line, an arrow between boxes, a painting thumbnail
+// (a colour square in the public copy, WikiArt licence).
+const diagramBox = (slide, x, y, w, h, heading, body, opts = {}) => {
+  card(slide, x, y, w, h, `box ${heading}`, opts.fill || C.background2);
+  slide.addText([
+    { text: heading, options: { bold: true, fontSize: opts.headSize || 14, color: opts.headColor || C.text2, breakLine: true } },
+    { text: body, options: { fontSize: opts.size || 11, color: opts.color || C.text1 } },
+  ], { x: x + 0.1, y: y + 0.08, w: w - 0.2, h: h - 0.16, align: "center", valign: "middle", margin: 0, paraSpaceAfter: 3,
+    isTextBox: true, objectName: `box text ${heading}` });
+};
+const arrow = (slide, x, yMid, name) => slide.addShape(pres.shapes.RIGHT_ARROW, { x: x + 0.05, y: yMid - 0.11, w: 0.2, h: 0.22,
+  fill: { color: C.text2 }, line: { color: C.text2, width: 0 }, objectName: name });
+const thumb = (slide, file, x, y, size) => (PUBLIC
+  ? slide.addShape(pres.shapes.RECTANGLE, { x, y, w: size, h: size, fill: { color: STYLE_COLORS[file] },
+    line: { color: STYLE_COLORS[file], width: 0 }, objectName: `colour ${file}` })
+  : slide.addImage({ path: path.join(ASSETS, `${file}.jpg`), x, y, w: size, h: size, altText: `${file} painting from the dataset`,
+    objectName: `painting ${file}` }));
+const paintingBox = (slide, x, y, w, h, line) => {
+  card(slide, x, y, w, h, "box painting");
+  const size = Math.min(w - 0.4, h - 0.65);
+  thumb(slide, "Impressionism", x + (w - size) / 2, y + 0.12, size);
+  slide.addText([{ text: "1 painting", options: { bold: true, fontSize: 13, color: C.text2, breakLine: true } },
+    { text: line, options: { fontSize: 11, color: C.text1 } }],
+  { x: x + 0.05, y: y + size + 0.17, w: w - 0.1, h: h - size - 0.22, align: "center", valign: "top", margin: 0,
+    isTextBox: true, objectName: "painting caption" });
+};
+
 const pngSize = (file) => { const b = fs.readFileSync(file); return { w: b.readUInt32BE(16), h: b.readUInt32BE(20) }; };
 
 const chartText = { catAxisLabelFontFace: "+mn-lt", valAxisLabelFontFace: "+mn-lt", dataLabelFontFace: "+mn-lt",
@@ -273,8 +300,44 @@ s.addText(bullets([
 ], 14), { x: 6.05, y: 1.2, w: 3.45, h: 3.85, valign: "top", margin: 0, color: C.text1, isTextBox: true, objectName: "monitoring bullets" });
 s.addNotes("We then looked inside the network during training: the gradient of each layer and the share of dead neurons. The gradient reaches every layer and only 4 percent of neurons are dead, so the training is healthy: the problem is overfitting. A learning-rate sweep chose 0.0001. Then we tested the tools of session 6, each with 3 seeds. Alone, each one helps a little. All together, they take the MLP from 38.8 to 45.5 percent, and the gap between train and validation from 0.61 to 0.12. But the MLP finds only 7 percent of the Cubist paintings: it sees colours, not shapes.");
 
-// ================================================================= 6. ResNet
+// ================================================================= 6. ResNet18, explained
 pres.addSection({ title: "Pretrained ResNet" });
+s = addSlide({ masterName: "CONTENT", sectionTitle: "Pretrained ResNet" });
+s.addText("ResNet18: a network made for images", { placeholder: "title" });
+stepTag(s, 4);
+{
+  const y = 1.15, h = 1.8, mid = y + h / 2;
+  paintingBox(s, 0.5, y, 1.3, h, "224 x 224 pixels");
+  arrow(s, 1.8, mid, "arrow 1");
+  card(s, 2.1, y, 3.5, h, "box resnet", C.text2);
+  s.addText([
+    { text: "ResNet18, pretrained and frozen", options: { bold: true, fontSize: 14, color: C.background1, breakLine: true } },
+    { text: `18 layers, ${Math.round(d05.parameters["ResNet18 + linear head (total)"] / 1e6)} million weights learned on 1.2 million ImageNet photos. We do not change them.`,
+      options: { fontSize: 11, color: MUTED_DARK } },
+  ], { x: 2.25, y: y + 0.1, w: 3.2, h: 0.85, valign: "top", margin: 0, isTextBox: true, objectName: "resnet text" });
+  [["first layers", "edges, colours"], ["middle layers", "textures"], ["last layers", "shapes"]].forEach(([when, what], i) => {
+    const x = 2.25 + i * 1.1;
+    s.addShape(pres.shapes.ROUNDED_RECTANGLE, { x, y: y + 1.05, w: 0.98, h: 0.6, fill: { color: CARD_DARK },
+      line: { color: CARD_DARK, width: 0 }, rectRadius: 0.06, objectName: `level ${i + 1}` });
+    s.addText([{ text: when, options: { fontSize: 9, color: MUTED_DARK, breakLine: true } },
+      { text: what, options: { fontSize: 11, bold: true, color: C.background1 } }],
+    { x, y: y + 1.05, w: 0.98, h: 0.6, align: "center", valign: "middle", margin: 0, isTextBox: true, objectName: `level text ${i + 1}` });
+  });
+  arrow(s, 5.6, mid, "arrow 2");
+  diagramBox(s, 5.9, y, 1.3, h, "512 numbers", "a summary of the painting");
+  arrow(s, 7.2, mid, "arrow 3");
+  diagramBox(s, 7.5, y, 2.0, h, "1 linear layer", `512 → 5 styles: ${heads["linear probe"].trained_parameters.toLocaleString("en-US").replace(",", " ")} weights, the only part we train`,
+    { fill: C.accent1, headColor: C.background1, color: C.background1, size: 12 });
+  const why = [
+    ["Made for images", "Small filters slide over the picture and look at neighbouring pixels, wherever they are. Our MLP saw 12 288 separate pixels."],
+    ["Why ResNet18", "The brief asks for a pretrained ResNet; ResNet18 is the smallest (45 MB), light enough for a kiosk CPU. Shortcuts between layers let its 18 layers learn well."],
+    ["Why frozen", `Only ${d01.split_counts.train.toLocaleString("en-US").replace(",", " ")} paintings: too few for 11 million weights. We reuse what it learned and train only the last layer, in ${heads["linear probe"].seconds.toFixed(1)} s.`],
+  ];
+  why.forEach(([hd, body], i) => noteCard(s, 0.5 + i * 3.05, 3.15, 2.9, 1.9, hd, body, { headSize: 14, size: 12 }));
+}
+s.addNotes("ResNet18 is a convolutional network, made for images. Its layers slide small filters over the picture: edges and colours first, then textures, then shapes. It was trained on 1.2 million ImageNet photos. We keep it frozen: each painting becomes 512 numbers, and we only train one linear layer from these 512 numbers to our 5 styles.");
+
+// ================================================================= 7. ResNet results
 s = addSlide({ masterName: "CONTENT", sectionTitle: "Pretrained ResNet" });
 s.addText("A pretrained ResNet18 sees shapes", { placeholder: "title" });
 stepTag(s, 4);
@@ -287,16 +350,78 @@ s.addChart(pres.charts.BAR, [
   valAxisHidden: true, valAxisMinVal: 0, valAxisMaxVal: 1000, valGridLine: { style: "none" }, catGridLine: { style: "none" },
   showLegend: false, showTitle: true, title: "Validation accuracy, mean of 3 seeds", barGapWidthPct: 45, ...chartText,
   objectName: "chart resnet" });
-noteCard(s, 5.55, 1.15, 3.95, 1.2, "Frozen features",
-  `Each painting → 512 numbers (${d05.feature_ms_per_image_batch64.toFixed(1)} ms). Only one linear layer is trained: 2 565 weights, ${heads["linear probe"].seconds.toFixed(1)} s.`);
+const cubism = (rows) => rows.find((r) => r.style === "Cubism").recall;
+noteCard(s, 5.55, 1.15, 3.95, 1.2, "It sees shapes",
+  `Cubist paintings found (validation): ${pct(cubism(d03.regularised_seed0_per_class), 0)} with our MLP, ${pct(cubism(d05.probe_seed0_per_class), 0)} with the ResNet.`);
 noteCard(s, 5.55, 2.5, 3.95, 1.2, "Fine-tuning layer4",
-  `8.4 M weights for 1 061 images: 99.9 % on train, ${pct(ftMean)} on validation. It overfits.`);
+  `Its last block learns too: 8.4 M weights for 1 061 images, 99.9 % on train, ${pct(ftMean)} on validation. It overfits.`);
 noteCard(s, 5.55, 3.85, 3.95, 1.2, "Monitored like the MLP",
   `Train and validation curves for every run. Frozen + linear head: gap of only ${heads["linear probe"].gap.toFixed(2)} (our first MLP: ${tools["baseline (lr 0.0001)"].gap.toFixed(2)}).`);
 s.addNotes("A network that can see shapes is a convolutional network. With 1 061 images we cannot train one from zero, so we reuse ResNet18, trained on 1.2 million ImageNet photos. We freeze it: each painting becomes 512 numbers, and we train only one linear layer, 2 565 weights, in 0.4 seconds. Result: 88.1 percent on validation, almost twice our best MLP. We monitored it like the MLP: the gap between train and validation is only 0.09. Fine-tuning the last block, 8.4 million weights, does not help here: it overfits.");
 
-// ================================================================= 7. final test
+// ================================================================= 8. the classical challenger, explained
 pres.addSection({ title: "The answer" });
+s = addSlide({ masterName: "CONTENT", sectionTitle: "The answer" });
+s.addText("Our classical challenger: a random forest", { placeholder: "title" });
+stepTag(s, 5);
+{
+  const y = 1.15, h = 1.45, mid = y + h / 2;
+  paintingBox(s, 0.5, y, 1.3, h, "the same photo");
+  arrow(s, 1.8, mid, "arrow 1");
+  card(s, 2.1, y, 3.1, h, "box features");
+  s.addText("102 hand-made numbers", { x: 2.2, y: y + 0.08, w: 2.9, h: 0.32, fontSize: 14, bold: true, color: C.text2, align: "center",
+    margin: 0, isTextBox: true, objectName: "features title" });
+  [["Colours: 82", "hue, saturation, brightness"], ["Brush strokes: 20", "direction and strength of the edges"]].forEach(([hd, body], i) => {
+    const x = 2.22 + i * 1.46;
+    s.addShape(pres.shapes.ROUNDED_RECTANGLE, { x, y: y + 0.45, w: 1.38, h: 0.88, fill: { color: C.background1 },
+      line: { color: C.background1, width: 0 }, rectRadius: 0.06, objectName: `feature group ${i + 1}` });
+    s.addText([{ text: hd, options: { bold: true, fontSize: 11, color: C.accent2, breakLine: true } },
+      { text: body, options: { fontSize: 10, color: C.text1 } }],
+    { x: x + 0.05, y: y + 0.45, w: 1.28, h: 0.88, align: "center", valign: "middle", margin: 0, isTextBox: true, objectName: `feature text ${i + 1}` });
+  });
+  arrow(s, 5.2, mid, "arrow 2");
+  diagramBox(s, 5.5, y, 2.1, h, "500 decision trees", "each one: a random draw of the paintings, 10 of the 102 numbers per question");
+  arrow(s, 7.6, mid, "arrow 3");
+  diagramBox(s, 7.9, y, 1.6, h, "They vote", "the style with the most votes wins", { fill: C.accent2, headColor: C.background1, color: C.background1, size: 12 });
+
+  // One tree, as an example: yes/no questions down to a style.
+  card(s, 0.5, 2.8, 5.3, 2.25, "tree card");
+  s.addText("One tree, for example (the real questions use our 102 numbers)", { x: 0.65, y: 2.88, w: 5.0, h: 0.28, fontSize: 11,
+    color: MUTED, margin: 0, isTextBox: true, objectName: "tree caption" });
+  const node = (cx, cy, w, text, fill, color, name) => {
+    s.addShape(pres.shapes.ROUNDED_RECTANGLE, { x: cx - w / 2, y: cy, w, h: 0.36, fill: { color: fill }, line: { color: fill, width: 0 },
+      rectRadius: 0.06, objectName: name });
+    s.addText(text, { x: cx - w / 2, y: cy, w, h: 0.36, fontSize: 11, bold: true, color, align: "center", valign: "middle", margin: 0,
+      isTextBox: true, objectName: `${name} text` });
+  };
+  const link = (x1, y1, x2, y2, label, name) => {
+    s.addShape(pres.shapes.LINE, { x: Math.min(x1, x2), y: y1, w: Math.abs(x2 - x1), h: y2 - y1, flipH: x2 < x1,
+      line: { color: MUTED, width: 1.25 }, objectName: name });
+    s.addText(label, { x: (x1 + x2) / 2 + (x2 < x1 ? -0.42 : 0.07), y: (y1 + y2) / 2 - 0.13, w: 0.35, h: 0.22, fontSize: 9,
+      color: MUTED, align: x2 < x1 ? "right" : "left", margin: 0, isTextBox: true, objectName: `${name} label` });
+  };
+  const rootX = 3.15, l2 = [1.85, 4.45], leaves = [[1.25, "Cubism"], [2.45, "Baroque"], [3.85, "Pop_Art"], [5.05, "Impressionism"]];
+  link(rootX, 3.58, l2[0], 3.95, "yes", "edge root yes"); link(rootX, 3.58, l2[1], 3.95, "no", "edge root no");
+  link(l2[0], 4.31, leaves[0][0], 4.6, "yes", "edge left yes"); link(l2[0], 4.31, leaves[1][0], 4.6, "no", "edge left no");
+  link(l2[1], 4.31, leaves[2][0], 4.6, "yes", "edge right yes"); link(l2[1], 4.31, leaves[3][0], 4.6, "no", "edge right no");
+  node(rootX, 3.22, 2.0, "Many dark colours?", C.text2, C.background1, "node root");
+  node(l2[0], 3.95, 1.9, "Many straight edges?", C.text2, C.background1, "node left");
+  node(l2[1], 3.95, 1.9, "Vivid flat colours?", C.text2, C.background1, "node right");
+  leaves.forEach(([cx, style]) => node(cx, 4.6, 1.1, style.replace("_", " "), STYLE_COLORS[style], C.background1, `leaf ${style}`));
+
+  const rfBest = Math.max(...Object.values(d06.classical_tuning[RF]));
+  card(s, 6.0, 2.8, 3.5, 2.25, "training card");
+  s.addText("How we trained it", { x: 6.18, y: 2.9, w: 3.15, h: 0.32, fontSize: 14, bold: true, color: C.text2, margin: 0,
+    isTextBox: true, objectName: "training title" });
+  s.addText(bullets([
+    `scikit-learn, 500 trees, on the ${d01.split_counts.train.toLocaleString("en-US").replace(",", " ")} training paintings`,
+    `4 settings tried, the best chosen on validation: ${pct(rfBest)}`,
+    `Training ${speed[RF].training_seconds.toFixed(0)} s; ${Math.round(speed[RF].ms_1_thread)} ms per photo`,
+  ], 12), { x: 6.18, y: 3.28, w: 3.15, h: 1.7, valign: "top", margin: 0, color: C.text1, isTextBox: true, objectName: "training bullets" });
+}
+s.addNotes("The classical challenger: 102 hand-made numbers per painting (colours and brush strokes), then a random forest of 500 decision trees that vote. Settings chosen on validation.");
+
+// ================================================================= 9. final test
 s = addSlide({ masterName: "CONTENT", sectionTitle: "The answer" });
 s.addText("Final test: the pretrained network wins", { placeholder: "title" });
 stepTag(s, 5);
@@ -319,7 +444,7 @@ noteCard(s, 6.85, 3.45, 2.65, 1.6, "Honest note",
   { headSize: 14, size: 12 });
 s.addNotes("Finally, the test, measured once on 220 new paintings. The pretrained models are at the top, from 83 to 88 percent. The best classical model reaches 67 percent, and our MLP 41 percent. The gap between our chosen model and the random forest is 16 points, and a paired bootstrap on the same paintings gives an interval from 9 to 24 points: it is not luck. One honest note: the fine-tuned model is first on test, but it was second on validation. With 220 images a score moves by about 5 points, so we keep the model we chose before the test.");
 
-// ================================================================= 8. cost on a kiosk
+// ================================================================= 10. cost on a kiosk
 s = addSlide({ masterName: "CONTENT", sectionTitle: "The answer" });
 s.addText("Fast and cheap enough for a kiosk", { placeholder: "title" });
 stepTag(s, 6);
@@ -331,7 +456,7 @@ noteCard(s, 0.5, 3.45, 9, 1.25, "In practice",
   `A kiosk 4 times slower still answers in about 0.2 s. Random forest: ${Math.round(speed[RF].ms_1_thread)} ms and ${Math.round(speed[RF].size_mb)} MB, but ${pct(test[RF].test_acc)}. When the collection changes: compute the new features, retrain one layer, in seconds.`);
 s.addNotes("Is it affordable on a kiosk? We timed one photo at a time, from the image to the answer. The ResNet takes 53 milliseconds on one CPU thread and 26 with four threads. Even on a kiosk four times slower, that is a fifth of a second. The model file is 45 megabytes, and training takes 17 seconds on a laptop, without a GPU. When the collection changes, we only compute the new features and retrain the last layer, in seconds.");
 
-// ================================================================= 9. recommendation
+// ================================================================= 11. recommendation
 s = addSlide({ masterName: "CLOSING", sectionTitle: "The answer" });
 s.addText("Our choice: frozen ResNet18 + linear head", { placeholder: "title" });
 s.addText(`Test, ${d01.split_counts.test} new paintings:  our MLP ${pct(test[MLP].test_acc)}  →  best classical ${pct(test[RF].test_acc)}  →  frozen ResNet18 ${pct(test[FROZEN].test_acc)}`,
@@ -355,11 +480,11 @@ s.addNotes("So our recommendation: deploy a frozen ResNet18 with a linear head. 
 pres.addSection({ title: "Backup" });
 // The classical challenger of the final test, explained (notebook 06, src/museum_guide/baselines.py).
 s = addSlide({ masterName: "CONTENT", sectionTitle: "Backup" });
-s.addText("Backup: the random forest challenger", { placeholder: "title" });
-noteCard(s, 0.5, 1.15, 4.4, 1.75, "102 hand-made numbers per painting",
-  "Colours: a histogram of hue, saturation and brightness (72) and colour statistics (10). Brush strokes: direction and strength of the edges, at two sizes (20).");
-noteCard(s, 5.1, 1.15, 4.4, 1.75, "500 decision trees that vote",
-  "Each tree learns from a random draw of the training paintings and sees 10 of the 102 numbers at each question. Their mistakes differ, so the vote cancels them.");
+s.addText("Backup: classical models, all the scores", { placeholder: "title" });
+noteCard(s, 0.5, 1.15, 4.4, 1.75, "Why hand-made numbers?",
+  `A question on one pixel means nothing: move the painting a little and it changes. Logistic regression: ${pct(test["logistic regression on pixels"].test_acc)} on pixels, ${pct(test["logistic regression on hand-made features"].test_acc)} on our 102 numbers.`);
+noteCard(s, 5.1, 1.15, 4.4, 1.75, "The numbers matter more than the model",
+  `The same logistic regression: ${pct(test["logistic regression on hand-made features"].test_acc)} on our 102 numbers, ${pct(test["logistic regression on ResNet features"].test_acc)} on the 512 numbers of the ResNet.`);
 [["logistic regression on pixels", "Logistic regression on pixels"],
   ["logistic regression on hand-made features", "Logistic regression on the 102 numbers"],
   [RF, "Random forest on the 102 numbers"],
@@ -367,7 +492,7 @@ noteCard(s, 5.1, 1.15, 4.4, 1.75, "500 decision trees that vote",
   statCard(s, 0.5 + i * 2.3167, 3.1, 2.05, 1.6, pct(test[model].test_acc), caption,
     { strong: model === FROZEN, color: model === RF ? HEX.classical : undefined, size: 30, captionSize: 12 }));
 const rfBestVal = Math.max(...Object.values(d06.classical_tuning[RF]));
-s.addText(`Test accuracy, ${d01.split_counts.test} paintings. Best of 4 settings on validation: ${pct(rfBestVal)}. Training ${speed[RF].training_seconds.toFixed(0)} s, ${Math.round(speed[RF].ms_1_thread)} ms per photo, ${Math.round(speed[RF].size_mb)} MB.`,
+s.addText(`Test accuracy, ${d01.split_counts.test} paintings. Random forest: best of 4 settings on validation (${pct(rfBestVal)}), training ${speed[RF].training_seconds.toFixed(0)} s, ${Math.round(speed[RF].ms_1_thread)} ms per photo, ${Math.round(speed[RF].size_mb)} MB.`,
   { x: 0.5, y: 4.78, w: 9, h: 0.35, fontSize: 12, color: MUTED, margin: 0, valign: "top", isTextBox: true, objectName: "forest caption" });
 s.addNotes(`If asked about the random forest: it is our best model without any neural network, the "classical model" of the director's question. A classical model cannot read raw pixels well, so we describe each painting with 102 hand-made numbers: its colours and the directions of its brush strokes. A random forest is 500 decision trees: each one learns from a random draw of the paintings and sees a random part of the numbers at each question, and they vote. Settings chosen on validation. On the test: ${pct(test[RF].test_acc)}, 16.4 points below the frozen ResNet18. The same logistic regression goes from ${pct(test["logistic regression on hand-made features"].test_acc)} on our numbers to ${pct(test["logistic regression on ResNet features"].test_acc)} on the ResNet features: the features matter more than the model on top.`);
 
