@@ -245,7 +245,7 @@ The notebooks are stored twice: the `.py` file is the source (easy to read in a 
 
 ## Presentation and study guide
 
-- [docs/museum_guide_presentation.pptx](docs/museum_guide_presentation.pptx): the 10-minute defence (12 slides,
+- [docs/museum_guide_presentation.pptx](docs/museum_guide_presentation.pptx): the 10-minute defence (11 slides,
   10 backup slides, speaker notes). In this public copy the paintings of the title slide are replaced by colour
   squares (WikiArt licence).
 - [docs/oral_study_guide.pdf](docs/oral_study_guide.pdf) ([.docx](docs/oral_study_guide.docx)): every step, every

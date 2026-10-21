@@ -426,53 +426,31 @@ stepTag(s, 5);
 }
 s.addNotes("The classical challenger: 102 hand-made numbers per painting (colours and brush strokes), then a random forest of 500 decision trees that vote. Settings chosen on validation.");
 
-// ================================================================= 9. final test
+// ================================================================= 9. the two final tests (notebooks 06 and 08)
 s = addSlide({ masterName: "CONTENT", sectionTitle: "The answer" });
-s.addText("Final test: the pretrained network wins", { placeholder: "title" });
-stepTag(s, 5);
-const order = [[MLP, "Our MLP, pixels", "neural"],
-  [RF, "Random forest, 102 hand-made numbers", "classical"],
-  [FROZEN, "ResNet18 frozen + linear head", "neural"],
-  [FT, "ResNet18, layer4 fine-tuned", "neural"]];
-const fams = [["classical", "Classical", HEX.classical], ["neural", "Neural", HEX.neural]];
-s.addChart(pres.charts.BAR, fams.map(([fam, name]) => ({ name, labels: order.map((o) => o[1]),
-  values: order.map((o) => (o[2] === fam ? T10(test[o[0]].test_acc) : 0)) })),
-{ x: 0.3, y: 1.05, w: 6.35, h: 4.05, barDir: "bar", barGrouping: "stacked", chartColors: fams.map((f) => f[2]),
-  showValue: true, dataLabelPosition: "inEnd", dataLabelFormatCode: FMT, dataLabelColor: "FFFFFF",
-  valAxisHidden: true, valAxisMinVal: 0, valAxisMaxVal: 1000, valGridLine: { style: "none" }, catGridLine: { style: "none" },
-  showLegend: true, legendPos: "b", showTitle: true, title: `Test accuracy, ${d01.split_counts.test} new paintings`, barGapWidthPct: 60,
-  ...chartText, objectName: "chart final test" });
-statCard(s, 6.85, 1.15, 2.65, 2.15, `+${(100 * paired.diff).toFixed(1)}`,
-  `points for our frozen ResNet over the best classical model (95 % interval ${(100 * paired.ci_low).toFixed(1)} to ${(100 * paired.ci_high).toFixed(1)})`, { strong: true, size: 40, captionSize: 12 });
-noteCard(s, 6.85, 3.45, 2.65, 1.6, "A surprise",
-  `Fine-tuned: 1st on test (${pct(test[FT].test_acc)}), but 2nd on validation (${pct(ftMean)}). Luck? We checked with a second test.`,
-  { headSize: 14, size: 12 });
-s.addNotes("Finally, the test, measured once on 220 new paintings. The pretrained models are at the top, from 83 to 88 percent. The best classical model reaches 67 percent, and our MLP 41 percent. The gap between our chosen model and the random forest is 16 points, and a paired bootstrap on the same paintings gives an interval from 9 to 24 points: it is not luck. One honest note: the fine-tuned model is first on test, but it was second on validation. With 220 images a score moves by about 5 points, so we keep the model we chose before the test.");
-
-// ================================================================= 10. second test (notebook 08)
-s = addSlide({ masterName: "CONTENT", sectionTitle: "The answer" });
-s.addText("A second test: the fine-tuned win was not luck", { placeholder: "title" });
+s.addText("Final tests: the fine-tuned ResNet18 wins", { placeholder: "title" });
 stepTag(s, 5);
 {
   const models = [[MLP, "Our MLP, pixels"], [RF, "Random forest, 102 numbers"], [FROZEN, "ResNet18 frozen + linear head"], [FT, "ResNet18, layer4 fine-tuned"]];
   s.addChart(pres.charts.BAR, [
     { name: `Test 1 (${d01.split_counts.test} paintings)`, labels: models.map((m) => m[1]), values: models.map((m) => T10(t2[m[0]]["test 1 acc"])) },
-    { name: `Test 2 (${d08.data.n} new paintings)`, labels: models.map((m) => m[1]), values: models.map((m) => T10(t2[m[0]]["test 2 acc"])) },
+    { name: `Test 2 (${d08.data.n} new paintings, new painters)`, labels: models.map((m) => m[1]), values: models.map((m) => T10(t2[m[0]]["test 2 acc"])) },
   ], { x: 0.3, y: 1.05, w: 6.35, h: 4.05, barDir: "bar", barGrouping: "clustered", chartColors: [HEX.quiet, HEX.neural],
     showValue: true, dataLabelPosition: "inEnd", dataLabelFormatCode: FMT, dataLabelColor: "FFFFFF",
     valAxisHidden: true, valAxisMinVal: 0, valAxisMaxVal: 1000, valGridLine: { style: "none" }, catGridLine: { style: "none" },
-    showLegend: true, legendPos: "b", showTitle: true, title: "Test accuracy, mean of 3 seeds", barGapWidthPct: 40, ...chartText,
-    objectName: "chart second test" });
-  statCard(s, 6.85, 1.15, 2.65, 2.15, `+${(-100 * ftOverFrozen.diff).toFixed(1)}`,
-    `points for fine-tuning over frozen, on the 440 test paintings (95 % interval ${(-100 * ftOverFrozen.ci_high).toFixed(1)} to ${(-100 * ftOverFrozen.ci_low).toFixed(1)})`,
-    { strong: true, size: 40, captionSize: 12 });
-  noteCard(s, 6.85, 3.45, 2.65, 1.6, `${d08.data.n} new paintings`,
-    "From parts of WikiArt we never opened, by painters our models never saw. Same models, used once.",
-    { headSize: 14, size: 12 });
+    showLegend: true, legendPos: "b", showTitle: true, title: "Test accuracy, mean of 3 seeds, each test used once", barGapWidthPct: 40, ...chartText,
+    objectName: "chart final tests" });
+  const nnOverRf = pairOf(FROZEN, RF, "test 1 + test 2 (440)");
+  statCard(s, 6.85, 1.15, 2.65, 1.85, `+${(100 * nnOverRf.diff).toFixed(1)}`,
+    `points for even the frozen ResNet over the random forest, 440 paintings (${(100 * nnOverRf.ci_low).toFixed(1)} to ${(100 * nnOverRf.ci_high).toFixed(1)})`,
+    { strong: true, size: 36, captionSize: 11 });
+  statCard(s, 6.85, 3.2, 2.65, 1.85, `+${(-100 * ftOverFrozen.diff).toFixed(1)}`,
+    `points for fine-tuning over frozen, 440 paintings (${(-100 * ftOverFrozen.ci_high).toFixed(1)} to ${(-100 * ftOverFrozen.ci_low).toFixed(1)}): not luck`,
+    { size: 36, captionSize: 11 });
 }
-s.addNotes("To check whether the fine-tuned win was luck, we drew 220 new paintings from parts of WikiArt we had never opened, by painters our models never saw, and tested the same models once more. Same ranking: fine-tuned 87.7 percent, frozen 84.1, random forest 63.6, our MLP 41.8. On the 440 test paintings together, fine-tuning wins by 5 points, between 2 and 8: it is not luck. Our 219 validation paintings were too few to separate the two.");
+s.addNotes("The two final tests, each used once. On the first 220 paintings, the pretrained models were at the top and the fine-tuned one was first, while it was second on validation. To check whether this was luck, we drew 220 new paintings by painters our models never saw: same ranking. On the 440 paintings, even the frozen model is 18 points above the random forest, and fine-tuning beats frozen by 5 points, between 2 and 8.");
 
-// ================================================================= 11. cost on a kiosk
+// ================================================================= 10. cost on a kiosk
 s = addSlide({ masterName: "CONTENT", sectionTitle: "The answer" });
 s.addText("Fast and cheap enough for a kiosk", { placeholder: "title" });
 stepTag(s, 6);
@@ -484,7 +462,7 @@ noteCard(s, 0.5, 3.45, 9, 1.25, "In practice",
   `A kiosk 4 times slower still answers in about 0.2 s. Random forest: ${Math.round(speed[RF].ms_1_thread)} ms and ${Math.round(speed[RF].size_mb)} MB, but ${pct(test[RF].test_acc)}. When the collection changes: retrain the last block and the head, in a few minutes.`);
 s.addNotes("Is it affordable on a kiosk? We timed one photo at a time, from the image to the answer. The fine-tuned ResNet takes 53 milliseconds on one CPU thread and 27 with four threads, like the frozen one. Even on a kiosk four times slower, that is a fifth of a second. The model file is 45 megabytes, and training takes about 2.5 minutes on a laptop, without a GPU.");
 
-// ================================================================= 12. recommendation
+// ================================================================= 11. recommendation
 s = addSlide({ masterName: "CLOSING", sectionTitle: "The answer" });
 s.addText("Our choice: a fine-tuned ResNet18", { placeholder: "title" });
 s.addText(`Both tests, ${d01.split_counts.test + d08.data.n} new paintings:  our MLP ${pct(both[MLP])}  →  random forest ${pct(both[RF])}  →  fine-tuned ResNet18 ${pct(both[FT])}`,
