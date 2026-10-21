@@ -1,0 +1,253 @@
+{
+  "data": {
+    "n": 220,
+    "per_style": {
+      "Baroque": 44,
+      "Cubism": 44,
+      "Impressionism": 44,
+      "Pop_Art": 44,
+      "Ukiyo_e": 44
+    },
+    "shards": [
+      19,
+      22,
+      32,
+      37,
+      56,
+      58
+    ],
+    "unknown_artist_share": 0.88636,
+    "near_duplicates_removed": 0,
+    "seed": 11
+  },
+  "reproducibility": [
+    {
+      "model": "regularised MLP on pixels",
+      "val_acc": 0.4551,
+      "test_acc_now": 0.41364,
+      "test_acc_notebook_06": 0.41364,
+      "same": true
+    },
+    {
+      "model": "random forest on hand-made features",
+      "val_acc": 0.6347,
+      "test_acc_now": 0.67273,
+      "test_acc_notebook_06": 0.67273,
+      "same": true
+    },
+    {
+      "model": "ResNet18 frozen + linear head",
+      "val_acc": 0.88128,
+      "test_acc_now": 0.8303,
+      "test_acc_notebook_06": 0.8303,
+      "same": true
+    },
+    {
+      "model": "ResNet18 fine-tuned (layer4)",
+      "val_acc": 0.85388,
+      "test_acc_now": 0.87879,
+      "test_acc_notebook_06": 0.87879,
+      "same": true
+    }
+  ],
+  "table": [
+    {
+      "model": "regularised MLP on pixels",
+      "test 1 acc": 0.41364,
+      "test 1 low": 0.34545,
+      "test 1 high": 0.47273,
+      "test 2 acc": 0.41818,
+      "test 2 low": 0.35455,
+      "test 2 high": 0.48182
+    },
+    {
+      "model": "random forest on hand-made features",
+      "test 1 acc": 0.67273,
+      "test 1 low": 0.60909,
+      "test 1 high": 0.73636,
+      "test 2 acc": 0.63636,
+      "test 2 low": 0.57273,
+      "test 2 high": 0.7
+    },
+    {
+      "model": "ResNet18 frozen + linear head",
+      "test 1 acc": 0.8303,
+      "test 1 low": 0.78636,
+      "test 1 high": 0.88636,
+      "test 2 acc": 0.84091,
+      "test 2 low": 0.78182,
+      "test 2 high": 0.87727
+    },
+    {
+      "model": "ResNet18 fine-tuned (layer4)",
+      "test 1 acc": 0.87879,
+      "test 1 low": 0.84091,
+      "test 1 high": 0.92727,
+      "test 2 acc": 0.87727,
+      "test 2 low": 0.83636,
+      "test 2 high": 0.92273
+    }
+  ],
+  "paired": [
+    {
+      "A": "ResNet18 frozen + linear head",
+      "B": "ResNet18 fine-tuned (layer4)",
+      "test": "test 2",
+      "seed": 0,
+      "diff": -0.05,
+      "ci_low": -0.09091,
+      "ci_high": -0.00909,
+      "share_not_better": 0.9954
+    },
+    {
+      "A": "ResNet18 frozen + linear head",
+      "B": "ResNet18 fine-tuned (layer4)",
+      "test": "test 2",
+      "seed": 1,
+      "diff": -0.04545,
+      "ci_low": -0.08636,
+      "ci_high": -0.00909,
+      "share_not_better": 0.993
+    },
+    {
+      "A": "ResNet18 frozen + linear head",
+      "B": "ResNet18 fine-tuned (layer4)",
+      "test": "test 2",
+      "seed": 2,
+      "diff": -0.01364,
+      "ci_low": -0.0592,
+      "ci_high": 0.03182,
+      "share_not_better": 0.743
+    },
+    {
+      "A": "ResNet18 frozen + linear head",
+      "B": "ResNet18 fine-tuned (layer4)",
+      "test": "test 1 + test 2 (440)",
+      "seed": 0,
+      "diff": -0.05,
+      "ci_low": -0.08182,
+      "ci_high": -0.02045,
+      "share_not_better": 0.9998
+    },
+    {
+      "A": "ResNet18 frozen + linear head",
+      "B": "random forest on hand-made features",
+      "test": "test 2",
+      "seed": 0,
+      "diff": 0.19545,
+      "ci_low": 0.12727,
+      "ci_high": 0.26364,
+      "share_not_better": 0.0
+    },
+    {
+      "A": "ResNet18 frozen + linear head",
+      "B": "random forest on hand-made features",
+      "test": "test 1 + test 2 (440)",
+      "seed": 0,
+      "diff": 0.17955,
+      "ci_low": 0.12727,
+      "ci_high": 0.22955,
+      "share_not_better": 0.0
+    },
+    {
+      "A": "random forest on hand-made features",
+      "B": "regularised MLP on pixels",
+      "test": "test 2",
+      "seed": 0,
+      "diff": 0.21818,
+      "ci_low": 0.15,
+      "ci_high": 0.28636,
+      "share_not_better": 0.0
+    },
+    {
+      "A": "random forest on hand-made features",
+      "B": "regularised MLP on pixels",
+      "test": "test 1 + test 2 (440)",
+      "seed": 0,
+      "diff": 0.24091,
+      "ci_low": 0.19091,
+      "ci_high": 0.29091,
+      "share_not_better": 0.0
+    }
+  ],
+  "frozen_seed0_per_class_test2": [
+    {
+      "style": "Baroque",
+      "recall": 0.95455,
+      "precision": 0.77778,
+      "f1": 0.85714,
+      "images": 44
+    },
+    {
+      "style": "Cubism",
+      "recall": 0.84091,
+      "precision": 0.86047,
+      "f1": 0.85057,
+      "images": 44
+    },
+    {
+      "style": "Impressionism",
+      "recall": 0.79545,
+      "precision": 0.85366,
+      "f1": 0.82353,
+      "images": 44
+    },
+    {
+      "style": "Pop_Art",
+      "recall": 0.61364,
+      "precision": 0.79412,
+      "f1": 0.69231,
+      "images": 44
+    },
+    {
+      "style": "Ukiyo_e",
+      "recall": 0.95455,
+      "precision": 0.875,
+      "f1": 0.91304,
+      "images": 44
+    }
+  ],
+  "both_tests_acc": {
+    "regularised MLP on pixels": 0.41591,
+    "random forest on hand-made features": 0.65455,
+    "ResNet18 frozen + linear head": 0.83561,
+    "ResNet18 fine-tuned (layer4)": 0.87803
+  },
+  "finetuned_seed0_per_class_both_tests": [
+    {
+      "style": "Baroque",
+      "recall": 0.94186,
+      "precision": 0.82653,
+      "f1": 0.88043,
+      "images": 86
+    },
+    {
+      "style": "Cubism",
+      "recall": 0.84884,
+      "precision": 0.87952,
+      "f1": 0.86391,
+      "images": 86
+    },
+    {
+      "style": "Impressionism",
+      "recall": 0.81915,
+      "precision": 0.91667,
+      "f1": 0.86517,
+      "images": 94
+    },
+    {
+      "style": "Pop_Art",
+      "recall": 0.81609,
+      "precision": 0.83529,
+      "f1": 0.82558,
+      "images": 87
+    },
+    {
+      "style": "Ukiyo_e",
+      "recall": 1.0,
+      "precision": 0.96667,
+      "f1": 0.98305,
+      "images": 87
+    }
+  ]
+}
