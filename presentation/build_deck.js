@@ -316,27 +316,30 @@ stepTag(s, 4);
   arrow(s, 1.8, mid, "arrow 1");
   card(s, 2.1, y, 3.5, h, "box resnet", C.text2);
   s.addText([
-    { text: "ResNet18, pretrained, frozen first", options: { bold: true, fontSize: 14, color: C.background1, breakLine: true } },
-    { text: `18 layers, ${Math.round(d05.parameters["ResNet18 + linear head (total)"] / 1e6)} million weights learned on 1.2 million ImageNet photos. Fine-tuning will unfreeze the last block.`,
+    { text: "ResNet18, pretrained on ImageNet", options: { bold: true, fontSize: 14, color: C.background1, breakLine: true } },
+    { text: `18 layers, ${Math.round(d05.parameters["ResNet18 + linear head (total)"] / 1e6)} million weights learned on 1.2 million photos. We never retrain all of them.`,
       options: { fontSize: 11, color: MUTED_DARK } },
   ], { x: 2.25, y: y + 0.1, w: 3.2, h: 0.85, valign: "top", margin: 0, isTextBox: true, objectName: "resnet text" });
-  [["first layers", "edges, colours"], ["middle layers", "textures"], ["last layers", "shapes"]].forEach(([when, what], i) => {
+  // What each part sees, and what happens to it: always frozen, or learning again when fine-tuned.
+  [["first layers", "edges, colours", "always frozen"], ["middle layers", "textures", "always frozen"],
+    ["last block", "shapes", "fine-tuned: learns"]].forEach(([when, what, status], i) => {
     const x = 2.25 + i * 1.1;
-    s.addShape(pres.shapes.ROUNDED_RECTANGLE, { x, y: y + 1.05, w: 0.98, h: 0.6, fill: { color: CARD_DARK },
-      line: { color: CARD_DARK, width: 0 }, rectRadius: 0.06, objectName: `level ${i + 1}` });
+    s.addShape(pres.shapes.ROUNDED_RECTANGLE, { x, y: y + 0.95, w: 0.98, h: 0.75, fill: { color: CARD_DARK },
+      line: { color: i === 2 ? C.accent4 : CARD_DARK, width: i === 2 ? 1.5 : 0 }, rectRadius: 0.06, objectName: `level ${i + 1}` });
     s.addText([{ text: when, options: { fontSize: 9, color: MUTED_DARK, breakLine: true } },
-      { text: what, options: { fontSize: 11, bold: true, color: C.background1 } }],
-    { x, y: y + 1.05, w: 0.98, h: 0.6, align: "center", valign: "middle", margin: 0, isTextBox: true, objectName: `level text ${i + 1}` });
+      { text: what, options: { fontSize: 11, bold: true, color: C.background1, breakLine: true } },
+      { text: status, options: { fontSize: 9, color: i === 2 ? C.accent4 : MUTED_DARK } }],
+    { x, y: y + 0.95, w: 0.98, h: 0.75, align: "center", valign: "middle", margin: 0, isTextBox: true, objectName: `level text ${i + 1}` });
   });
   arrow(s, 5.6, mid, "arrow 2");
   diagramBox(s, 5.9, y, 1.3, h, "512 numbers", "a summary of the painting");
   arrow(s, 7.2, mid, "arrow 3");
-  diagramBox(s, 7.5, y, 2.0, h, "Our new last layer", `replaces ResNet's own: 512 → 5 styles, ${heads["linear probe"].trained_parameters.toLocaleString("en-US").replace(",", " ")} weights, always trained`,
+  diagramBox(s, 7.5, y, 2.0, h, "Our new last layer", `replaces ResNet's own: 512 → 5 styles, ${heads["linear probe"].trained_parameters.toLocaleString("en-US").replace(",", " ")} weights, trained in both ways`,
     { fill: C.accent1, headColor: C.background1, color: C.background1, size: 12 });
   const why = [
     ["Made for images", "Small filters slide over the picture and look at neighbouring pixels, wherever they are. Our MLP saw 12 288 separate pixels."],
     ["Why ResNet18", "The brief asks for a pretrained ResNet; ResNet18 is the smallest (45 MB), light enough for a kiosk CPU. Shortcuts between layers let its 18 layers learn well."],
-    ["Why frozen first", `Only ${d01.split_counts.train.toLocaleString("en-US").replace(",", " ")} paintings: too few for 11 million weights. We reuse what it learned and first train only our new last layer, in ${heads["linear probe"].seconds.toFixed(1)} s.`],
+    ["Two ways to reuse it", `Frozen: only our new layer learns (2 565 weights, ${heads["linear probe"].seconds.toFixed(1)} s). Fine-tuned: the last block learns too (8.4 M weights, minutes), the first layers stay frozen.`],
   ];
   why.forEach(([hd, body], i) => noteCard(s, 0.5 + i * 3.05, 3.15, 2.9, 1.9, hd, body, { headSize: 14, size: 12 }));
 }
@@ -358,8 +361,8 @@ s.addChart(pres.charts.BAR, [
 const cubism = (rows) => rows.find((r) => r.style === "Cubism").recall;
 noteCard(s, 5.55, 1.15, 3.95, 1.2, "It sees shapes",
   `Cubist paintings found (validation): ${pct(cubism(d03.regularised_seed0_per_class), 0)} with our MLP, ${pct(cubism(d05.probe_seed0_per_class), 0)} with the ResNet.`);
-noteCard(s, 5.55, 2.5, 3.95, 1.2, "Fine-tuning: lower on validation",
-  `We also unfreeze its last block (8.4 M weights) to learn from our paintings: ${pct(ftMean)} on validation. The tests will say otherwise.`);
+noteCard(s, 5.55, 2.5, 3.95, 1.2, "Fine-tuned: lower on validation",
+  `Last block learning again (8.4 M weights), first layers still frozen: ${pct(ftMean)} on validation. The tests will say otherwise.`);
 noteCard(s, 5.55, 3.85, 3.95, 1.2, "Monitored like the MLP",
   `Train and validation curves for every run. Frozen + linear head: gap of only ${heads["linear probe"].gap.toFixed(2)} (our first MLP: ${tools["baseline (lr 0.0001)"].gap.toFixed(2)}).`);
 s.addNotes("A network that can see shapes is a convolutional network. With 1 061 images we cannot train one from zero, so we reuse ResNet18, trained on 1.2 million ImageNet photos. We freeze it: each painting becomes 512 numbers, and we train only one linear layer, 2 565 weights, in 0.4 seconds. Result: 88.1 percent on validation, almost twice our best MLP. We monitored it like the MLP: the gap between train and validation is only 0.09. Fine-tuning the last block, 8.4 million weights, does not help here: it overfits.");
