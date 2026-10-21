@@ -379,6 +379,24 @@ s.addNotes("So our recommendation: deploy a frozen ResNet18 with a linear head. 
 
 // ================================================================= backup slides (for the questions)
 pres.addSection({ title: "Backup" });
+// The classical challenger of the final test, explained (notebook 06, src/museum_guide/baselines.py).
+s = addSlide({ masterName: "CONTENT", sectionTitle: "Backup" });
+s.addText("Backup: the random forest challenger", { placeholder: "title" });
+noteCard(s, 0.5, 1.15, 4.4, 1.75, "102 hand-made numbers per painting",
+  "Colours: a histogram of hue, saturation and brightness (72) and colour statistics (10). Brush strokes: direction and strength of the edges, at two sizes (20).");
+noteCard(s, 5.1, 1.15, 4.4, 1.75, "500 decision trees that vote",
+  "Each tree learns from a random draw of the training paintings and sees 10 of the 102 numbers at each question. Their mistakes differ, so the vote cancels them.");
+[["logistic regression on pixels", "Logistic regression on pixels"],
+  ["logistic regression on hand-made features", "Logistic regression on the 102 numbers"],
+  [RF, "Random forest on the 102 numbers"],
+  [FROZEN, "ResNet18 frozen + linear head (ours)"]].forEach(([model, caption], i) =>
+  statCard(s, 0.5 + i * 2.3167, 3.1, 2.05, 1.6, pct(test[model].test_acc), caption,
+    { strong: model === FROZEN, color: model === RF ? HEX.classical : undefined, size: 30, captionSize: 12 }));
+const rfBestVal = Math.max(...Object.values(d06.classical_tuning[RF]));
+s.addText(`Test accuracy, ${d01.split_counts.test} paintings. Best of 4 settings on validation: ${pct(rfBestVal)}. Training ${speed[RF].training_seconds.toFixed(0)} s, ${Math.round(speed[RF].ms_1_thread)} ms per photo, ${Math.round(speed[RF].size_mb)} MB.`,
+  { x: 0.5, y: 4.78, w: 9, h: 0.35, fontSize: 12, color: MUTED, margin: 0, valign: "top", isTextBox: true, objectName: "forest caption" });
+s.addNotes(`If asked about the random forest: it is our best model without any neural network, the "classical model" of the director's question. A classical model cannot read raw pixels well, so we describe each painting with 102 hand-made numbers: its colours and the directions of its brush strokes. A random forest is 500 decision trees: each one learns from a random draw of the paintings and sees a random part of the numbers at each question, and they vote. Settings chosen on validation. On the test: ${pct(test[RF].test_acc)}, 16.4 points below the frozen ResNet18. The same logistic regression goes from ${pct(test["logistic regression on hand-made features"].test_acc)} on our numbers to ${pct(test["logistic regression on ResNet features"].test_acc)} on the ResNet features: the features matter more than the model on top.`);
+
 s = addSlide({ masterName: "CONTENT", sectionTitle: "Backup" });
 s.addText("Backup: validation and test disagree", { placeholder: "title" });
 s.addTable([
