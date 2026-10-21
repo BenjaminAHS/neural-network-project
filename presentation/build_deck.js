@@ -138,7 +138,7 @@ const noteCard = (slide, x, y, w, h, heading, body, opts = {}) => {
 const STEPS = [
   ["Data", "Data and a fair split", "1 500 WikiArt paintings, 5 styles, split by painter"],
   ["Our MLP", "Our own network (MLP)", "built from nn.Linear, trained on the pixels"],
-  ["Monitoring", "Monitoring and diagnosis", "look inside the training, fix it, break it on purpose"],
+  ["Monitoring", "Monitoring and diagnosis", "look inside the training, diagnose it, fix it"],
   ["ResNet18", "A pretrained ResNet18", "reuse a network trained on 1.2 million photos"],
   ["Final test", "The final test", "every model once on 220 new paintings, classical models too"],
   ["Kiosk cost", "The cost on a kiosk", "time per photo, size, training time"],
@@ -149,6 +149,7 @@ const stepTag = (slide, n) => slide.addText(`STEP ${n} OF ${STEPS.length} · ${S
 
 const bullets = (items, size = 15) => items.map((t, i) => ({ text: t,
   options: { bullet: true, fontSize: size, breakLine: i < items.length - 1, paraSpaceAfter: 8 } }));
+const head = (t) => ({ text: t, options: { bold: true, color: C.background1, fill: { color: C.text2 } } });
 
 const pngSize = (file) => { const b = fs.readFileSync(file); return { w: b.readUInt32BE(16), h: b.readUInt32BE(20) }; };
 
@@ -272,24 +273,7 @@ s.addText(bullets([
 ], 14), { x: 6.05, y: 1.2, w: 3.45, h: 3.85, valign: "top", margin: 0, color: C.text1, isTextBox: true, objectName: "monitoring bullets" });
 s.addNotes("We then looked inside the network during training: the gradient of each layer and the share of dead neurons. The gradient reaches every layer and only 4 percent of neurons are dead, so the training is healthy: the problem is overfitting. A learning-rate sweep chose 0.0001. Then we tested the tools of session 6, each with 3 seeds. Alone, each one helps a little. All together, they take the MLP from 38.8 to 45.5 percent, and the gap between train and validation from 0.61 to 0.12. But the MLP finds only 7 percent of the Cubist paintings: it sees colours, not shapes.");
 
-// ================================================================= 6. training doctor
-s = addSlide({ masterName: "CONTENT", sectionTitle: "Our MLP" });
-s.addText("Four broken runs, four signatures", { placeholder: "title" });
-stepTag(s, 3);
-const head = (t) => ({ text: t, options: { bold: true, color: C.background1, fill: { color: C.text2 } } });
-s.addTable([
-  [head("Bug we caused"), head("Symptom we measured"), head("Cause"), head("Cure → result")],
-  ["Learning rate too big", "loss stuck at ln 5; 99.6 % of neurons dead in layer 2", "steps push every ReLU below 0", "lr 0.0001 → 43.8 %"],
-  ["zero_grad() forgotten", "loss jumps to 4.9, then one class only", "gradients pile up: x26 in 2 epochs", "zero_grad() → 41.1 %"],
-  ["Raw pixels (0 to 255)", "first loss 16.3 instead of 1.6", "inputs dozens of times too big", "standardise → 43.8 %"],
-  ["8 sigmoid layers", "loss stuck at ln 5", "vanishing gradient: layer 1 gets 6e-7 of layer 9", "ReLU + He init → 39.3 %"],
-], { x: 0.5, y: 1.15, w: 9, colW: [1.85, 2.75, 2.45, 1.95], fontSize: 13, color: C.text1, valign: "middle", margin: 0.07,
-  border: { type: "solid", pt: 0.75, color: "D9DCE2" }, rowH: [0.42, 0.62, 0.62, 0.62, 0.62], objectName: "doctor table" });
-noteCard(s, 0.5, 4.15, 9, 0.9, "Lesson", "Same symptom (loss stuck at ln 5), two causes: only the monitor (dead neurons, gradient per layer) tells them apart.",
-  { headSize: 14, size: 14 });
-s.addNotes("To be ready for real problems, we broke the training four times on purpose. A learning rate too big killed 99.6 percent of the neurons of layer 2. A forgotten zero_grad made the gradients pile up, 26 times bigger after two epochs. Raw pixels gave a first loss of 16 instead of 1.6. And eight sigmoid layers gave a vanishing gradient: the first layer gets a millionth of the gradient of the last one. The key lesson: two of these bugs show the same symptom, a loss stuck at ln 5. Only the monitoring, dead neurons or gradient per layer, tells them apart.");
-
-// ================================================================= 7. ResNet
+// ================================================================= 6. ResNet
 pres.addSection({ title: "Pretrained ResNet" });
 s = addSlide({ masterName: "CONTENT", sectionTitle: "Pretrained ResNet" });
 s.addText("A pretrained ResNet18 sees shapes", { placeholder: "title" });
@@ -307,12 +291,11 @@ noteCard(s, 5.55, 1.15, 3.95, 1.2, "Frozen features",
   `Each painting → 512 numbers (${d05.feature_ms_per_image_batch64.toFixed(1)} ms). Only one linear layer is trained: 2 565 weights, ${heads["linear probe"].seconds.toFixed(1)} s.`);
 noteCard(s, 5.55, 2.5, 3.95, 1.2, "Fine-tuning layer4",
   `8.4 M weights for 1 061 images: 99.9 % on train, ${pct(ftMean)} on validation. It overfits.`);
-noteCard(s, 5.55, 3.85, 3.95, 1.2, "Two silent bugs",
-  `No model.eval(): ${pct(d05.extraction_bugs["forgot model.eval()"])}. No ImageNet normalisation: ${pct(d05.extraction_bugs["forgot the ImageNet normalisation"])}.`,
-  { headColor: C.accent2 });
-s.addNotes("A network that can see shapes is a convolutional network. With 1 061 images we cannot train one from zero, so we reuse ResNet18, trained on 1.2 million ImageNet photos. We freeze it: each painting becomes 512 numbers, and we train only one linear layer, 2 565 weights, in 0.4 seconds. Result: 88.1 percent on validation, almost twice our best MLP. Fine-tuning the last block, 8.4 million weights, does not help here: it overfits. We also measured two silent bugs: forgetting model.eval() drops the score to 12.8 percent, and forgetting the ImageNet normalisation costs 6 points.");
+noteCard(s, 5.55, 3.85, 3.95, 1.2, "Monitored like the MLP",
+  `Train and validation curves for every run. Frozen + linear head: gap of only ${heads["linear probe"].gap.toFixed(2)} (our first MLP: ${tools["baseline (lr 0.0001)"].gap.toFixed(2)}).`);
+s.addNotes("A network that can see shapes is a convolutional network. With 1 061 images we cannot train one from zero, so we reuse ResNet18, trained on 1.2 million ImageNet photos. We freeze it: each painting becomes 512 numbers, and we train only one linear layer, 2 565 weights, in 0.4 seconds. Result: 88.1 percent on validation, almost twice our best MLP. We monitored it like the MLP: the gap between train and validation is only 0.09. Fine-tuning the last block, 8.4 million weights, does not help here: it overfits.");
 
-// ================================================================= 8. painter leakage
+// ================================================================= 7. painter leakage
 s = addSlide({ masterName: "CONTENT", sectionTitle: "Pretrained ResNet" });
 s.addText("Seeing the painter inflates the score", { placeholder: "title" });
 stepTag(s, 4);
@@ -334,7 +317,7 @@ s.addText(bullets([
 ], 14), { x: 6.3, y: 3.1, w: 3.2, h: 1.95, valign: "top", margin: 0, color: C.text1, isTextBox: true, objectName: "leakage bullets" });
 s.addNotes("Now the painter rule from the beginning. To measure it fairly, we scored the same images twice with cross-validation, changing only one thing: whether the model saw other paintings by the same painter. On images by known painters, seeing the painter gives 83.7 percent instead of 72.3: 11 points of pure flattery. On the control group, unknown painters, nothing changes. So the model partly recognises painters, and a random split would have given the director a score that is too optimistic. Our split by painter avoids it.");
 
-// ================================================================= 9. final test
+// ================================================================= 8. final test
 pres.addSection({ title: "The answer" });
 s = addSlide({ masterName: "CONTENT", sectionTitle: "The answer" });
 s.addText("Final test: the pretrained network wins", { placeholder: "title" });
@@ -362,7 +345,7 @@ noteCard(s, 6.85, 3.45, 2.65, 1.6, "Honest note",
   { headSize: 14, size: 12 });
 s.addNotes("Finally, the test, measured once on 220 new paintings. The pretrained models are at the top, from 83 to 88 percent. The best classical model reaches 67 percent, and our MLP 41 percent. The gap between our chosen model and the random forest is 16 points, and a paired bootstrap on the same paintings gives an interval from 9 to 24 points: it is not luck. One honest note: the fine-tuned model is first on test, but it was second on validation. With 220 images a score moves by about 5 points, so we keep the model we chose before the test.");
 
-// ================================================================= 10. cost on a kiosk
+// ================================================================= 9. cost on a kiosk
 s = addSlide({ masterName: "CONTENT", sectionTitle: "The answer" });
 s.addText("Fast and cheap enough for a kiosk", { placeholder: "title" });
 stepTag(s, 6);
@@ -374,7 +357,7 @@ noteCard(s, 0.5, 3.45, 9, 1.25, "In practice",
   `A kiosk 4 times slower still answers in about 0.2 s. Random forest: ${Math.round(speed[RF].ms_1_thread)} ms and ${Math.round(speed[RF].size_mb)} MB, but ${pct(test[RF].test_acc)}. When the collection changes: compute the new features, retrain one layer, in seconds.`);
 s.addNotes("Is it affordable on a kiosk? We timed one photo at a time, from the image to the answer. The ResNet takes 53 milliseconds on one CPU thread and 26 with four threads. Even on a kiosk four times slower, that is a fifth of a second. The model file is 45 megabytes, and training takes 17 seconds on a laptop, without a GPU. When the collection changes, we only compute the new features and retrain the last layer, in seconds.");
 
-// ================================================================= 11. recommendation
+// ================================================================= 10. recommendation
 s = addSlide({ masterName: "CLOSING", sectionTitle: "The answer" });
 s.addText("Our choice: frozen ResNet18 + linear head", { placeholder: "title" });
 s.addText(`Test, ${d01.split_counts.test} new paintings:  our MLP ${pct(test[MLP].test_acc)}  →  best classical ${pct(test[RF].test_acc)}  →  frozen ResNet18 ${pct(test[FROZEN].test_acc)}`,
@@ -432,6 +415,21 @@ s.addTable([
   border: { type: "solid", pt: 0.75, color: "D9DCE2" }, objectName: "recipes table" });
 s.addNotes("If asked about hyperparameters: all of them were chosen on the validation set (learning-rate sweep, 3 seeds per setting), and they are written once in src/museum_guide/recipes.py.");
 
+// Training doctor (notebook 04): out of the talk, kept for the questions on monitoring.
+s = addSlide({ masterName: "CONTENT", sectionTitle: "Backup" });
+s.addText("Backup: four broken runs, four signatures", { placeholder: "title" });
+s.addTable([
+  [head("Bug we caused"), head("Symptom we measured"), head("Cause"), head("Cure → result")],
+  ["Learning rate too big", "loss stuck at ln 5; 99.6 % of neurons dead in layer 2", "steps push every ReLU below 0", "lr 0.0001 → 43.8 %"],
+  ["zero_grad() forgotten", "loss jumps to 4.9, then one class only", "gradients pile up: x26 in 2 epochs", "zero_grad() → 41.1 %"],
+  ["Raw pixels (0 to 255)", "first loss 16.3 instead of 1.6", "inputs dozens of times too big", "standardise → 43.8 %"],
+  ["8 sigmoid layers", "loss stuck at ln 5", "vanishing gradient: layer 1 gets 6e-7 of layer 9", "ReLU + He init → 39.3 %"],
+], { x: 0.5, y: 1.15, w: 9, colW: [1.85, 2.75, 2.45, 1.95], fontSize: 13, color: C.text1, valign: "middle", margin: 0.07,
+  border: { type: "solid", pt: 0.75, color: "D9DCE2" }, rowH: [0.42, 0.62, 0.62, 0.62, 0.62], objectName: "doctor table" });
+noteCard(s, 0.5, 4.15, 9, 0.9, "Lesson", "Same symptom (loss stuck at ln 5), two causes: only the monitor (dead neurons, gradient per layer) tells them apart.",
+  { headSize: 14, size: 14 });
+s.addNotes(`If asked whether our monitoring tools really detect problems: in notebook 04 we broke the MLP training four times on purpose, and each bug left its own signature. Two of them give the same loss stuck at ln 5; only the dead neurons or the gradient per layer tell them apart. For the ResNet, two silent bugs: forgetting model.eval() gives ${pct(d05.extraction_bugs["forgot model.eval()"])}, forgetting the ImageNet normalisation ${pct(d05.extraction_bugs["forgot the ImageNet normalisation"])}.`);
+
 s = addSlide({ masterName: "CONTENT", sectionTitle: "Backup" });
 s.addText("Backup: where the chosen model fails", { placeholder: "title" });
 const pc = [...d06.best_model_test_per_class].sort((a, b) => a.recall - b.recall); // best style at the top
@@ -474,7 +472,22 @@ if (fs.existsSync(T_FILE)) {
   s.addNotes("If asked about BERT or transformers: BERT reads text, so it cannot classify paintings alone. Its image cousin ViT gives the same accuracy as ResNet18 but is about 9 times slower. CLIP, trained on images with captions, reaches about 89 percent with no training at all and about 95 percent with our linear head, on validation. Two cautions: it probably saw WikiArt during its training, and we did not reopen the test set. It is our first next step, and it would also answer visitors' questions in words.");
 }
 
+// pptxgenjs writes the notes of a slide as one run of text. The transition sentence of the oral script
+// comes after a blank line: make it a paragraph of its own, in bold, so it stands out while presenting.
+async function splitTransitionNotes(file) {
+  const JSZip = require("jszip");
+  const zip = await JSZip.loadAsync(fs.readFileSync(file));
+  for (const name of Object.keys(zip.files).filter((n) => /^ppt\/notesSlides\/notesSlide\d+\.xml$/.test(n))) {
+    const xml = await zip.file(name).async("string");
+    const split = xml.replace(/(?:\r?\n){2}(TRANSITION: )/g,
+      '</a:t></a:r></a:p><a:p><a:pPr><a:spcBef><a:spcPts val="900"/></a:spcBef></a:pPr><a:r><a:rPr lang="en-US" b="1" dirty="0"/><a:t>$1');
+    if (split !== xml) zip.file(name, split);
+  }
+  fs.writeFileSync(file, await zip.generateAsync({ type: "nodebuffer", compression: "DEFLATE" }));
+}
+
 pres.writeFile({ fileName: OUT }).then(async () => {
   await applyTheme(OUT, THEME);
+  await splitTransitionNotes(OUT);
   console.log(`written ${OUT}`);
 });
