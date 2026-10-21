@@ -338,7 +338,7 @@ stepTag(s, 4);
     { fill: C.accent1, headColor: C.background1, color: C.background1, size: 12 });
   const why = [
     ["Made for images", "Small filters slide over the picture and look at neighbouring pixels, wherever they are. Our MLP saw 12 288 separate pixels."],
-    ["Why ResNet18", "The brief asks for a pretrained ResNet; ResNet18 is the smallest (45 MB), light enough for a kiosk CPU. Shortcuts between layers let its 18 layers learn well."],
+    ["Why ResNet18", "ResNet, a famous CNN family (ImageNet winner in 2015), is asked by the brief. ResNet18 is its smallest member: 45 MB, light enough for a kiosk CPU."],
     ["Two ways to reuse it", `Frozen: only our new layer learns (2 565 weights, ${heads["linear probe"].seconds.toFixed(1)} s). Fine-tuned: the last block learns too (8.4 M weights, minutes), the first layers stay frozen.`],
   ];
   why.forEach(([hd, body], i) => noteCard(s, 0.5 + i * 3.05, 3.15, 2.9, 1.9, hd, body, { headSize: 14, size: 12 }));
