@@ -24,14 +24,15 @@ every claim backed by evidence.
 | 3 | A pretrained CNN (ResNet18) used as a feature extractor and fine-tuned | [05_resnet](notebooks/05_resnet.ipynb) |
 | 4 | Classical models, the final test, CPU speed tests and our recommendation to the director | [06_final_comparison](notebooks/06_final_comparison.ipynb) |
 | Bonus | Transformers (ViT, CLIP) against ResNet18, on validation | [07_transformers](notebooks/07_transformers.ipynb) |
+| 5 | A second test on 220 new paintings: was the fine-tuned win luck? | [08_second_test](notebooks/08_second_test.ipynb) |
 
 ## Our answer to the director, in short
 
-**Yes, a neural network is worth it, but a pretrained one that we reuse (ResNet18, frozen, with a linear
-head), not one we train from zero.** On 220 paintings never seen before, it reaches **83.0 %**, against
-**67.3 %** for the best classical model and 41.4 % for our MLP on pixels. It classifies one photo in about
-53 ms on one CPU thread and trains in 17 s on a laptop, without a GPU. Details and limits:
-[see below](#final-test-and-recommendation).
+**Yes, a neural network is worth it, but a pretrained one that we reuse (ResNet18, with its last block
+fine-tuned on our paintings), not one we train from zero.** On 440 paintings never seen before (two
+tests), it reaches **87.8 %**, against **65.5 %** for the best classical model and 41.6 % for our MLP on
+pixels. It classifies one photo in about 53 ms on one CPU thread and trains in 2.5 minutes on a laptop,
+without a GPU. Details and limits: [see below](#final-test-and-recommendation).
 
 ## Data
 
@@ -158,21 +159,47 @@ times are medians over 50 photos, one photo at a time, including the resizing an
 - **The pretrained network wins clearly**: the frozen ResNet + linear head is 16.4 points better than the
   random forest (interval of the difference: 9.1 to 24.1 points, on the same test paintings).
 - **Frozen or fine-tuned?** The validation and the test disagree (88.1 % against 85.4 % on validation, 83.0 %
-  against 87.9 % on test): with about 220 paintings per set, our data cannot separate them. We chose the
-  frozen model on validation, before the test, and we keep it; fine-tuning is the first thing to try again
-  with more data.
+  against 87.9 % on test). We had chosen the frozen model on validation, before the test. Switching on one
+  test alone would make its score too optimistic, so we checked with a second test (below).
 - **Speed is not a problem**: every model classifies a photo in well under a tenth of a second on one
   CPU thread.
 
 ![Test accuracy](reports/figures/06_test_accuracy.png)
 
-**Our recommendation**: ResNet18 frozen, with a linear head.
+### A second test: was the fine-tuned win luck?
 
-- It is much more accurate than any classical model: about one visitor in six gets a wrong style, against
+[scripts/make_second_test.py](scripts/make_second_test.py) draws **220 new paintings** (44 per style) that no
+model and no notebook had seen: only WikiArt shards that our data never opened, no painter known from our
+1 500 paintings (89 % are "Unknown Artist"), the same 224 x 224 processing, and a perceptual-hash check (no
+near-copy of our paintings). [Notebook 08](notebooks/08_second_test.ipynb) trains the same models again (same
+recipes and seeds, same scores as notebook 06) and scores them **once** on these paintings. Its rules were
+written before the run.
+
+| Model (mean of 3 seeds) | Test 1 (220) | Test 2 (220 new) | Both tests (440) |
+|---|---|---|---|
+| Regularised MLP on pixels | 41.4 % | 41.8 % | 41.6 % |
+| Random forest on hand-made features | 67.3 % | 63.6 % | 65.5 % |
+| ResNet18 frozen + linear head | 83.0 % | 84.1 % | 83.6 % |
+| **ResNet18 with `layer4` fine-tuned** | **87.9 %** | **87.7 %** | **87.8 %** |
+
+- **Not luck**: on the 440 test paintings, fine-tuning beats the frozen model by **5.0 points** (paired
+  interval 2.0 to 8.2). Our 219 validation paintings were too few to see it.
+- **The answer to the director holds**: the frozen ResNet is 18.0 points better than the random forest on the
+  440 paintings (12.7 to 23.0).
+
+![Second test](reports/figures/08_second_test.png)
+
+**Our recommendation**: ResNet18 pretrained on ImageNet, with its last block (`layer4`) fine-tuned on our
+paintings.
+
+- It is much more accurate than any classical model: about one visitor in eight gets a wrong style, against
   one in three.
-- It is fast enough for a modest CPU.
-- It is cheap to maintain for a small team: the ResNet is used as downloaded, and only a small layer is
-  trained, in seconds, when the collection changes.
+- It is fast enough for a modest CPU (53 ms per photo, 45 MB, like the frozen version).
+- It is cheap to maintain for a small team: when the collection changes, the last block and the head are
+  retrained in a few minutes on a laptop, without a GPU.
+- Honest caveat: the two tests helped this choice, so its test scores are slightly optimistic. With more data
+  we would choose with cross-validation and keep a third set of new paintings for the final score. The frozen
+  version is a fallback: 4 to 5 points less accurate, trained in seconds.
 
 **Before production**:
 
@@ -192,7 +219,7 @@ ResNet18. These are **validation** numbers: the test set was used once, in noteb
 
 | Frozen network | Validation accuracy (219 paintings) | Time per photo vs ResNet18 | Parameters |
 |---|---|---|---|
-| ResNet18 + linear head (our choice) | 88.1 % | x 1 | 11 M |
+| ResNet18 frozen + linear head | 88.1 % | x 1 | 11 M |
 | ViT-B/16 (the BERT architecture on 16 x 16 image patches) + linear head | 88.1 % | x 9 | 86 M |
 | CLIP ViT-B/32, zero-shot (no training: one sentence per style) | 89.0 % | x 2.7 | 151 M (88 M for images) |
 | CLIP ViT-B/32 + linear head | **94.7 %** | x 2.7 | 151 M (88 M for images) |
@@ -209,6 +236,7 @@ ResNet18. These are **validation** numbers: the test set was used once, in noteb
 pip install -r requirements.txt
 bash scripts/get_data.sh                  # once: builds data/wikiart_style5
 python -m pytest                          # automatic checks
+python scripts/make_second_test.py        # once: builds data/wikiart_test2 (220 new paintings, for notebook 08)
 python scripts/run_notebooks.py           # rebuilds and runs every notebook (FAST_RUN=1 for a quick check)
 ```
 
@@ -217,7 +245,7 @@ The notebooks are stored twice: the `.py` file is the source (easy to read in a 
 
 ## Presentation and study guide
 
-- [docs/museum_guide_presentation.pptx](docs/museum_guide_presentation.pptx): the 10-minute defence (11 slides,
+- [docs/museum_guide_presentation.pptx](docs/museum_guide_presentation.pptx): the 10-minute defence (12 slides,
   10 backup slides, speaker notes). In this public copy the paintings of the title slide are replaced by colour
   squares (WikiArt licence).
 - [docs/oral_study_guide.pdf](docs/oral_study_guide.pdf) ([.docx](docs/oral_study_guide.docx)): every step, every
@@ -227,9 +255,9 @@ The notebooks are stored twice: the `.py` file is the source (easy to read in a 
 
 ```
 make_wikiart_subset.py   builds the data subset (script given by the course)
-scripts/                 the exact data command, and a script that runs all the notebooks
+scripts/                 the data command, the second test set, a ResNet18-from-zero check, and a script that runs the notebooks
 src/museum_guide/        our Python code (data, models, training loop, diagnostics)
-notebooks/               the experiments, run in order (01 to 06, then the bonus 07)
+notebooks/               the experiments, run in order (01 to 06, the bonus 07, then the second test 08)
 tests/                   small automatic checks (data split, model, training loop)
 reports/                 figures, the split and every measured result (JSON), no artwork images
 docs/                    the presentation and the oral study guide
@@ -243,3 +271,4 @@ docs/                    the presentation and the oral study guide
 - [x] **m3**: pretrained ResNet18 (feature extractor, fine-tuning, painter leakage)
 - [x] **v1.0**: classical models, CPU benchmark, final test and recommendation
 - [x] Bonus: transformers (ViT, CLIP) on validation
+- [x] Second test on 220 new paintings: the fine-tuned ResNet18 is confirmed, and recommended
