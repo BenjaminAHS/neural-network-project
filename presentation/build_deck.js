@@ -232,7 +232,7 @@ s.addText([
   { text: "known painters in two parts", options: { fontSize: 15, bold: true, color: C.text2, breakLine: true } },
   { text: `a random split would share ${d01.leakage.shared_painters_random_split} of ${d01.leakage.known_painters}`, options: { fontSize: 14, color: C.text1 } },
 ], { x: 6.4, y: 3.05, w: 2.95, h: 0.95, valign: "middle", margin: 0, isTextBox: true, objectName: "zero caption" });
-s.addText("Otherwise a model can recognise the painter instead of the style (measured later: +11 points).",
+s.addText("Otherwise a model can recognise the painter instead of the style (we measured it: +11 points).",
   { x: 5.45, y: 4.15, w: 3.85, h: 0.7, fontSize: 12, color: MUTED, margin: 0, valign: "top", isTextBox: true, objectName: "split note" });
 s.addNotes("We used 1 500 WikiArt paintings, 300 per style. We split them into 1 061 to train, 219 to validate and 220 to test, with the same share of each style. One more rule: all the paintings of a known painter go to the same part. With a random split, 23 of our 32 known painters would be in two parts, and a model could recognise the painter instead of the style. With our split, zero. The test set stayed locked until the very end: we used it once. Later I will show that this rule changes the score by 11 points.");
 
@@ -295,48 +295,22 @@ noteCard(s, 5.55, 3.85, 3.95, 1.2, "Monitored like the MLP",
   `Train and validation curves for every run. Frozen + linear head: gap of only ${heads["linear probe"].gap.toFixed(2)} (our first MLP: ${tools["baseline (lr 0.0001)"].gap.toFixed(2)}).`);
 s.addNotes("A network that can see shapes is a convolutional network. With 1 061 images we cannot train one from zero, so we reuse ResNet18, trained on 1.2 million ImageNet photos. We freeze it: each painting becomes 512 numbers, and we train only one linear layer, 2 565 weights, in 0.4 seconds. Result: 88.1 percent on validation, almost twice our best MLP. We monitored it like the MLP: the gap between train and validation is only 0.09. Fine-tuning the last block, 8.4 million weights, does not help here: it overfits.");
 
-// ================================================================= 7. painter leakage
-s = addSlide({ masterName: "CONTENT", sectionTitle: "Pretrained ResNet" });
-s.addText("Seeing the painter inflates the score", { placeholder: "title" });
-stepTag(s, 4);
-s.addChart(pres.charts.BAR, [
-  { name: "Random folds: the painter was seen in training", labels: ["Known painters (536 images)", "Unknown Artist (744 images, control)"],
-    values: [T10(leakMean("random folds", "known painters")), T10(leakMean("random folds", "unknown painters"))] },
-  { name: "Painter folds: the painter was never seen", labels: ["Known painters (536 images)", "Unknown Artist (744 images, control)"],
-    values: [T10(leakMean("painter folds", "known painters")), T10(leakMean("painter folds", "unknown painters"))] },
-], { x: 0.4, y: 1.1, w: 5.6, h: 3.95, barDir: "col", barGrouping: "clustered", chartColors: [HEX.neural, HEX.classical],
-  showValue: true, dataLabelPosition: "outEnd", dataLabelFormatCode: FMT, dataLabelColor: HEX.axis,
-  valAxisHidden: true, valAxisMinVal: 500, valAxisMaxVal: 950, valGridLine: { style: "none" }, catGridLine: { style: "none" },
-  showLegend: true, legendPos: "t", showTitle: false, barGapWidthPct: 60, ...chartText, objectName: "chart leakage" });
-statCard(s, 6.3, 1.15, 3.2, 1.75, `+${(100 * (leakMean("random folds", "known painters") - leakMean("painter folds", "known painters"))).toFixed(1)}`,
-  "points when the painter was seen in training", { strong: true, size: 40 });
-s.addText(bullets([
-  "Same images, same model: 5-fold cross-validation on train + validation",
-  "Control group (unknown painters): no change",
-  "So we split by painter: a random split would flatter the score",
-], 14), { x: 6.3, y: 3.1, w: 3.2, h: 1.95, valign: "top", margin: 0, color: C.text1, isTextBox: true, objectName: "leakage bullets" });
-s.addNotes("Now the painter rule from the beginning. To measure it fairly, we scored the same images twice with cross-validation, changing only one thing: whether the model saw other paintings by the same painter. On images by known painters, seeing the painter gives 83.7 percent instead of 72.3: 11 points of pure flattery. On the control group, unknown painters, nothing changes. So the model partly recognises painters, and a random split would have given the director a score that is too optimistic. Our split by painter avoids it.");
-
-// ================================================================= 8. final test
+// ================================================================= 7. final test
 pres.addSection({ title: "The answer" });
 s = addSlide({ masterName: "CONTENT", sectionTitle: "The answer" });
 s.addText("Final test: the pretrained network wins", { placeholder: "title" });
 stepTag(s, 5);
-const order = [["always the most frequent style", "Always the same style", "baseline"],
-  ["logistic regression on pixels", "Logistic regression, pixels", "classical"],
-  [MLP, "Our MLP, pixels", "neural"],
-  ["logistic regression on hand-made features", "Logistic regression, hand-made", "classical"],
-  [RF, "Random forest, hand-made", "classical"],
+const order = [[MLP, "Our MLP, pixels", "neural"],
+  [RF, "Random forest, 102 hand-made numbers", "classical"],
   [FROZEN, "ResNet18 frozen + linear head (ours)", "neural"],
-  ["logistic regression on ResNet features", "ResNet18 frozen + logistic regression", "hybrid"],
   [FT, "ResNet18, layer4 fine-tuned", "neural"]];
-const fams = [["baseline", "Baseline", HEX.baseline], ["classical", "Classical", HEX.classical], ["hybrid", "Hybrid", HEX.hybrid], ["neural", "Neural", HEX.neural]];
+const fams = [["classical", "Classical", HEX.classical], ["neural", "Neural", HEX.neural]];
 s.addChart(pres.charts.BAR, fams.map(([fam, name]) => ({ name, labels: order.map((o) => o[1]),
   values: order.map((o) => (o[2] === fam ? T10(test[o[0]].test_acc) : 0)) })),
 { x: 0.3, y: 1.05, w: 6.35, h: 4.05, barDir: "bar", barGrouping: "stacked", chartColors: fams.map((f) => f[2]),
   showValue: true, dataLabelPosition: "inEnd", dataLabelFormatCode: FMT, dataLabelColor: "FFFFFF",
   valAxisHidden: true, valAxisMinVal: 0, valAxisMaxVal: 1000, valGridLine: { style: "none" }, catGridLine: { style: "none" },
-  showLegend: true, legendPos: "b", showTitle: true, title: `Test accuracy, ${d01.split_counts.test} new paintings`, barGapWidthPct: 35,
+  showLegend: true, legendPos: "b", showTitle: true, title: `Test accuracy, ${d01.split_counts.test} new paintings`, barGapWidthPct: 60,
   ...chartText, objectName: "chart final test" });
 statCard(s, 6.85, 1.15, 2.65, 2.15, `+${(100 * paired.diff).toFixed(1)}`,
   `points over the best classical model (95 % interval ${(100 * paired.ci_low).toFixed(1)} to ${(100 * paired.ci_high).toFixed(1)})`, { strong: true, size: 40, captionSize: 13 });
@@ -345,7 +319,7 @@ noteCard(s, 6.85, 3.45, 2.65, 1.6, "Honest note",
   { headSize: 14, size: 12 });
 s.addNotes("Finally, the test, measured once on 220 new paintings. The pretrained models are at the top, from 83 to 88 percent. The best classical model reaches 67 percent, and our MLP 41 percent. The gap between our chosen model and the random forest is 16 points, and a paired bootstrap on the same paintings gives an interval from 9 to 24 points: it is not luck. One honest note: the fine-tuned model is first on test, but it was second on validation. With 220 images a score moves by about 5 points, so we keep the model we chose before the test.");
 
-// ================================================================= 9. cost on a kiosk
+// ================================================================= 8. cost on a kiosk
 s = addSlide({ masterName: "CONTENT", sectionTitle: "The answer" });
 s.addText("Fast and cheap enough for a kiosk", { placeholder: "title" });
 stepTag(s, 6);
@@ -357,14 +331,14 @@ noteCard(s, 0.5, 3.45, 9, 1.25, "In practice",
   `A kiosk 4 times slower still answers in about 0.2 s. Random forest: ${Math.round(speed[RF].ms_1_thread)} ms and ${Math.round(speed[RF].size_mb)} MB, but ${pct(test[RF].test_acc)}. When the collection changes: compute the new features, retrain one layer, in seconds.`);
 s.addNotes("Is it affordable on a kiosk? We timed one photo at a time, from the image to the answer. The ResNet takes 53 milliseconds on one CPU thread and 26 with four threads. Even on a kiosk four times slower, that is a fifth of a second. The model file is 45 megabytes, and training takes 17 seconds on a laptop, without a GPU. When the collection changes, we only compute the new features and retrain the last layer, in seconds.");
 
-// ================================================================= 10. recommendation
+// ================================================================= 9. recommendation
 s = addSlide({ masterName: "CLOSING", sectionTitle: "The answer" });
 s.addText("Our choice: frozen ResNet18 + linear head", { placeholder: "title" });
 s.addText(`Test, ${d01.split_counts.test} new paintings:  our MLP ${pct(test[MLP].test_acc)}  →  best classical ${pct(test[RF].test_acc)}  →  frozen ResNet18 ${pct(test[FROZEN].test_acc)}`,
   { x: 0.5, y: 1.15, w: 9, h: 0.4, fontSize: 14, color: MUTED_DARK, align: "center", margin: 0, isTextBox: true, objectName: "journey" });
 const cols = [
   ["Why", C.accent3, ["1 visitor in 6 gets a wrong style, against 1 in 3 with the best classical model", "53 ms per photo on a modest CPU", "Retrained in seconds when the collection changes"]],
-  ["Not now", C.accent2, ["Our MLP on pixels: 41 %", "A classical model alone: 61 to 67 %", "Fine-tuning: slower, not proven better"]],
+  ["Not now", C.accent2, ["Our MLP on pixels: 41 %", `The random forest alone: ${pct(test[RF].test_acc)}`, "Fine-tuning: slower, not proven better"]],
   ["Before launch", C.accent4, ["Test a few hundred real kiosk photos", "Add more styles and paintings", "Measure the real kiosk hardware"]],
 ];
 cols.forEach(([headText, color, items], i) => {
@@ -396,6 +370,27 @@ const rfBestVal = Math.max(...Object.values(d06.classical_tuning[RF]));
 s.addText(`Test accuracy, ${d01.split_counts.test} paintings. Best of 4 settings on validation: ${pct(rfBestVal)}. Training ${speed[RF].training_seconds.toFixed(0)} s, ${Math.round(speed[RF].ms_1_thread)} ms per photo, ${Math.round(speed[RF].size_mb)} MB.`,
   { x: 0.5, y: 4.78, w: 9, h: 0.35, fontSize: 12, color: MUTED, margin: 0, valign: "top", isTextBox: true, objectName: "forest caption" });
 s.addNotes(`If asked about the random forest: it is our best model without any neural network, the "classical model" of the director's question. A classical model cannot read raw pixels well, so we describe each painting with 102 hand-made numbers: its colours and the directions of its brush strokes. A random forest is 500 decision trees: each one learns from a random draw of the paintings and sees a random part of the numbers at each question, and they vote. Settings chosen on validation. On the test: ${pct(test[RF].test_acc)}, 16.4 points below the frozen ResNet18. The same logistic regression goes from ${pct(test["logistic regression on hand-made features"].test_acc)} on our numbers to ${pct(test["logistic regression on ResNet features"].test_acc)} on the ResNet features: the features matter more than the model on top.`);
+
+// Painter shortcut (notebook 05): out of the talk, kept for the questions on the split by painter.
+s = addSlide({ masterName: "CONTENT", sectionTitle: "Backup" });
+s.addText("Backup: seeing the painter inflates the score", { placeholder: "title" });
+s.addChart(pres.charts.BAR, [
+  { name: "Random folds: the painter was seen in training", labels: ["Known painters (536 images)", "Unknown Artist (744 images, control)"],
+    values: [T10(leakMean("random folds", "known painters")), T10(leakMean("random folds", "unknown painters"))] },
+  { name: "Painter folds: the painter was never seen", labels: ["Known painters (536 images)", "Unknown Artist (744 images, control)"],
+    values: [T10(leakMean("painter folds", "known painters")), T10(leakMean("painter folds", "unknown painters"))] },
+], { x: 0.4, y: 1.1, w: 5.6, h: 3.95, barDir: "col", barGrouping: "clustered", chartColors: [HEX.neural, HEX.classical],
+  showValue: true, dataLabelPosition: "outEnd", dataLabelFormatCode: FMT, dataLabelColor: HEX.axis,
+  valAxisHidden: true, valAxisMinVal: 500, valAxisMaxVal: 950, valGridLine: { style: "none" }, catGridLine: { style: "none" },
+  showLegend: true, legendPos: "t", showTitle: false, barGapWidthPct: 60, ...chartText, objectName: "chart leakage" });
+statCard(s, 6.3, 1.15, 3.2, 1.75, `+${(100 * (leakMean("random folds", "known painters") - leakMean("painter folds", "known painters"))).toFixed(1)}`,
+  "points when the painter was seen in training", { strong: true, size: 40 });
+s.addText(bullets([
+  "Same images, same model: 5-fold cross-validation on train + validation",
+  "Control group (unknown painters): no change",
+  "So we split by painter: a random split would flatter the score",
+], 14), { x: 6.3, y: 3.1, w: 3.2, h: 1.95, valign: "top", margin: 0, color: C.text1, isTextBox: true, objectName: "leakage bullets" });
+s.addNotes("If asked why we split by painter: we scored the same images twice with cross-validation, changing only one thing: whether the model saw other paintings by the same painter. On images by known painters, seeing the painter gives 83.7 percent instead of 72.3: 11 points of flattery. On the control group, unknown painters, nothing changes. So a random split would have given the director a score that is too optimistic.");
 
 s = addSlide({ masterName: "CONTENT", sectionTitle: "Backup" });
 s.addText("Backup: validation and test disagree", { placeholder: "title" });
