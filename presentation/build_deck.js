@@ -31,6 +31,7 @@ const CARD_DARK = "2A3448";
 
 // ---------------------------------------------------------------- numbers (read, not typed)
 const d01 = R("01_data"), d02 = R("02_mlp"), d03 = R("03_monitoring"), d05 = R("05_resnet"), d06 = R("06_final");
+const d08 = R("08_second_test"); // the second test: 220 new paintings, used once
 const pct = (x, digits = 1) => `${(100 * x).toFixed(digits)} %`;
 const test = Object.fromEntries(d06.test.map((t) => [t.model, t]));
 const speed = Object.fromEntries(d06.speed.map((s) => [s.model, s]));
@@ -44,6 +45,10 @@ const leakMean = (folds, key) => {
 const paired = d06.paired.find((p) => p.A === "ResNet18 frozen + linear head" && p.B === "random forest on hand-made features");
 const FROZEN = "ResNet18 frozen + linear head", FT = "ResNet18 fine-tuned (layer4)", RF = "random forest on hand-made features";
 const MLP = "regularised MLP on pixels";
+const t2 = Object.fromEntries(d08.table.map((r) => [r.model, r]));
+const both = d08.both_tests_acc; // every model on the 440 test paintings (mean of the seeds)
+const pairOf = (a, b, testName, seed = 0) => d08.paired.find((r) => r.A === a && r.B === b && r.test === testName && r.seed === seed);
+const ftOverFrozen = pairOf(FROZEN, FT, "test 1 + test 2 (440)"); // diff = frozen - fine-tuned
 
 // ---------------------------------------------------------------- deck, theme, layouts
 const pres = new pptxgen();
@@ -353,8 +358,8 @@ s.addChart(pres.charts.BAR, [
 const cubism = (rows) => rows.find((r) => r.style === "Cubism").recall;
 noteCard(s, 5.55, 1.15, 3.95, 1.2, "It sees shapes",
   `Cubist paintings found (validation): ${pct(cubism(d03.regularised_seed0_per_class), 0)} with our MLP, ${pct(cubism(d05.probe_seed0_per_class), 0)} with the ResNet.`);
-noteCard(s, 5.55, 2.5, 3.95, 1.2, "Fine-tuning: less convincing",
-  `We also unfreeze its last block (8.4 M weights) to learn from our paintings: ${pct(ftMean)} on validation, below the frozen version.`);
+noteCard(s, 5.55, 2.5, 3.95, 1.2, "Fine-tuning: lower on validation",
+  `We also unfreeze its last block (8.4 M weights) to learn from our paintings: ${pct(ftMean)} on validation. The tests will say otherwise.`);
 noteCard(s, 5.55, 3.85, 3.95, 1.2, "Monitored like the MLP",
   `Train and validation curves for every run. Frozen + linear head: gap of only ${heads["linear probe"].gap.toFixed(2)} (our first MLP: ${tools["baseline (lr 0.0001)"].gap.toFixed(2)}).`);
 s.addNotes("A network that can see shapes is a convolutional network. With 1 061 images we cannot train one from zero, so we reuse ResNet18, trained on 1.2 million ImageNet photos. We freeze it: each painting becomes 512 numbers, and we train only one linear layer, 2 565 weights, in 0.4 seconds. Result: 88.1 percent on validation, almost twice our best MLP. We monitored it like the MLP: the gap between train and validation is only 0.09. Fine-tuning the last block, 8.4 million weights, does not help here: it overfits.");
@@ -427,7 +432,7 @@ s.addText("Final test: the pretrained network wins", { placeholder: "title" });
 stepTag(s, 5);
 const order = [[MLP, "Our MLP, pixels", "neural"],
   [RF, "Random forest, 102 hand-made numbers", "classical"],
-  [FROZEN, "ResNet18 frozen + linear head (ours)", "neural"],
+  [FROZEN, "ResNet18 frozen + linear head", "neural"],
   [FT, "ResNet18, layer4 fine-tuned", "neural"]];
 const fams = [["classical", "Classical", HEX.classical], ["neural", "Neural", HEX.neural]];
 s.addChart(pres.charts.BAR, fams.map(([fam, name]) => ({ name, labels: order.map((o) => o[1]),
@@ -438,31 +443,54 @@ s.addChart(pres.charts.BAR, fams.map(([fam, name]) => ({ name, labels: order.map
   showLegend: true, legendPos: "b", showTitle: true, title: `Test accuracy, ${d01.split_counts.test} new paintings`, barGapWidthPct: 60,
   ...chartText, objectName: "chart final test" });
 statCard(s, 6.85, 1.15, 2.65, 2.15, `+${(100 * paired.diff).toFixed(1)}`,
-  `points over the best classical model (95 % interval ${(100 * paired.ci_low).toFixed(1)} to ${(100 * paired.ci_high).toFixed(1)})`, { strong: true, size: 40, captionSize: 13 });
-noteCard(s, 6.85, 3.45, 2.65, 1.6, "Honest note",
-  `Fine-tuned: 1st on test (${pct(test[FT].test_acc)}), 2nd on validation (${pct(ftMean)}). We keep the model chosen before the test.`,
+  `points for our frozen ResNet over the best classical model (95 % interval ${(100 * paired.ci_low).toFixed(1)} to ${(100 * paired.ci_high).toFixed(1)})`, { strong: true, size: 40, captionSize: 12 });
+noteCard(s, 6.85, 3.45, 2.65, 1.6, "A surprise",
+  `Fine-tuned: 1st on test (${pct(test[FT].test_acc)}), but 2nd on validation (${pct(ftMean)}). Luck? We checked with a second test.`,
   { headSize: 14, size: 12 });
 s.addNotes("Finally, the test, measured once on 220 new paintings. The pretrained models are at the top, from 83 to 88 percent. The best classical model reaches 67 percent, and our MLP 41 percent. The gap between our chosen model and the random forest is 16 points, and a paired bootstrap on the same paintings gives an interval from 9 to 24 points: it is not luck. One honest note: the fine-tuned model is first on test, but it was second on validation. With 220 images a score moves by about 5 points, so we keep the model we chose before the test.");
 
-// ================================================================= 10. cost on a kiosk
+// ================================================================= 10. second test (notebook 08)
+s = addSlide({ masterName: "CONTENT", sectionTitle: "The answer" });
+s.addText("A second test: the fine-tuned win was not luck", { placeholder: "title" });
+stepTag(s, 5);
+{
+  const models = [[MLP, "Our MLP, pixels"], [RF, "Random forest, 102 numbers"], [FROZEN, "ResNet18 frozen + linear head"], [FT, "ResNet18, layer4 fine-tuned"]];
+  s.addChart(pres.charts.BAR, [
+    { name: `Test 1 (${d01.split_counts.test} paintings)`, labels: models.map((m) => m[1]), values: models.map((m) => T10(t2[m[0]]["test 1 acc"])) },
+    { name: `Test 2 (${d08.data.n} new paintings)`, labels: models.map((m) => m[1]), values: models.map((m) => T10(t2[m[0]]["test 2 acc"])) },
+  ], { x: 0.3, y: 1.05, w: 6.35, h: 4.05, barDir: "bar", barGrouping: "clustered", chartColors: [HEX.quiet, HEX.neural],
+    showValue: true, dataLabelPosition: "inEnd", dataLabelFormatCode: FMT, dataLabelColor: "FFFFFF",
+    valAxisHidden: true, valAxisMinVal: 0, valAxisMaxVal: 1000, valGridLine: { style: "none" }, catGridLine: { style: "none" },
+    showLegend: true, legendPos: "b", showTitle: true, title: "Test accuracy, mean of 3 seeds", barGapWidthPct: 40, ...chartText,
+    objectName: "chart second test" });
+  statCard(s, 6.85, 1.15, 2.65, 2.15, `+${(-100 * ftOverFrozen.diff).toFixed(1)}`,
+    `points for fine-tuning over frozen, on the 440 test paintings (95 % interval ${(-100 * ftOverFrozen.ci_high).toFixed(1)} to ${(-100 * ftOverFrozen.ci_low).toFixed(1)})`,
+    { strong: true, size: 40, captionSize: 12 });
+  noteCard(s, 6.85, 3.45, 2.65, 1.6, `${d08.data.n} new paintings`,
+    "From parts of WikiArt we never opened, by painters our models never saw. Same models, used once.",
+    { headSize: 14, size: 12 });
+}
+s.addNotes("To check whether the fine-tuned win was luck, we drew 220 new paintings from parts of WikiArt we had never opened, by painters our models never saw, and tested the same models once more. Same ranking: fine-tuned 87.7 percent, frozen 84.1, random forest 63.6, our MLP 41.8. On the 440 test paintings together, fine-tuning wins by 5 points, between 2 and 8: it is not luck. Our 219 validation paintings were too few to separate the two.");
+
+// ================================================================= 11. cost on a kiosk
 s = addSlide({ masterName: "CONTENT", sectionTitle: "The answer" });
 s.addText("Fast and cheap enough for a kiosk", { placeholder: "title" });
 stepTag(s, 6);
-const sp = speed[FROZEN];
+const sp = speed[FT]; // the model we recommend (same speed and size as the frozen one)
 [[`${Math.round(sp.ms_1_thread)} ms`, "per photo on one CPU thread"], [`${Math.round(sp.ms_4_thread)} ms`, "per photo with 4 threads"],
-  [`${Math.round(sp.size_mb)} MB`, "model file (11 M numbers)"], [`${Math.round(sp.training_seconds)} s`, "training on a laptop, no GPU"]]
-  .forEach(([v, c], i) => statCard(s, 0.5 + i * 2.3, 1.2, 2.1, 2.0, v, c, { strong: i === 0, size: 36 }));
+  [`${Math.round(sp.size_mb)} MB`, "model file (11 M numbers)"], [`${(sp.training_seconds / 60).toFixed(1)} min`, "training on a laptop, no GPU"]]
+  .forEach(([v, c], i) => statCard(s, 0.5 + i * 2.3, 1.2, 2.1, 2.0, v, c, { strong: i === 0, size: 32 }));
 noteCard(s, 0.5, 3.45, 9, 1.25, "In practice",
-  `A kiosk 4 times slower still answers in about 0.2 s. Random forest: ${Math.round(speed[RF].ms_1_thread)} ms and ${Math.round(speed[RF].size_mb)} MB, but ${pct(test[RF].test_acc)}. When the collection changes: compute the new features, retrain one layer, in seconds.`);
-s.addNotes("Is it affordable on a kiosk? We timed one photo at a time, from the image to the answer. The ResNet takes 53 milliseconds on one CPU thread and 26 with four threads. Even on a kiosk four times slower, that is a fifth of a second. The model file is 45 megabytes, and training takes 17 seconds on a laptop, without a GPU. When the collection changes, we only compute the new features and retrain the last layer, in seconds.");
+  `A kiosk 4 times slower still answers in about 0.2 s. Random forest: ${Math.round(speed[RF].ms_1_thread)} ms and ${Math.round(speed[RF].size_mb)} MB, but ${pct(test[RF].test_acc)}. When the collection changes: retrain the last block and the head, in a few minutes.`);
+s.addNotes("Is it affordable on a kiosk? We timed one photo at a time, from the image to the answer. The fine-tuned ResNet takes 53 milliseconds on one CPU thread and 27 with four threads, like the frozen one. Even on a kiosk four times slower, that is a fifth of a second. The model file is 45 megabytes, and training takes about 2.5 minutes on a laptop, without a GPU.");
 
-// ================================================================= 11. recommendation
+// ================================================================= 12. recommendation
 s = addSlide({ masterName: "CLOSING", sectionTitle: "The answer" });
-s.addText("Our choice: frozen ResNet18 + linear head", { placeholder: "title" });
-s.addText(`Test, ${d01.split_counts.test} new paintings:  our MLP ${pct(test[MLP].test_acc)}  →  best classical ${pct(test[RF].test_acc)}  →  frozen ResNet18 ${pct(test[FROZEN].test_acc)}`,
+s.addText("Our choice: a fine-tuned ResNet18", { placeholder: "title" });
+s.addText(`Both tests, ${d01.split_counts.test + d08.data.n} new paintings:  our MLP ${pct(both[MLP])}  →  random forest ${pct(both[RF])}  →  fine-tuned ResNet18 ${pct(both[FT])}`,
   { x: 0.5, y: 1.15, w: 9, h: 0.4, fontSize: 14, color: MUTED_DARK, align: "center", margin: 0, isTextBox: true, objectName: "journey" });
 const cols = [
-  ["Why", C.accent3, ["1 visitor in 6 gets a wrong style, against 1 in 3 with the best classical model", "53 ms per photo on a modest CPU", "Retrained in seconds when the collection changes"]],
+  ["Why", C.accent3, [`1 visitor in ${Math.round(1 / (1 - both[FT]))} gets a wrong style, against 1 in ${Math.round(1 / (1 - both[RF]))} with the best classical model`, "53 ms per photo on a modest CPU", "Retrained in a few minutes when the collection changes"]],
   ["Before launch", C.accent4, ["Test a few hundred real kiosk photos", "Add more styles and paintings", "Measure the real kiosk hardware"]],
 ];
 cols.forEach(([headText, color, items], i) => {
@@ -473,7 +501,7 @@ cols.forEach(([headText, color, items], i) => {
   s.addText(bullets(items, 16), { x: x + 0.25, y: 2.5, w: 3.85, h: 2.3, valign: "top", margin: 0, color: C.background1,
     isTextBox: true, objectName: `items ${headText}` });
 });
-s.addNotes("So our recommendation: deploy a frozen ResNet18 with a linear head. It is the accurate choice: one visitor in six gets a wrong style, against one in three with the best classical model. It is fast enough, and cheap to maintain for a small team. We do not recommend our MLP on pixels, a classical model alone, or fine-tuning for now. Before the launch, we must test real photos taken at the kiosks, add more styles, and measure the real hardware. Everything is reproducible in our Git repository. Thank you, we are happy to take your questions.");
+s.addNotes("So our recommendation: deploy a ResNet18 pretrained on ImageNet, with its last block fine-tuned on our paintings. It is the accurate choice: one visitor in eight gets a wrong style, against one in three with the best classical model. It is fast enough, and cheap to maintain for a small team. Before the launch, we must test real photos taken at the kiosks, add more styles, and measure the real hardware. Thank you, we are happy to take your questions.");
 
 // ================================================================= backup slides (for the questions)
 pres.addSection({ title: "Backup" });
@@ -487,13 +515,13 @@ noteCard(s, 5.1, 1.15, 4.4, 1.75, "The numbers matter more than the model",
 [["logistic regression on pixels", "Logistic regression on pixels"],
   ["logistic regression on hand-made features", "Logistic regression on the 102 numbers"],
   [RF, "Random forest on the 102 numbers"],
-  [FROZEN, "ResNet18 frozen + linear head (ours)"]].forEach(([model, caption], i) =>
+  [FT, "ResNet18 fine-tuned (our choice)"]].forEach(([model, caption], i) =>
   statCard(s, 0.5 + i * 2.3167, 3.1, 2.05, 1.6, pct(test[model].test_acc), caption,
-    { strong: model === FROZEN, color: model === RF ? HEX.classical : undefined, size: 30, captionSize: 12 }));
+    { strong: model === FT, color: model === RF ? HEX.classical : undefined, size: 30, captionSize: 12 }));
 const rfBestVal = Math.max(...Object.values(d06.classical_tuning[RF]));
 s.addText(`Test accuracy, ${d01.split_counts.test} paintings. Random forest: best of 4 settings on validation (${pct(rfBestVal)}), training ${speed[RF].training_seconds.toFixed(0)} s, ${Math.round(speed[RF].ms_1_thread)} ms per photo, ${Math.round(speed[RF].size_mb)} MB.`,
   { x: 0.5, y: 4.78, w: 9, h: 0.35, fontSize: 12, color: MUTED, margin: 0, valign: "top", isTextBox: true, objectName: "forest caption" });
-s.addNotes(`If asked about the random forest: it is our best model without any neural network, the "classical model" of the director's question. A classical model cannot read raw pixels well, so we describe each painting with 102 hand-made numbers: its colours and the directions of its brush strokes. A random forest is 500 decision trees: each one learns from a random draw of the paintings and sees a random part of the numbers at each question, and they vote. Settings chosen on validation. On the test: ${pct(test[RF].test_acc)}, 16.4 points below the frozen ResNet18. The same logistic regression goes from ${pct(test["logistic regression on hand-made features"].test_acc)} on our numbers to ${pct(test["logistic regression on ResNet features"].test_acc)} on the ResNet features: the features matter more than the model on top.`);
+s.addNotes(`If asked about the random forest: it is our best model without any neural network, the "classical model" of the director's question. A classical model cannot read raw pixels well, so we describe each painting with 102 hand-made numbers: its colours and the directions of its brush strokes. A random forest is 500 decision trees: each one learns from a random draw of the paintings and sees a random part of the numbers at each question, and they vote. Settings chosen on validation. On the first test: ${pct(test[RF].test_acc)}, ${(100 * (test[FT].test_acc - test[RF].test_acc)).toFixed(1)} points below the fine-tuned ResNet18. The same logistic regression goes from ${pct(test["logistic regression on hand-made features"].test_acc)} on our numbers to ${pct(test["logistic regression on ResNet features"].test_acc)} on the ResNet features: the features matter more than the model on top.`);
 
 // Painter shortcut (notebook 05): out of the talk, kept for the questions on the split by painter.
 s = addSlide({ masterName: "CONTENT", sectionTitle: "Backup" });
@@ -517,26 +545,26 @@ s.addText(bullets([
 s.addNotes("If asked why we split by painter: we scored the same images twice with cross-validation, changing only one thing: whether the model saw other paintings by the same painter. On images by known painters, seeing the painter gives 83.7 percent instead of 72.3: 11 points of flattery. On the control group, unknown painters, nothing changes. So a random split would have given the director a score that is too optimistic.");
 
 s = addSlide({ masterName: "CONTENT", sectionTitle: "Backup" });
-s.addText("Backup: validation and test disagree", { placeholder: "title" });
+s.addText("Backup: validation and the two tests", { placeholder: "title" });
 s.addTable([
-  [head("Model"), head("Validation (219)"), head("Test (220)"), head("Test, 95 % interval")],
-  ["ResNet18 frozen + linear head (chosen)", pct(heads["linear probe"].val_acc), pct(test[FROZEN].test_acc), `${pct(test[FROZEN].ci_low)} to ${pct(test[FROZEN].ci_high)}`],
-  ["ResNet18, layer4 fine-tuned", pct(ftMean), pct(test[FT].test_acc), `${pct(test[FT].ci_low)} to ${pct(test[FT].ci_high)}`],
-], { x: 0.5, y: 1.2, w: 9, colW: [3.6, 1.7, 1.5, 2.2], fontSize: 14, color: C.text1, valign: "middle", margin: 0.08,
+  [head("Model"), head("Validation (219)"), head("Test 1 (220)"), head("Test 2 (220)"), head("Both tests (440)")],
+  ["ResNet18 frozen + linear head", pct(heads["linear probe"].val_acc), pct(t2[FROZEN]["test 1 acc"]), pct(t2[FROZEN]["test 2 acc"]), pct(both[FROZEN])],
+  ["ResNet18, layer4 fine-tuned (our choice)", pct(ftMean), pct(t2[FT]["test 1 acc"]), pct(t2[FT]["test 2 acc"]), pct(both[FT])],
+], { x: 0.5, y: 1.2, w: 9, colW: [3.3, 1.45, 1.4, 1.4, 1.45], fontSize: 14, color: C.text1, valign: "middle", margin: 0.08,
   border: { type: "solid", pt: 0.75, color: "D9DCE2" }, rowH: [0.45, 0.55, 0.55], objectName: "disagreement table" });
 s.addText(bullets([
-  "With about 220 paintings per set, a score moves by about 5 points just by chance",
-  "We chose the model on validation, before the test: choosing on the test would make its score too optimistic",
-  "Both models have the same speed and size at inference; fine-tuning is the first thing to retry with more data",
+  `Validation favoured frozen; two independent tests favour fine-tuning: +${(-100 * ftOverFrozen.diff).toFixed(1)} points on 440 paintings (interval ${(-100 * ftOverFrozen.ci_high).toFixed(1)} to ${(-100 * ftOverFrozen.ci_low).toFixed(1)})`,
+  "219 validation paintings were too few to separate them: next time, choose with cross-validation on train + validation",
+  "The tests helped this choice, so the fine-tuned scores are slightly optimistic; a third set of new paintings would give the clean score",
 ], 15), { x: 0.5, y: 2.95, w: 9, h: 2.1, valign: "top", margin: 0, color: C.text1, isTextBox: true, objectName: "disagreement bullets" });
-s.addNotes("If asked why we did not pick the fine-tuned model: the test set is used once to report, not to choose. Validation and test point in opposite directions, and their intervals overlap, so our data cannot separate the two variants.");
+s.addNotes("If asked why we changed our choice after the test: validation chose the frozen model, the first test said the opposite, so we drew a second test of 220 new paintings to check, used once. It confirms the fine-tuned model, by 5 points on the 440 test paintings, so it was not luck. Because both tests helped this choice, the fine-tuned scores are slightly optimistic; with more data, we would choose with cross-validation and keep a third set for the final score.");
 
 s = addSlide({ masterName: "CONTENT", sectionTitle: "Backup" });
 s.addText("Backup: why you can trust the numbers", { placeholder: "title" });
-[["Reproducible", "Fixed seeds and a pinned dataset revision. Notebook 06 trains the 9 neural models again and gets the same validation scores, to 4 decimals."],
+[["Reproducible", "Fixed seeds and a pinned dataset revision. Notebooks 06 and 08 train the models again and get the same scores, to 4 decimals."],
   ["Tested", "33 automatic tests: split without painter leakage, parameter counts, training loop, metrics, benchmark helpers."],
   ["Versioned", "Small commits, one step at a time, on GitHub; milestone tags m1, m2, m3 and v1.0. Every number is saved in reports/results/*.json."],
-  ["Honest", "Test set used once; 3 seeds for noisy runs; 95 % bootstrap intervals; no image of the paintings in Git (licence)."]]
+  ["Honest", "Two test sets, each used once; 3 seeds for noisy runs; 95 % bootstrap intervals; no image of the paintings in Git (licence)."]]
   .forEach(([h, t], i) => noteCard(s, 0.5 + (i % 2) * 4.6, 1.2 + Math.floor(i / 2) * 1.95, 4.4, 1.75, h, t, { size: 14 }));
 s.addNotes("If asked how the work can be checked: everything runs again from the repository with two commands, and the final notebook re-trains every neural model and finds exactly the same validation scores.");
 
@@ -569,18 +597,19 @@ s.addNotes(`If asked whether our monitoring tools really detect problems: in not
 
 s = addSlide({ masterName: "CONTENT", sectionTitle: "Backup" });
 s.addText("Backup: where the chosen model fails", { placeholder: "title" });
-const pc = [...d06.best_model_test_per_class].sort((a, b) => a.recall - b.recall); // best style at the top
-s.addChart(pres.charts.BAR, [{ name: "recall", labels: pc.map((r) => r.style.replace("_", " ").replace("Ukiyo e", "Ukiyo-e")), values: pc.map((r) => T10(r.recall)) }],
+const pc = [...d08.finetuned_seed0_per_class_both_tests].sort((a, b) => a.recall - b.recall); // best style at the top
+const styleName = (r) => r.style.replace("_", " ").replace("Ukiyo e", "Ukiyo-e");
+s.addChart(pres.charts.BAR, [{ name: "recall", labels: pc.map(styleName), values: pc.map((r) => T10(r.recall)) }],
   { x: 0.4, y: 1.1, w: 5.4, h: 3.95, barDir: "bar", chartColors: [HEX.neural], showValue: true, dataLabelPosition: "inEnd",
     dataLabelFormatCode: FMT, dataLabelColor: "FFFFFF", valAxisHidden: true, valAxisMinVal: 0, valAxisMaxVal: 1000,
     valGridLine: { style: "none" }, catGridLine: { style: "none" }, showLegend: false, showTitle: true,
-    title: "Share of each style found, test set (seed 0)", barGapWidthPct: 45, ...chartText, objectName: "chart per class" });
+    title: "Fine-tuned ResNet18: share of each style found, both tests (seed 0)", barGapWidthPct: 45, ...chartText, objectName: "chart per class" });
 s.addText(bullets([
-  "Easiest: Ukiyo-e and Impressionism",
-  "Hardest: Pop Art and Cubism; on validation they were mostly confused with each other (flat strong colours, hard edges)",
-  "The MLP found only 7 % of Cubist paintings; the ResNet finds most of them",
+  `Easiest: ${styleName(pc[4])} and ${styleName(pc[3])}`,
+  `Hardest: ${styleName(pc[0])} (${pct(pc[0].recall, 0)}) and ${styleName(pc[1])}`,
+  "On validation, Cubism and Pop Art were the pair most often confused: flat strong colours, hard edges",
 ], 14), { x: 6.05, y: 1.2, w: 3.45, h: 3.85, valign: "top", margin: 0, color: C.text1, isTextBox: true, objectName: "per class bullets" });
-s.addNotes("If asked about errors: the ResNet's main confusion is Cubism versus Pop Art, which share flat areas of strong colour and hard edges.");
+s.addNotes(`If asked about errors: on the 440 test paintings, the fine-tuned ResNet finds every Ukiyo-e painting and at least ${pct(pc[0].recall, 0)} of every style; the hardest are ${styleName(pc[0])} and ${styleName(pc[1])}.`);
 
 // Bonus backup slide: transformers (notebook 07), only when its results exist.
 const T_FILE = path.join(ROOT, "reports", "results", "07_transformers.json");
@@ -653,7 +682,8 @@ s.addText("Backup: inside ResNet18 + our linear head", { placeholder: "title" })
     s.addText(label, { x: xs[from], y: 3.6, w: xs[to] + bw - xs[from], h: 0.22, fontSize: 10, bold: true, color, align: "center",
       margin: 0, isTextBox: true, objectName: `${name} label` });
   };
-  bar(1, 6, C.text2, "Frozen body: 11.2 million weights learned on ImageNet, never changed", "frozen");
+  bar(1, 4, C.text2, "Frozen: 2.8 million weights learned on ImageNet", "frozen");
+  bar(5, 5, C.accent4, "Fine-tuned", "fine-tuned");
   bar(7, 7, C.accent1, "Trained by us", "trained");
 
   // One residual block: two 3 x 3 convolutions, and a shortcut that adds the input back.
@@ -694,7 +724,7 @@ s.addText("Backup: inside ResNet18 + our linear head", { placeholder: "title" })
     { text: "each block only learns a correction added to its input. The gradient flows back through the shortcuts, so all the layers learn. 18 layers = conv1 + 16 convolutions in the blocks + the last layer." },
   ], { x: 6.45, y: 3.93, w: 3.05, h: 1.15, fontSize: 11, color: C.text1, valign: "top", margin: 0, isTextBox: true, objectName: "residual text" });
 }
-s.addNotes("If asked how ResNet18 is built: the painting (224 by 224 pixels, 3 colours) goes through a first convolution and four layers of residual blocks. At each layer the picture gets smaller (56, 28, 14, 7 pixels) but the number of channels grows (64 to 512): from edges and colours to textures, patterns and shapes. The average of the last 512 maps gives 512 numbers. All of this is frozen: 11.2 million weights learned on ImageNet. Our linear head turns the 512 numbers into 5 scores, one per style: 2 565 weights, the only ones we train. Residual means each block adds its input back through a shortcut, so the gradient reaches every layer.");
+s.addNotes("If asked how ResNet18 is built: the painting (224 by 224 pixels, 3 colours) goes through a first convolution and four layers of residual blocks. At each layer the picture gets smaller (56, 28, 14, 7 pixels) but the number of channels grows (64 to 512): from edges and colours to textures, patterns and shapes. The average of the last 512 maps gives 512 numbers. In our final model, conv1 to layer3 stay frozen (2.8 million weights learned on ImageNet), layer4 is fine-tuned on our paintings (8.4 million), and our linear head turns the 512 numbers into 5 scores, one per style (2 565 weights). In the frozen version, layer4 stays frozen too. Residual means each block adds its input back through a shortcut, so the gradient reaches every layer.");
 
 // Why pretrained? The same ResNet18 trained from zero (scripts/resnet_from_zero.py), validation only.
 const ZERO_FILE = path.join(ROOT, "reports", "results", "resnet_from_zero.json");
