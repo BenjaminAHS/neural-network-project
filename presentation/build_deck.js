@@ -609,6 +609,93 @@ if (fs.existsSync(T_FILE)) {
   s.addNotes("If asked about BERT or transformers: BERT reads text, so it cannot classify paintings alone. Its image cousin ViT gives the same accuracy as ResNet18 but is about 9 times slower. CLIP, trained on images with captions, reaches about 89 percent with no training at all and about 95 percent with our linear head, on validation. Two cautions: it probably saw WikiArt during its training, and we did not reopen the test set. It is our first next step, and it would also answer visitors' questions in words.");
 }
 
+// Inside ResNet18 + our linear head: the stages with their output size and weights (torchvision resnet18).
+s = addSlide({ masterName: "CONTENT", sectionTitle: "Backup" });
+s.addText("Backup: inside ResNet18 + our linear head", { placeholder: "title" });
+{
+  const stages = [ // [name, output shape, weights, output side in pixels, role]
+    ["1 painting", "224 x 224 x 3", "", 224, "input"],
+    ["conv1 + pool", "56 x 56 x 64", "9.5 k weights", 56, "body"],
+    ["layer1", "56 x 56 x 64", "148 k weights", 56, "body"],
+    ["layer2", "28 x 28 x 128", "526 k weights", 28, "body"],
+    ["layer3", "14 x 14 x 256", "2.1 M weights", 14, "body"],
+    ["layer4", "7 x 7 x 512", "8.4 M weights", 7, "body"],
+    ["average", "512 numbers", "no weights", 1, "body"],
+    ["linear head", "512 → 5", `${heads["linear probe"].trained_parameters.toLocaleString("en-US").replace(",", " ")} weights`, 1, "head"],
+    ["5 styles", "highest score wins", "", 1, "output"],
+  ];
+  const bw = 0.82, gap = 0.2, x0 = 0.51, mid = 2.05;
+  const xs = stages.map((_, i) => x0 + i * (bw + gap));
+  stages.forEach(([name, shape, weights, side, role], i) => {
+    const h = 0.45 + 1.35 * Math.log(side) / Math.log(224), y = mid - h / 2, x = xs[i];
+    const fill = role === "body" ? C.text2 : role === "head" ? C.accent1 : C.background2;
+    const color = role === "body" || role === "head" ? C.background1 : C.text2;
+    s.addShape(pres.shapes.ROUNDED_RECTANGLE, { x, y, w: bw, h, fill: { color: fill }, line: { color: fill, width: 0 },
+      rectRadius: 0.06, objectName: `stage ${name}` });
+    s.addText(name, { x, y, w: bw, h, fontSize: 10, bold: true, color, align: "center", valign: "middle", margin: 0.02,
+      isTextBox: true, objectName: `stage name ${name}` });
+    s.addText([{ text: shape, options: { breakLine: weights !== "" } }, ...(weights ? [{ text: weights }] : [])],
+      { x: x - 0.08, y: 3.03, w: bw + 0.16, h: 0.42, fontSize: 9, color: C.text1, align: "center", valign: "top", margin: 0,
+        isTextBox: true, objectName: `stage caption ${name}` });
+    if (i < stages.length - 1) {
+      s.addShape(pres.shapes.LINE, { x: x + bw + 0.03, y: mid, w: gap - 0.06, h: 0, line: { color: HEX.axis, width: 1.5, endArrowType: "triangle" },
+        objectName: `stage arrow ${i + 1}` });
+    }
+  });
+  // What the stages learned to see on ImageNet, from small details to shapes.
+  [[1, 2, "edges, colours"], [3, 3, "textures"], [4, 4, "patterns"], [5, 5, "shapes"]].forEach(([a, b, what]) =>
+    s.addText(what, { x: xs[a] - 0.05, y: 1.08, w: xs[b] + bw - xs[a] + 0.1, h: 0.2, fontSize: 9, italic: true, color: C.accent1,
+      align: "center", margin: 0, isTextBox: true, objectName: `sees ${what}` }));
+  // Frozen body and trained head.
+  const bar = (from, to, color, label, name) => {
+    s.addShape(pres.shapes.RECTANGLE, { x: xs[from], y: 3.52, w: xs[to] + bw - xs[from], h: 0.05, fill: { color }, line: { color, width: 0 },
+      objectName: `${name} bar` });
+    s.addText(label, { x: xs[from], y: 3.6, w: xs[to] + bw - xs[from], h: 0.22, fontSize: 10, bold: true, color, align: "center",
+      margin: 0, isTextBox: true, objectName: `${name} label` });
+  };
+  bar(1, 6, C.text2, "Frozen body: 11.2 million weights learned on ImageNet, never changed", "frozen");
+  bar(7, 7, C.accent1, "Trained by us", "trained");
+
+  // One residual block: two 3 x 3 convolutions, and a shortcut that adds the input back.
+  s.addText("One residual block (2 per layer, 8 in all)", { x: 0.5, y: 3.93, w: 3.6, h: 0.2, fontSize: 11, bold: true,
+    color: C.text2, margin: 0, isTextBox: true, objectName: "block title" });
+  const flow = [["x", 0.3, "label"], ["conv 3x3", 0.8, "op"], ["BN + ReLU", 0.9, "op"], ["conv 3x3", 0.8, "op"], ["BN", 0.5, "op"],
+    ["+", 0.34, "add"], ["ReLU", 0.6, "op"], ["out", 0.35, "label"]];
+  const fy = 4.62, fh = 0.34, fgap = 0.17;
+  let fx = 0.5;
+  const centres = [];
+  flow.forEach(([label, w, kind], i) => {
+    centres.push(fx + w / 2);
+    if (kind === "op") {
+      s.addShape(pres.shapes.ROUNDED_RECTANGLE, { x: fx, y: fy, w, h: fh, fill: { color: C.text2 }, line: { color: C.text2, width: 0 },
+        rectRadius: 0.05, objectName: `block ${i} ${label}` });
+    } else if (kind === "add") {
+      s.addShape(pres.shapes.OVAL, { x: fx, y: fy, w, h: fh, fill: { color: C.accent1 }, line: { color: C.accent1, width: 0 },
+        objectName: "block add" });
+    }
+    s.addText(label, { x: fx, y: fy, w, h: fh, fontSize: kind === "add" ? 14 : 10, bold: true,
+      color: kind === "label" ? C.text2 : C.background1, align: "center", valign: "middle", margin: 0, isTextBox: true,
+      objectName: `block text ${i} ${label}` });
+    if (i < flow.length - 1) {
+      s.addShape(pres.shapes.LINE, { x: fx + w + 0.02, y: fy + fh / 2, w: fgap - 0.04, h: 0,
+        line: { color: HEX.axis, width: 1.25, endArrowType: "triangle" }, objectName: `block arrow ${i + 1}` });
+    }
+    fx += w + fgap;
+  });
+  const [cx, cplus] = [centres[0], centres[5]], top = 4.33;
+  s.addShape(pres.shapes.LINE, { x: cx, y: top, w: 0, h: fy - top, line: { color: C.accent1, width: 1.5 }, objectName: "shortcut up" });
+  s.addShape(pres.shapes.LINE, { x: cx, y: top, w: cplus - cx, h: 0, line: { color: C.accent1, width: 1.5 }, objectName: "shortcut across" });
+  s.addShape(pres.shapes.LINE, { x: cplus, y: top, w: 0, h: fy - top, line: { color: C.accent1, width: 1.5, endArrowType: "triangle" },
+    objectName: "shortcut down" });
+  s.addText("shortcut: the input x is added back", { x: cx, y: top - 0.22, w: cplus - cx, h: 0.2, fontSize: 9, italic: true,
+    color: C.accent1, align: "center", margin: 0, isTextBox: true, objectName: "shortcut label" });
+  s.addText([
+    { text: "Why \"Res\" (residual): ", options: { bold: true, color: C.text2 } },
+    { text: "each block only learns a correction added to its input. The gradient flows back through the shortcuts, so all the layers learn. 18 layers = conv1 + 16 convolutions in the blocks + the last layer." },
+  ], { x: 6.45, y: 3.93, w: 3.05, h: 1.15, fontSize: 11, color: C.text1, valign: "top", margin: 0, isTextBox: true, objectName: "residual text" });
+}
+s.addNotes("If asked how ResNet18 is built: the painting (224 by 224 pixels, 3 colours) goes through a first convolution and four layers of residual blocks. At each layer the picture gets smaller (56, 28, 14, 7 pixels) but the number of channels grows (64 to 512): from edges and colours to textures, patterns and shapes. The average of the last 512 maps gives 512 numbers. All of this is frozen: 11.2 million weights learned on ImageNet. Our linear head turns the 512 numbers into 5 scores, one per style: 2 565 weights, the only ones we train. Residual means each block adds its input back through a shortcut, so the gradient reaches every layer.");
+
 // pptxgenjs writes the notes of a slide as one run of text. The transition sentence of the oral script
 // comes after a blank line: make it a paragraph of its own, in bold, so it stands out while presenting.
 async function splitTransitionNotes(file) {
