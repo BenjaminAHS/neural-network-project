@@ -1,0 +1,293 @@
+{
+  "budget": {
+    "ms_1_thread": 250,
+    "size_mb": 200,
+    "kiosk_slowdown": 4
+  },
+  "model": {
+    "name": "openai/clip-vit-large-patch14",
+    "features": 768,
+    "parameters_millions_total": 427.61651,
+    "parameters_millions_image": 303.96621,
+    "feature_seconds_per_image_batch32": 2.31243
+  },
+  "head_runs": [
+    {
+      "seed": 0,
+      "val_acc": 0.96347,
+      "seconds": 1.61853,
+      "trained_parameters": 3845
+    },
+    {
+      "seed": 1,
+      "val_acc": 0.96347,
+      "seconds": 3.67398,
+      "trained_parameters": 3845
+    },
+    {
+      "seed": 2,
+      "val_acc": 0.96347,
+      "seconds": 1.19787,
+      "trained_parameters": 3845
+    }
+  ],
+  "validation": {
+    "ResNet18 frozen + linear head (notebook 05)": 0.88128,
+    "ResNet18 fine-tuned (notebook 05)": 0.85388,
+    "CLIP ViT-B/32 + linear head (notebook 07)": 0.94673,
+    "CLIP ViT-L/14 + linear head (this notebook)": 0.96347
+  },
+  "tests": {
+    "test 1 acc": 0.97424,
+    "test 1 low": 0.95455,
+    "test 1 high": 0.99545,
+    "test 2 acc": 0.95455,
+    "test 2 low": 0.92273,
+    "test 2 high": 0.98182,
+    "both acc": 0.96439,
+    "both low": 0.94773,
+    "both high": 0.98182
+  },
+  "tests_all_models": [
+    {
+      "model": "regularised MLP on pixels",
+      "test 1 acc": 0.41364,
+      "test 2 acc": 0.41818,
+      "both acc": 0.41591
+    },
+    {
+      "model": "random forest on hand-made features",
+      "test 1 acc": 0.67273,
+      "test 2 acc": 0.63636,
+      "both acc": 0.65455
+    },
+    {
+      "model": "ResNet18 frozen + linear head",
+      "test 1 acc": 0.8303,
+      "test 2 acc": 0.84091,
+      "both acc": 0.83561
+    },
+    {
+      "model": "ResNet18 fine-tuned (layer4)",
+      "test 1 acc": 0.87879,
+      "test 2 acc": 0.87727,
+      "both acc": 0.87803
+    },
+    {
+      "model": "CLIP ViT-L/14 + linear head",
+      "test 1 acc": 0.97424,
+      "test 2 acc": 0.95455,
+      "both acc": 0.96439
+    }
+  ],
+  "reproducibility": [
+    {
+      "model": "random forest on hand-made features",
+      "val_acc_now": 0.6347,
+      "val_acc_before": 0.6347,
+      "same": true
+    },
+    {
+      "model": "regularised MLP on pixels",
+      "val_acc_now": 0.46119,
+      "val_acc_before": 0.46119,
+      "same": true
+    },
+    {
+      "model": "ResNet18 fine-tuned (layer4)",
+      "val_acc_now": 0.85845,
+      "val_acc_before": 0.85845,
+      "same": true
+    }
+  ],
+  "paired": [
+    {
+      "A": "CLIP ViT-L/14 + linear head",
+      "B": "ResNet18 fine-tuned (layer4)",
+      "test": "test 1",
+      "diff": 0.09091,
+      "ci_low": 0.05455,
+      "ci_high": 0.13182,
+      "share_not_better": 0.0
+    },
+    {
+      "A": "CLIP ViT-L/14 + linear head",
+      "B": "ResNet18 fine-tuned (layer4)",
+      "test": "test 2",
+      "diff": 0.07273,
+      "ci_low": 0.02727,
+      "ci_high": 0.11818,
+      "share_not_better": 0.0008
+    },
+    {
+      "A": "CLIP ViT-L/14 + linear head",
+      "B": "ResNet18 fine-tuned (layer4)",
+      "test": "test 1 + test 2 (440)",
+      "diff": 0.08182,
+      "ci_low": 0.05227,
+      "ci_high": 0.11136,
+      "share_not_better": 0.0
+    },
+    {
+      "A": "ResNet18 fine-tuned (layer4)",
+      "B": "random forest on hand-made features",
+      "test": "test 1",
+      "diff": 0.21364,
+      "ci_low": 0.14091,
+      "ci_high": 0.28636,
+      "share_not_better": 0.0
+    },
+    {
+      "A": "ResNet18 fine-tuned (layer4)",
+      "B": "random forest on hand-made features",
+      "test": "test 2",
+      "diff": 0.24545,
+      "ci_low": 0.18636,
+      "ci_high": 0.30909,
+      "share_not_better": 0.0
+    },
+    {
+      "A": "ResNet18 fine-tuned (layer4)",
+      "B": "random forest on hand-made features",
+      "test": "test 1 + test 2 (440)",
+      "diff": 0.22955,
+      "ci_low": 0.18182,
+      "ci_high": 0.27727,
+      "share_not_better": 0.0
+    }
+  ],
+  "per_class_both_tests_seed0": [
+    {
+      "style": "Baroque",
+      "recall": 0.98837,
+      "precision": 0.97701,
+      "f1": 0.98266,
+      "images": 86
+    },
+    {
+      "style": "Cubism",
+      "recall": 0.93023,
+      "precision": 0.97561,
+      "f1": 0.95238,
+      "images": 86
+    },
+    {
+      "style": "Impressionism",
+      "recall": 0.96809,
+      "precision": 0.96809,
+      "f1": 0.96809,
+      "images": 94
+    },
+    {
+      "style": "Pop_Art",
+      "recall": 0.95402,
+      "precision": 0.92222,
+      "f1": 0.93785,
+      "images": 87
+    },
+    {
+      "style": "Ukiyo_e",
+      "recall": 0.98851,
+      "precision": 0.98851,
+      "f1": 0.98851,
+      "images": 87
+    }
+  ],
+  "kiosk": [
+    {
+      "model": "random forest on hand-made features",
+      "ms_1_thread": 67.19755,
+      "p95_ms_1_thread": 98.26708,
+      "ms_4_thread": 73.271,
+      "p95_ms_4_thread": 102.77489,
+      "size_mb": 25.85047,
+      "parameters_millions": null,
+      "gflops": null,
+      "retrain_seconds": 5.24649
+    },
+    {
+      "model": "regularised MLP on pixels",
+      "ms_1_thread": 0.95195,
+      "p95_ms_1_thread": 1.61253,
+      "ms_4_thread": 1.3382,
+      "p95_ms_4_thread": 2.09998,
+      "size_mb": 6.8414,
+      "parameters_millions": 1.70752,
+      "gflops": 0.00341,
+      "retrain_seconds": 18.25349
+    },
+    {
+      "model": "ResNet18 fine-tuned (layer4)",
+      "ms_1_thread": 121.4319,
+      "p95_ms_1_thread": 156.08377,
+      "ms_4_thread": 53.94205,
+      "p95_ms_4_thread": 63.46004,
+      "size_mb": 44.79578,
+      "parameters_millions": 11.17908,
+      "gflops": 3.62713,
+      "retrain_seconds": 204.94308
+    },
+    {
+      "model": "CLIP ViT-L/14 + linear head",
+      "ms_1_thread": 4576.22,
+      "p95_ms_1_thread": 5598.47512,
+      "ms_4_thread": 1946.27685,
+      "p95_ms_4_thread": 2073.08381,
+      "size_mb": 1216.02839,
+      "parameters_millions": 303.97005,
+      "gflops": 155.53266,
+      "retrain_seconds": 2455.10484
+    }
+  ],
+  "recap": [
+    {
+      "model": "random forest on hand-made features",
+      "accuracy, 440 test paintings": 0.65455,
+      "ms per photo, 1 thread": 67.19755,
+      "seconds on a kiosk 4x slower": 0.26879,
+      "model file (MB)": 25.85047,
+      "GFLOPs per photo": null,
+      "retraining (minutes)": 0.08744,
+      "within the time budget": true,
+      "within the size budget": true,
+      "fits the kiosk": true
+    },
+    {
+      "model": "regularised MLP on pixels",
+      "accuracy, 440 test paintings": 0.41591,
+      "ms per photo, 1 thread": 0.95195,
+      "seconds on a kiosk 4x slower": 0.00381,
+      "model file (MB)": 6.8414,
+      "GFLOPs per photo": 0.00341,
+      "retraining (minutes)": 0.30422,
+      "within the time budget": true,
+      "within the size budget": true,
+      "fits the kiosk": true
+    },
+    {
+      "model": "ResNet18 fine-tuned (layer4)",
+      "accuracy, 440 test paintings": 0.87803,
+      "ms per photo, 1 thread": 121.4319,
+      "seconds on a kiosk 4x slower": 0.48573,
+      "model file (MB)": 44.79578,
+      "GFLOPs per photo": 3.62713,
+      "retraining (minutes)": 3.41572,
+      "within the time budget": true,
+      "within the size budget": true,
+      "fits the kiosk": true
+    },
+    {
+      "model": "CLIP ViT-L/14 + linear head",
+      "accuracy, 440 test paintings": 0.96439,
+      "ms per photo, 1 thread": 4576.22,
+      "seconds on a kiosk 4x slower": 18.30488,
+      "model file (MB)": 1216.02839,
+      "GFLOPs per photo": 155.53266,
+      "retraining (minutes)": 40.91841,
+      "within the time budget": false,
+      "within the size budget": false,
+      "fits the kiosk": false
+    }
+  ],
+  "cpu_threads_available": 8
+}

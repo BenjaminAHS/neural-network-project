@@ -14,6 +14,7 @@ from .config import CACHE_DIR
 from .models import ImageNetNormalise
 
 CLIP_NAME = "openai/clip-vit-base-patch32"
+CLIP_LARGE = "openai/clip-vit-large-patch14"  # the biggest CLIP of OpenAI at 224 px: 428 M parameters (notebook 09)
 CLIP_MEAN = (0.48145466, 0.4578275, 0.40821073)  # the pixel statistics CLIP was trained with
 CLIP_STD = (0.26862954, 0.26130258, 0.27577711)
 
